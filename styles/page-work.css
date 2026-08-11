@@ -1,0 +1,274 @@
+/* ============================================================
+   PAGE-WORK.CSS — work.html only
+   ============================================================ */
+
+:root {
+  /* --px now inherits the site-wide 52px default from variables.css.
+     It used to be pinned to 40px here because the title-fit script
+     read a hardcoded 80px offset instead of the real padding — now
+     that fitTitleToWidth() (scripts/fit-title.js) measures the
+     parent's actual computed padding, the title re-fits correctly
+     at any --px value, so the override is gone. */
+
+  /* Aliases onto the canonical brand tokens (previously
+     duplicated as raw hex in this file's own :root). */
+  --c-title:   var(--c-textile);
+  --c-tagline: var(--c-ai-visual-art);
+  --c-dot:     var(--c-tagline);
+}
+
+/* ─── NAV — page-specific overrides ──────────────────────────
+   work.html's nav has no logo and uses a different alignment/gap
+   than the rest of the site; preserved as-is, not unified. */
+.comp-nav {
+  justify-content: flex-end;
+  border-bottom: none;
+}
+.comp-nav__links {
+  gap: 28px;
+  align-items: center;
+}
+.comp-nav__dot {
+  margin-left: 6px;
+}
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.page-work { padding-top: var(--nav-h); }
+
+.work-hero {
+  padding: 20px var(--px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.work-title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 16.2vw;
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--c-title);
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.work-tagline {
+  font-family: var(--f-mono);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-tagline);
+  text-align: center;
+  line-height: 1.2;
+  margin: 18px 0 28px;
+  font-weight: bold;
+}
+
+/* ─── HERO BAG ───────────────────────────────────────────── */
+.home-bag-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  aspect-ratio: 1308 / 1000;
+}
+
+.home-bag {
+  position: relative;
+  width: 100%; height: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 6px rgba(0,0,0,0.05),
+    0 10px 28px rgba(0,0,0,0.10),
+    0 28px 56px rgba(0,0,0,0.08);
+}
+
+.home-bag__content {
+  position: absolute;
+  inset: 0;
+  background: #ede8df;
+  overflow: hidden;
+}
+
+/* ─── BAG SHAPES (Matter.js-driven) ─────────────────────── */
+.bag-shape {
+  position: absolute;
+  top: 0; left: 0;
+  cursor: grab;
+  will-change: transform;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.bag-shape:active { cursor: grabbing; }
+
+/* Real cutout artwork (assets/shapes/*.svg) has its own irregular
+   silhouette, so a box-shadow would draw a visible rectangle behind
+   it — drop-shadow follows the alpha shape instead. */
+.bag-shape--cutout {
+  box-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.18));
+}
+
+/* PNG overlay */
+.home-bag__plastic {
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/bag-overlay.png') center / cover no-repeat;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* ─── PAGINATION DOTS ──────────────────────────────────────
+   Hidden by default. Only relevant when .comp-category-grid
+   can't fit every discipline in one row (5th category added,
+   or a narrow viewport) — the script at the bottom of this page
+   toggles .is-active on the grid and this wrapper together, and
+   builds one dot per page dynamically; the page count is derived
+   from real scroll overflow, never hardcoded to today's 4 items. */
+.pagination-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0 0;
+}
+
+.pagination-dots.is-active { display: flex; }
+
+.pdot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--c-border);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.pdot.is-active { background: var(--c-text); }
+
+/* ─── PROJECTS STRIP ─────────────────────────────────────── */
+.comp-projects-strip {
+  margin-top: 40px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.comp-projects-strip:active { cursor: grabbing; }
+.comp-projects-strip::-webkit-scrollbar { display: none; }
+
+.project-card {
+  flex-shrink: 0;
+  width: 280px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+
+.project-card:hover { filter: brightness(0.92); }
+
+.project-card--1 { background: #d8c8a8; }
+
+/* Cards with real cover photos — dark gradient layered under the
+   text for legibility, regardless of what the photo looks like. */
+.project-card--2 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/arts-and-economic-impact-awards/arts-and-economic-impact-awards-cover.png') center/cover no-repeat;
+}
+.project-card--3 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/historic-hampton-house/historic-hampton-house-cover.png') center/cover no-repeat;
+}
+.project-card--4 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
+}
+.project-card--5 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/fuego-mestizo/fuego-mestizo-cover.png') center/cover no-repeat;
+}
+.project-card--6 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/crescendo/crescendo-cover.png') center/cover no-repeat;
+}
+.project-card--7 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/hija-roja/hija-roja-cover.png') center/cover no-repeat;
+}
+.project-card--8 {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
+}
+
+.project-card__label {
+  font-family: var(--f-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 4px;
+}
+
+.project-card__title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.project-card__dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  margin-top: 12px;
+}
+
+.project-card--1 .project-card__label,
+.project-card--1 .project-card__title { color: #202020; }
+.project-card--1 .project-card__dot   { background: #202020; }
+
+/* Cards --2 through --8 all carry the dark-gradient + photo
+   background above, so they share the same light text treatment
+   regardless of category color. */
+.project-card--2 .project-card__label,
+.project-card--2 .project-card__title,
+.project-card--3 .project-card__label,
+.project-card--3 .project-card__title,
+.project-card--4 .project-card__label,
+.project-card--4 .project-card__title,
+.project-card--5 .project-card__label,
+.project-card--5 .project-card__title,
+.project-card--6 .project-card__label,
+.project-card--6 .project-card__title,
+.project-card--7 .project-card__label,
+.project-card--7 .project-card__title,
+.project-card--8 .project-card__label,
+.project-card--8 .project-card__title { color: #F5F2EB; }
+
+.project-card--2 .project-card__dot,
+.project-card--3 .project-card__dot,
+.project-card--4 .project-card__dot,
+.project-card--5 .project-card__dot,
+.project-card--6 .project-card__dot,
+.project-card--7 .project-card__dot,
+.project-card--8 .project-card__dot { background: #F5F2EB; }

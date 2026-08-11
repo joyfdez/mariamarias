@@ -1,0 +1,338 @@
+<title>María Méndez — Work</title>
+
+<link rel="stylesheet" href="styles/variables.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/page-work.css">
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<nav class="comp-nav">
+  <ul class="comp-nav__links">
+    <li class="is-active"><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li data-placeholder>Shop</li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="comp-nav__dot"></div>
+</nav>
+
+<!-- ─── PAGE ─────────────────────────────────────────────────── -->
+<main class="page-work">
+
+  <section class="work-hero">
+    <h1 class="work-title">Maria Mendez</h1>
+    <p class="work-tagline">
+      Graphic Designer<br>
+      Textile Artist<br>
+      Illustrator
+    </p>
+
+    <!-- HERO BAG -->
+    <div class="home-bag-wrap">
+      <div class="home-bag">
+
+        <div class="home-bag__zipper"></div>
+
+        <!-- Shape pieces are injected here and driven by Matter.js, see script below -->
+        <div class="home-bag__content" id="bagContent"></div>
+
+        <!-- PNG plastic overlay -->
+        <div class="home-bag__plastic"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY GRID -->
+  <section class="comp-category-grid">
+
+    <a class="category-item category-item--textile" href="category-textile.html">
+      <span class="category-num">01</span>
+      <div class="category-icon">
+        <img class="category-shape" src="assets/shapes/bird.svg" alt="">
+      </div>
+      <div class="category-name">Textile &amp;<br>Surface Design</div>
+    </a>
+
+    <a class="category-item category-item--campaigns" href="category-campaigns.html">
+      <span class="category-num">02</span>
+      <div class="category-icon">
+        <img class="category-shape" src="assets/shapes/nenunfar.svg" alt="">
+      </div>
+      <div class="category-name">Campaigns</div>
+    </a>
+
+    <a class="category-item category-item--branding" href="category-branding.html">
+      <span class="category-num">03</span>
+      <div class="category-icon">
+        <img class="category-shape" src="assets/shapes/horse.svg" alt="">
+      </div>
+      <div class="category-name">Branding</div>
+    </a>
+
+    <a class="category-item category-item--packaging" href="category-packaging.html">
+      <span class="category-num">04</span>
+      <div class="category-icon">
+        <img class="category-shape" src="assets/shapes/leaf.svg" alt="">
+      </div>
+      <div class="category-name">Packaging /<br>Product Design</div>
+    </a>
+
+  </section>
+
+  <!-- Dots are built by JS below, only when the grid actually overflows -->
+  <div class="pagination-dots" id="categoryDots"></div>
+
+  <!-- PROJECTS STRIP -->
+  <div class="comp-projects-strip" id="projectsStrip">
+
+    <a class="project-card project-card--1" href="#">
+      <div class="project-card__label">Textile · 2023</div>
+      <div class="project-card__title">Caballos<br>Silvestres</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--2" href="project-arts-and-economic-impact-awards.html">
+      <div class="project-card__label">Campaigns · 2024</div>
+      <div class="project-card__title">Arts &amp;<br>Economic<br>Impact Awards</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--3" href="project-historic-hampton-house.html">
+      <div class="project-card__label">Branding · 2024</div>
+      <div class="project-card__title">Historic<br>Hampton<br>House</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--4" href="project-bioliving.html">
+      <div class="project-card__label">Packaging · 2024</div>
+      <div class="project-card__title">BioLiving</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--5" href="project-fuego-mestizo.html">
+      <div class="project-card__label">Branding · 2024</div>
+      <div class="project-card__title">Fuego<br>Mestizo</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--6" href="project-crescendo.html">
+      <div class="project-card__label">Branding · 2025</div>
+      <div class="project-card__title">Crescendo</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--7" href="project-hija-roja.html">
+      <div class="project-card__label">Branding · 2022</div>
+      <div class="project-card__title">Hija<br>Roja</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+    <a class="project-card project-card--8" href="project-national-arts-and-humanities-month.html">
+      <div class="project-card__label">Campaigns · 2024</div>
+      <div class="project-card__title">National Arts<br>&amp; Humanities<br>Month</div>
+      <div class="project-card__dot"></div>
+    </a>
+
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script src="scripts/fit-title.js"></script>
+<script>
+/* Hero bag physics — 8 pieces, gravity + drag, DOM synced to Matter.js bodies */
+(function () {
+  const container = document.getElementById('bagContent');
+  if (!container || typeof Matter === 'undefined') return;
+
+  const { Engine, World, Bodies, Body, Mouse, MouseConstraint, Events } = Matter;
+
+  /* w/h keep each real asset's aspect ratio (see assets/shapes/*.svg viewBox) */
+  const SHAPES = [
+    { type: 'bird',     w: 210, h: 208, circle: false, color: '#1546F4', img: 'bird.svg' },
+    { type: 'poodle',   w: 212, h: 193,  circle: false, color: '#D82618', img: 'poodle.svg' },
+    { type: 'horse',    w: 217, h: 213, circle: false, color: '#1B5744', img: 'horse.svg' },
+    { type: 'leaf',     w: 190,  h: 196,  circle: false, color: '#D00071', img: 'leaf.svg' },
+    { type: 'fish',     w: 200, h: 166,  circle: false, color: '#C9B189', img: 'fish.svg' },
+    { type: 'nenunfar', w: 174,  h: 174,  circle: true,  color: '#C6D90A', img: 'nenunfar.svg' },
+  ];
+
+  const engine = Engine.create();
+  const world = engine.world;
+  engine.gravity.y = 1;
+  engine.enableSleeping = true;
+
+  let W = container.clientWidth;
+  let H = container.clientHeight;
+  const wallT = 60;
+  let walls = [];
+
+  function buildWalls() {
+    if (walls.length) World.remove(world, walls);
+    walls = [
+      Bodies.rectangle(W / 2, H + wallT / 2, W + wallT * 2, wallT, { isStatic: true }), // floor
+      Bodies.rectangle(-wallT / 2, H / 2, wallT, H * 3, { isStatic: true }),            // left
+      Bodies.rectangle(W + wallT / 2, H / 2, wallT, H * 3, { isStatic: true }),          // right
+    ];
+
+    World.add(world, walls);
+  }
+  buildWalls();
+
+  const bodies = [];
+  const els = [];
+
+  SHAPES.forEach((s, i) => {
+    const x = W / 2 + (Math.random() - 0.5) * (W * 0.5);
+    const y = -80 - i * 90;
+    const body = s.circle
+      ? Bodies.circle(x, y, s.w / 2, { restitution: 0.15, friction: 0.5 })
+      : Bodies.rectangle(x, y, s.w, s.h, { restitution: 0.15, friction: 0.5 });
+    Body.setAngle(body, (Math.random() - 0.5) * 0.6);
+    World.add(world, body);
+    bodies.push(body);
+
+    const el = document.createElement('div');
+    el.className = 'bag-shape piece-' + s.type + (s.img ? ' bag-shape--cutout' : '');
+    el.style.width = s.w + 'px';
+    el.style.height = s.h + 'px';
+    if (s.img) {
+      el.style.backgroundImage = `url('assets/shapes/${s.img}')`;
+      el.style.backgroundSize = 'contain';
+      el.style.backgroundRepeat = 'no-repeat';
+      el.style.backgroundPosition = 'center';
+    } else {
+      el.style.background = s.color;
+      if (s.circle) el.style.borderRadius = '50%';
+    }
+    container.appendChild(el);
+    els.push(el);
+  });
+
+  const mouse = Mouse.create(container);
+  mouse.element.removeEventListener('mousewheel', mouse.mousewheel);
+  mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel);
+
+  const mouseConstraint = MouseConstraint.create(engine, {
+    mouse,
+    constraint: { stiffness: 0.2, render: { visible: false } }
+  });
+  World.add(world, mouseConstraint);
+
+  Events.on(mouseConstraint, 'startdrag', e => {
+    const i = bodies.indexOf(e.body);
+    if (i > -1) els[i].style.zIndex = 50;
+  });
+  Events.on(mouseConstraint, 'enddrag', e => {
+    const i = bodies.indexOf(e.body);
+    if (i > -1) els[i].style.zIndex = 10;
+  });
+
+  function tick() {
+    Engine.update(engine, 1000 / 60);
+    bodies.forEach((body, i) => {
+      const s = SHAPES[i];
+      els[i].style.transform =
+        `translate(${body.position.x - s.w / 2}px, ${body.position.y - s.h / 2}px) rotate(${body.angle}rad)`;
+    });
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      W = container.clientWidth;
+      H = container.clientHeight;
+      buildWalls();
+    }, 200);
+  });
+})();
+
+/* Fit title full width — shared with contact.html, see scripts/fit-title.js */
+fitTitleToWidth(document.querySelector('.work-title'));
+
+/* Discipline grid pagination — dots stay hidden while every category
+   fits in one row (comp-category-grid's minmax(180px,1fr) columns).
+   Once it overflows (5th category added, or a narrow viewport), the
+   grid becomes a snap-scrolling strip and this builds one dot per
+   page, wires click-to-page, and keeps the active dot in sync on
+   scroll/resize. Page count is derived from real scrollWidth, never
+   hardcoded to today's 4 items. */
+(function () {
+  const grid = document.querySelector('.comp-category-grid');
+  const dotsWrap = document.getElementById('categoryDots');
+  if (!grid || !dotsWrap) return;
+
+  let pageCount = 0;
+
+  function buildDots(count) {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < count; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'pdot';
+      dot.addEventListener('click', () => {
+        grid.scrollTo({ left: i * grid.clientWidth, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function updateActiveDot() {
+    if (!pageCount) return;
+    const idx = Math.min(pageCount - 1, Math.round(grid.scrollLeft / grid.clientWidth));
+    dotsWrap.querySelectorAll('.pdot').forEach((dot, i) => {
+      dot.classList.toggle('is-active', i === idx);
+    });
+  }
+
+  function refresh() {
+    const overflowing = grid.scrollWidth > grid.clientWidth + 1;
+    grid.classList.toggle('is-paged', overflowing);
+    dotsWrap.classList.toggle('is-active', overflowing);
+
+    if (!overflowing) {
+      pageCount = 0;
+      dotsWrap.innerHTML = '';
+      return;
+    }
+
+    const newPageCount = Math.max(1, Math.round(grid.scrollWidth / grid.clientWidth));
+    if (newPageCount !== pageCount) {
+      pageCount = newPageCount;
+      buildDots(pageCount);
+    }
+    updateActiveDot();
+  }
+
+  grid.addEventListener('scroll', updateActiveDot);
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(refresh, 200);
+  });
+
+  refresh();
+})();
+
+/* Drag-scroll project strip */
+(function () {
+  const strip = document.getElementById('projectsStrip');
+  let down = false, startX, scrollLeft;
+  strip.addEventListener('mousedown', e => {
+    down = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft;
+  });
+  document.addEventListener('mouseup', () => { down = false; });
+  strip.addEventListener('mousemove', e => {
+    if (!down) return;
+    e.preventDefault();
+    strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX);
+  });
+  /* prevent nav on drag */
+  strip.addEventListener('click', e => {
+    if (Math.abs(strip.scrollLeft - scrollLeft) > 4) e.preventDefault();
+  });
+})();
+</script>

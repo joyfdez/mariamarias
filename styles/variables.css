@@ -1,0 +1,90 @@
+/* ============================================================
+   VARIABLES.CSS — María Méndez Studio
+   Design tokens: font faces, brand colors, spacing.
+   Load first — before base.css, components.css, page-*.css.
+   ============================================================ */
+
+/* ─── FONT FACES ─────────────────────────────────────────────
+   Single source of truth for all 8 pages. Titulares principales
+   use Akkordeon EIGHT (weight 900) — apply font-weight:900 via
+   var(--f-display) to select it, never a different weight file. */
+@font-face {
+  font-family: 'Akkordeon';
+  src: url('../assets/fonts/Akkordeon-Font/Akkordeon Eight.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Akkordeon';
+  src: url('../assets/fonts/Akkordeon-Font/Akkordeon Nine.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Druk Condensed';
+  src: url('../assets/fonts/Druk_Collection/Druk Condensed Family/DrukCond-Super-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Diatype';
+  src: url('../assets/fonts/ABC Diatype.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Diatype Mono';
+  src: url('../assets/fonts/ABC Diatype Mono.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Brand colors — confirmed palette ──────────────────── */
+  --c-textile:       #1546F4; /* Textile & Surface Design */
+  --c-campaigns:     #C6D90A; /* Campaigns */
+  --c-branding:      #1B5744; /* Branding */
+  --c-packaging:     #D00071; /* Packaging / Product Design */
+  --c-ai-visual-art: #D82618; /* AI Visual Art — used today only in work.html; no category page yet */
+
+  /* Derived tonal variants — pre-existing pcard shading tones,
+     preserved exactly as authored, now named instead of loose hex. */
+  --c-textile-1: #0f3dd4;
+  --c-textile-2: #2550e8;
+  --c-textile-3: #0b2fbc;
+  --c-textile-4: #1848e0;
+  --c-textile-5: #0d38c8;
+  --c-textile-6: #0a2ba0;
+
+  --c-branding-1: #142e25;
+  --c-branding-2: #1d4a38;
+  --c-branding-3: #102820;
+  --c-branding-4: #163c2f;
+
+  --c-packaging-1: #a80059;
+
+  /* ── Base neutrals — cream/light default.
+     Dark or category-tinted pages override --c-bg/--c-text/
+     --c-muted/--c-border/--c-dot in their own :root block,
+     loaded after this file so the override wins. ── */
+  --c-bg:     #F5F2EB;
+  --c-text:   #202020;
+  --c-muted:  rgba(32,32,32,0.52);
+  --c-border: rgba(32,32,32,0.10);
+  --c-dot:    var(--c-text);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --f-display: 'Akkordeon',       Georgia, 'Times New Roman', serif;
+  --f-sec:     'Druk Condensed',  'Impact', 'Arial Narrow', sans-serif; /* Reservado para titulares secundarios — pendiente de asignación, no aplicar sin confirmación */
+  --f-body:    'ABC Diatype',     'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --f-mono:    'ABC Diatype Mono','Courier New', Courier, monospace;
+
+  /* ── Layout ─────────────────────────────────────────────── */
+  --nav-h: 52px;
+  --px:    52px; /* work.html intentionally overrides this — see page-work.css */
+}

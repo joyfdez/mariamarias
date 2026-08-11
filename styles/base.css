@@ -1,0 +1,15 @@
+/* ============================================================
+   BASE.CSS — reset + global element defaults
+   Identical across all 8 pages. Page-specific body extras
+   (font-size, line-height, min-height, transitions) live in
+   each page-*.css file, not here.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--f-mono);
+  background: var(--c-bg);
+  color: var(--c-text);
+  overflow-x: hidden;
+}

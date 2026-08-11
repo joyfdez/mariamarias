@@ -1,0 +1,101 @@
+<title>María Méndez — Packaging & Product Design</title>
+
+<link rel="stylesheet" href="styles/variables.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/page-category.css">
+<style>
+/* Per-page theme injection — Packaging */
+:root {
+  --c-bg:     var(--c-packaging);
+  --c-text:   #F5F2EB;
+  --c-muted:  rgba(245,242,235,0.52);
+  --c-border: rgba(245,242,235,0.14);
+  --c-dot:    #F5F2EB;
+}
+</style>
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<nav class="comp-nav">
+  <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
+  <ul class="comp-nav__links">
+    <li class="is-active"><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li data-placeholder>Shop</li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="comp-nav__dot"></div>
+</nav>
+
+<!-- ─── PAGE ─────────────────────────────────────────────────── -->
+<main class="page-cat page-cat--packaging">
+
+  <section class="cat-hero">
+    <div>
+      <p class="cat-eyebrow">04 — Category</p>
+      <h1 class="cat-title">Packaging /<br>Product<br>Design</h1>
+    </div>
+    <div>
+      <p class="cat-count">1 Project</p>
+      <p class="cat-desc">Object as message. Packaging and product design where materials speak first, forms follow function, and both carry the brand.</p>
+    </div>
+  </section>
+
+  <!-- ─── HERO CARD ─────────────────────────────────────────── -->
+  <div class="cat-grid">
+
+    <!-- 1 · BioLiving — full-width hero -->
+    <a class="pcard pcard--1" href="project-bioliving.html">
+      <div class="pcard__art">
+        <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Container / jar body -->
+          <rect x="154" y="236" width="152" height="156" rx="10" fill="rgba(245,242,235,0.14)" stroke="rgba(245,242,235,0.24)" stroke-width="1.5"/>
+          <!-- Lid -->
+          <rect x="148" y="220" width="164" height="20" rx="5" fill="rgba(245,242,235,0.22)"/>
+          <!-- Label area -->
+          <rect x="170" y="272" width="120" height="82" rx="4" fill="rgba(245,242,235,0.06)" stroke="rgba(245,242,235,0.16)" stroke-width="1"/>
+          <!-- Label horizontal rules -->
+          <line x1="186" y1="298" x2="274" y2="298" stroke="rgba(245,242,235,0.18)" stroke-width="1"/>
+          <line x1="186" y1="314" x2="250" y2="314" stroke="rgba(245,242,235,0.12)" stroke-width="1"/>
+          <!-- Stem emerging from lid -->
+          <line x1="230" y1="220" x2="230" y2="68" stroke="rgba(245,242,235,0.20)" stroke-width="2" stroke-linecap="round"/>
+          <!-- Main leaf pair, large -->
+          <path d="M230,130 C216,108 188,104 172,116 C182,124 206,126 230,130Z" fill="rgba(245,242,235,0.22)"/>
+          <path d="M230,130 C244,108 272,104 288,116 C278,124 254,126 230,130Z" fill="rgba(245,242,235,0.22)"/>
+          <!-- Mid leaf pair -->
+          <path d="M230,100 C218,82 196,79 184,88 C192,95 212,96 230,100Z" fill="rgba(245,242,235,0.18)"/>
+          <path d="M230,100 C242,82 264,79 276,88 C268,95 248,96 230,100Z" fill="rgba(245,242,235,0.18)"/>
+          <!-- Upper leaf pair, small -->
+          <path d="M230,74 C221,61 205,59 196,66 C203,72 218,73 230,74Z" fill="rgba(245,242,235,0.14)"/>
+          <path d="M230,74 C239,61 255,59 264,66 C257,72 242,73 230,74Z" fill="rgba(245,242,235,0.14)"/>
+          <!-- Top bud -->
+          <ellipse cx="230" cy="52" rx="10" ry="16" fill="rgba(245,242,235,0.20)"/>
+          <!-- Ground / base shadow -->
+          <ellipse cx="230" cy="396" rx="90" ry="8" fill="rgba(245,242,235,0.08)"/>
+          <!-- Decorative dots (water droplets / purity) -->
+          <circle cx="130" cy="280" r="4" fill="rgba(245,242,235,0.14)"/>
+          <circle cx="118" cy="260" r="3" fill="rgba(245,242,235,0.10)"/>
+          <circle cx="330" cy="276" r="4" fill="rgba(245,242,235,0.14)"/>
+          <circle cx="344" cy="255" r="3" fill="rgba(245,242,235,0.10)"/>
+          <!-- Small satellite elements -->
+          <circle cx="116" cy="320" r="12" stroke="rgba(245,242,235,0.16)" stroke-width="1.5" fill="none"/>
+          <circle cx="344" cy="315" r="12" stroke="rgba(245,242,235,0.16)" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <div class="pcard__info">
+        <div>
+          <span class="pcard__meta">Packaging · 2024</span>
+          <h2 class="pcard__title">BioLiving</h2>
+          <div class="pcard__dot"></div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="comp-footer-minimal">
+    <a class="footer-back" href="work.html">← All Work</a>
+    <span class="footer-copy">María Méndez Studio</span>
+  </footer>
+
+</main>

@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Node (in case a build step gets added later)
+node_modules/
+
+# Editor/OS temp files
+*.swp
+*~
+.vercel

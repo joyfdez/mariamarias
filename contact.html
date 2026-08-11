@@ -1,0 +1,81 @@
+<title>María Méndez — Contact</title>
+
+<link rel="stylesheet" href="styles/variables.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/page-contact.css">
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<nav class="comp-nav">
+  <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
+  <ul class="comp-nav__links">
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li data-placeholder>Shop</li>
+    <li class="is-active"><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="comp-nav__dot"></div>
+</nav>
+
+<!-- ─── PAGE ─────────────────────────────────────────────────── -->
+<main class="page-contact">
+
+  <!-- TOP BLOCK -->
+  <section class="contact-top">
+
+    <!-- LEFT COLUMN -->
+    <div class="contact-col contact-col--left">
+      
+      <div class="contact-group">
+        <p class="label-mono">E-mail:</p>
+        <p class="body-text"><a class="plain-link" href="mailto:hello@mariamariass.com">hello@mariamariass.com</a></p>
+      </div>
+      <div class="contact-group">
+        <p class="label-mono">Instagram:</p>
+        <p class="body-text"><a class="plain-link" href="https://www.instagram.com/mariamariasssssss/" target="_blank" rel="noopener">@mariamariasssssss</a></p>
+      </div>
+      <div class="contact-group">
+        <p class="label-mono">Behance:</p>
+        <p class="body-text"><a class="plain-link" href="https://www.behance.net/mfmcmendezc664" target="_blank" rel="noopener">behance.net/mfmcmendezc664</a></p>
+      </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div class="contact-col contact-col--center">
+      <div class="contact-avatar">
+        <img src="assets/images/Contact1.png" alt="María Méndez">
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="contact-col contact-col--right">
+      <a class="back-link" href="work.html">← Back to Work</a>
+      <p class="body-text" id="madridClock">Madrid, --:--:--</p>
+    </div>
+
+  </section>
+
+  <!-- BOTTOM BLOCK -->
+  <section class="contact-bottom">
+    <h2 class="contact-outline" id="contactOutline">Contact</h2>
+  </section>
+
+</main>
+
+<script src="scripts/fit-title.js"></script>
+<script>
+/* Live Madrid clock */
+(function () {
+  const el = document.getElementById('madridClock');
+  const fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Madrid',
+    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+  });
+  const tick = () => { el.textContent = `Madrid, ${fmt.format(new Date())}`; };
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* Fit outline title to available width — shared with work.html, see scripts/fit-title.js */
+fitTitleToWidth(document.querySelector('.contact-outline'), { max: 60 });
+</script>

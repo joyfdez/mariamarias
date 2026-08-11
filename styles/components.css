@@ -1,0 +1,395 @@
+/* ============================================================
+   COMPONENTS.CSS — pieces reused across pages
+   Nav · footer-minimal · cta-link · transparent-bag (shared
+   mechanics) · discipline grid · spec sheet.
+   Page-specific overrides (colors, gaps, positions) live in the
+   corresponding page-*.css and load after this file, so they win.
+
+   NAMING CONVENTION — kebab-case throughout, BEM __element /
+   --modifier suffixes, no exceptions. Prefix by role, not by
+   how many pages use it:
+     page-*  → the root <main> of a page (page-work, page-cat…)
+     comp-*  → a section/component wrapper (comp-nav, comp-about-
+               hero…), even one only instantiated on a single page
+               today — it's a wrapper, not necessarily a "content"
+               element
+     bare    → semantic content elements inside a component/page,
+               no prefix (work-title, cat-title, pcard__meta…)
+   This is the convention already followed everywhere in this
+   project; write new pages/components against it rather than
+   guessing from nearby examples.
+   ============================================================ */
+
+/* ─── NAV ────────────────────────────────────────────────────
+   Baseline matches the majority pattern (about, contact, project,
+   the 4 category pages): logo + links, space-between, gap 30px.
+   work.html has no logo and overrides justify-content/gap/dot
+   margin in page-work.css — see the note there. */
+.comp-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--px);
+  background: var(--c-bg);
+  border-bottom: 1px solid var(--c-border);
+  z-index: 1000;
+}
+
+.comp-nav__logo {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+}
+
+.comp-nav__links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.comp-nav__links li {
+  font-family: var(--f-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  transition: opacity 0.2s;
+}
+
+.comp-nav__links a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.comp-nav__links li:hover     { opacity: 1; }
+.comp-nav__links li.is-active { opacity: 1; }
+.comp-nav__links li[data-placeholder] { cursor: default; pointer-events: none; opacity: 0.3; }
+
+.comp-nav__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--c-dot);
+  flex-shrink: 0;
+}
+
+/* ─── FOOTER MINIMAL ─────────────────────────────────────────
+   Identical across the 4 category pages. */
+.comp-footer-minimal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px var(--px);
+  border-top: 1px solid var(--c-border);
+  margin-top: 2px;
+}
+.footer-back { font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--c-muted); transition: color 0.2s; }
+.footer-back:hover { color: var(--c-text); }
+.footer-copy { font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.10em; color: var(--c-muted); }
+
+/* ─── CTA LINK ───────────────────────────────────────────────
+   Identical in about.html and project.html. */
+.cta-link {
+  font-family: var(--f-mono);
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+  margin-top: 20px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.cta-link:hover { opacity: 0.5; }
+
+/* ─── TRANSPARENT BAG — shared mechanics ─────────────────────
+   Used by about.html's hero bags (photographed plastic-bag PNG
+   overlay + zipper). project.html's gallery used to share this
+   too, but now uses the plain, non-bag ".gallery-piece" component
+   below instead. */
+.comp-transparent-bag {
+  border-radius: 3px;
+  overflow: hidden;
+}
+.comp-transparent-bag::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: screen;
+  opacity: 0.88;
+  pointer-events: none;
+  z-index: 5;
+}
+.bag-fill {
+  position: absolute;
+  inset: 0;
+}
+
+/* ─── GALLERY PIECE — draggable, no bag treatment ────────────
+   Used by project.html and every real-content project page.
+   Position (left/top/width) comes from a page-specific .gp-N
+   class; height is intentionally never set here so each piece
+   keeps its image's real aspect ratio — nothing gets cropped. */
+.gallery-piece {
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  will-change: transform;
+  transition:
+    box-shadow 0.28s ease,
+    transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-piece.is-dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.gallery-piece__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.10),
+    0 6px 18px rgba(0,0,0,0.20),
+    0 20px 44px rgba(0,0,0,0.16);
+  transition: box-shadow 0.28s ease;
+}
+
+/* Placeholder variant (no real photo yet) — a gradient div with
+   an authored aspect-ratio instead of an <img>. */
+.gallery-piece__fill {
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.10),
+    0 6px 18px rgba(0,0,0,0.20),
+    0 20px 44px rgba(0,0,0,0.16);
+  transition: box-shadow 0.28s ease;
+}
+
+.gallery-piece:hover .gallery-piece__img,
+.gallery-piece:hover .gallery-piece__fill {
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.14),
+    0 12px 30px rgba(0,0,0,0.26),
+    0 32px 56px rgba(0,0,0,0.20);
+}
+
+.gallery-piece.is-dragging .gallery-piece__img,
+.gallery-piece.is-dragging .gallery-piece__fill {
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.18),
+    0 20px 48px rgba(0,0,0,0.30),
+    0 40px 70px rgba(0,0,0,0.22);
+}
+
+/* ─── GALLERY LIGHTBOX — double-click detail view ────────────
+   Built and injected by scripts/gallery.js; one instance per
+   .comp-gallery-interactive section. Pure viewing — dragging is
+   not wired up inside it. */
+.comp-gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.86);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2000;
+  transition: opacity 0.25s ease;
+}
+
+.comp-gallery-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.comp-gallery-lightbox .lightbox-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.comp-gallery-lightbox .lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  cursor: default;
+}
+
+.comp-gallery-lightbox .lightbox-fill {
+  max-width: 90vw;
+  max-height: 90vh;
+  aspect-ratio: var(--fill-ratio, 4/3);
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.comp-gallery-lightbox button {
+  position: absolute;
+  background: rgba(245,242,235,0.10);
+  border: 1px solid rgba(245,242,235,0.24);
+  color: #F5F2EB;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.comp-gallery-lightbox button:hover { background: rgba(245,242,235,0.22); }
+
+.comp-gallery-lightbox .lightbox-close { top: 24px; right: 24px; }
+.comp-gallery-lightbox .lightbox-prev  { left: 24px;  top: 50%; transform: translateY(-50%); }
+.comp-gallery-lightbox .lightbox-next  { right: 24px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 640px) {
+  .comp-gallery-lightbox .lightbox-prev,
+  .comp-gallery-lightbox .lightbox-next { width: 36px; height: 36px; font-size: 18px; }
+}
+
+/* ─── DISCIPLINE GRID ─────────────────────────────────────────
+   work.html's category picker. Lives here as a reusable
+   component even though only one page instantiates it today.
+
+   grid-auto-columns: minmax(180px, 1fr) means the row behaves
+   exactly like the old repeat(4, 1fr) whenever 180px × item-count
+   fits the container (every desktop/tablet width today), but lets
+   the grid genuinely overflow instead of squishing items forever
+   once it doesn't (5th discipline added, or a narrow viewport).
+   overflow-x + scroll-snap make that overflow state a real
+   swipeable/scrollable strip; script below (work.html) detects
+   the overflow and drives .pagination-dots to match. */
+.comp-category-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(180px, 1fr);
+  margin: 40px var(--px) 0;
+  border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.comp-category-grid::-webkit-scrollbar { display: none; }
+.comp-category-grid.is-paged { cursor: grab; }
+
+.category-item {
+  padding: 28px 20px 32px;
+  border-right: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  scroll-snap-align: start;
+}
+
+.category-item:last-child { border-right: none; }
+.category-item:hover { background: rgba(32,32,32,0.04); }
+
+.category-num {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.category-icon {
+  width: 96px; height: 96px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-name {
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.55;
+}
+
+.category-item--textile  { --cat: var(--c-textile);  }
+.category-item--campaigns{ --cat: var(--c-campaigns); }
+.category-item--branding { --cat: var(--c-branding);  }
+.category-item--packaging{ --cat: var(--c-packaging); }
+
+.category-num,
+.category-name { color: var(--cat); }
+
+/* Category / value icons — hand-cut paper shapes from assets/shapes/*.svg.
+   Each file already carries its own brand color, so these are plain
+   <img> — --cat still tints .category-num/.category-name above. */
+.category-shape {
+  display: block;
+  max-width: 84%;
+  max-height: 84%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ─── SPEC SHEET ──────────────────────────────────────────────
+   project.html's client/discipline/year strip. Lives here as a
+   reusable component even though only one page instantiates it
+   today. */
+.comp-spec-sheet {
+  display: flex;
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.spec-item {
+  flex: 1;
+  padding: 12px 16px;
+  border-right: 1px solid var(--c-border);
+}
+.spec-item:last-child { border-right: none; }
+
+.spec-label {
+  font-family: var(--f-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 6px;
+}
+
+.spec-value {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}

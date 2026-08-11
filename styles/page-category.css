@@ -1,0 +1,174 @@
+/* ============================================================
+   PAGE-CATEGORY.CSS — shared by the 4 category-*.html pages
+   (textile, campaigns, branding, packaging)
+
+   Each category page injects its own theme via a tiny inline
+   :root override (--c-bg/--c-text/--c-muted/--c-border/--c-dot)
+   in its own <head>, and tags <main> with a modifier class
+   (page-cat--textile, page-cat--campaigns, page-cat--branding,
+   page-cat--packaging) so the numeric differences that were
+   previously duplicated per-file (grid layout, card padding,
+   hover strength, title clamps, dot size) can live in one place,
+   scoped correctly, without homogenizing anything that actually
+   differed on purpose.
+   ============================================================ */
+
+body { min-height: 100vh; }
+
+/* ─── PAGE ───────────────────────────────────────────────── */
+.page-cat { padding-top: var(--nav-h); }
+
+/* ─── HERO ───────────────────────────────────────────────── */
+.cat-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  padding: 64px var(--px) 52px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.cat-eyebrow {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 18px;
+}
+
+.cat-title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(60px, 8vw, 116px);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.page-cat--packaging .cat-title { font-size: clamp(54px, 7.5vw, 110px); }
+
+.cat-count {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 14px;
+}
+
+.cat-desc {
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--c-muted);
+  max-width: 360px;
+}
+
+/* ─── GRID — layout differs entirely per category ─────────── */
+.cat-grid {
+  display: grid;
+  gap: 2px;
+  margin-top: 2px;
+}
+.page-cat--branding .cat-grid  { grid-template-columns: 1.5fr 1fr; grid-template-rows: 360px 260px 200px; }
+.page-cat--campaigns .cat-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 600px; }
+.page-cat--packaging .cat-grid { grid-template-columns: 1fr; grid-template-rows: minmax(560px, 72vh); }
+.page-cat--textile .cat-grid   { grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px 280px 200px; }
+
+/* ─── PCARD BASE ─────────────────────────────────────────── */
+.pcard {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--c-text);
+  transition: filter 0.22s;
+}
+.pcard:hover { filter: brightness(1.08); }
+.page-cat--branding .pcard:hover,
+.page-cat--textile .pcard:hover { filter: brightness(1.10); }
+
+.pcard__art {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  overflow: hidden;
+}
+.page-cat--campaigns .pcard__art { padding: 40px; }
+.page-cat--packaging .pcard__art { padding: 52px; }
+.page-cat--textile   .pcard__art { padding: 28px; }
+
+.pcard__art svg { width: 100%; height: 100%; }
+.page-cat--packaging .pcard__art svg { max-height: 480px; }
+
+.pcard__info {
+  padding: 16px 22px 20px;
+  border-top: 1px solid rgba(245,242,235,0.10);
+}
+.page-cat--campaigns .pcard__info { padding: 18px 24px 22px; border-top-color: rgba(32,32,32,0.10); }
+.page-cat--packaging .pcard__info {
+  padding: 22px var(--px) 28px;
+  border-top-color: rgba(245,242,235,0.12);
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.pcard__meta {
+  font-family: var(--f-mono);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pcard__title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.page-cat--campaigns .pcard__title { font-size: clamp(22px, 2.2vw, 30px); }
+.page-cat--packaging .pcard__title { font-size: clamp(36px, 4.5vw, 64px); line-height: 0.90; margin-bottom: 12px; }
+
+.pcard__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-dot); }
+.page-cat--packaging .pcard__dot { width: 8px; height: 8px; margin-bottom: 2px; }
+
+/* ─── TEXTILE — 6-card grid ──────────────────────────────── */
+.page-cat--textile .pcard--1 { grid-column: 1; grid-row: 1 / 3; background: var(--c-textile-1); }
+.page-cat--textile .pcard--2 { grid-column: 2; grid-row: 1;     background: var(--c-textile-2); }
+.page-cat--textile .pcard--3 { grid-column: 3; grid-row: 1;     background: var(--c-textile-3); }
+.page-cat--textile .pcard--4 { grid-column: 2; grid-row: 2;     background: var(--c-textile-4); }
+.page-cat--textile .pcard--5 { grid-column: 3; grid-row: 2;     background: var(--c-textile-5); }
+.page-cat--textile .pcard--6 { grid-column: 1 / 4; grid-row: 3; background: var(--c-textile-6); flex-direction: row; }
+.page-cat--textile .pcard--6 .pcard__art { border-right: 1px solid rgba(245,242,235,0.10); padding: 16px 40px; }
+.page-cat--textile .pcard--6 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+
+/* ─── BRANDING — 4-card grid ─────────────────────────────── */
+.page-cat--branding .pcard--1 { grid-column: 1; grid-row: 1 / 3; background: var(--c-branding-1); }
+.page-cat--branding .pcard--2 { grid-column: 2; grid-row: 1;     background: var(--c-branding-2); }
+.page-cat--branding .pcard--3 { grid-column: 2; grid-row: 2;     background: var(--c-branding-3); }
+.page-cat--branding .pcard--4 { grid-column: 1 / 3; grid-row: 3; background: var(--c-branding-4); flex-direction: row; }
+.page-cat--branding .pcard--4 .pcard__art { border-right: 1px solid rgba(245,242,235,0.10); padding: 16px 40px; }
+.page-cat--branding .pcard--4 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
+
+/* ─── CAMPAIGNS — 2-card grid, dark cards need light text override ─── */
+.page-cat--campaigns .pcard--1 { background: #202020; color: #F5F2EB; }
+.page-cat--campaigns .pcard--2 { background: var(--c-textile); color: #F5F2EB; }
+.page-cat--campaigns .pcard--1 .pcard__info,
+.page-cat--campaigns .pcard--2 .pcard__info { border-top-color: rgba(245,242,235,0.12); }
+.page-cat--campaigns .pcard--1 .pcard__meta,
+.page-cat--campaigns .pcard--2 .pcard__meta { color: rgba(245,242,235,0.50); }
+.page-cat--campaigns .pcard--1 .pcard__dot,
+.page-cat--campaigns .pcard--2 .pcard__dot { background: var(--c-campaigns); }
+
+/* ─── PACKAGING — single hero card ───────────────────────── */
+.page-cat--packaging .pcard--1 { background: var(--c-packaging-1); }
