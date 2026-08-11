@@ -150,12 +150,12 @@
 
   /* w/h keep each real asset's aspect ratio (see assets/shapes/*.svg viewBox) */
   const SHAPES = [
-    { type: 'bird',     w: 210, h: 208, circle: false, color: '#1546F4', img: 'bird.svg' },
-    { type: 'poodle',   w: 212, h: 193,  circle: false, color: '#D82618', img: 'poodle.svg' },
-    { type: 'horse',    w: 217, h: 213, circle: false, color: '#1B5744', img: 'horse.svg' },
-    { type: 'leaf',     w: 190,  h: 196,  circle: false, color: '#D00071', img: 'leaf.svg' },
-    { type: 'fish',     w: 200, h: 166,  circle: false, color: '#C9B189', img: 'fish.svg' },
-    { type: 'nenunfar', w: 174,  h: 174,  circle: true,  color: '#C6D90A', img: 'nenunfar.svg' },
+    { type: 'bird',     w: 240, h: 238, circle: false, color: '#1546F4', img: 'bird.svg' },
+    { type: 'poodle',   w: 242, h: 223,  circle: false, color: '#D82618', img: 'poodle.svg' },
+    { type: 'horse',    w: 247, h: 243, circle: false, color: '#1B5744', img: 'horse.svg' },
+    { type: 'leaf',     w: 220,  h: 226,  circle: false, color: '#D00071', img: 'leaf.svg' },
+    { type: 'fish',     w: 230, h: 196,  circle: false, color: '#C9B189', img: 'fish.svg' },
+    { type: 'nenunfar', w: 204,  h: 204,  circle: true,  color: '#C6D90A', img: 'nenunfar.svg' },
   ];
 
   const engine = Engine.create();
@@ -167,6 +167,14 @@
   let H = container.clientHeight;
   const wallT = 60;
   let walls = [];
+
+  /* SHAPES' w/h are sized for the 860px reference width (.home-bag-wrap's
+     max-width). On narrow mobile containers those pieces are as big as
+     the box itself, which makes Matter's solver "explode" overlapping
+     bodies out past the walls — scale them down to match the real
+     container width so they never outsize the space they fall into. */
+  const scale = Math.min(1, W / 860);
+  const pieces = SHAPES.map(s => ({ ...s, w: s.w * scale, h: s.h * scale }));
 
   function buildWalls() {
     if (walls.length) World.remove(world, walls);
@@ -183,7 +191,7 @@
   const bodies = [];
   const els = [];
 
-  SHAPES.forEach((s, i) => {
+  pieces.forEach((s, i) => {
     const x = W / 2 + (Math.random() - 0.5) * (W * 0.5);
     const y = -80 - i * 90;
     const body = s.circle
@@ -232,7 +240,7 @@
   function tick() {
     Engine.update(engine, 1000 / 60);
     bodies.forEach((body, i) => {
-      const s = SHAPES[i];
+      const s = pieces[i];
       els[i].style.transform =
         `translate(${body.position.x - s.w / 2}px, ${body.position.y - s.h / 2}px) rotate(${body.angle}rad)`;
     });

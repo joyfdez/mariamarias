@@ -272,3 +272,20 @@
 .project-card--6 .project-card__dot,
 .project-card--7 .project-card__dot,
 .project-card--8 .project-card__dot { background: #F5F2EB; }
+
+/* ─── MOBILE EMERGENCY FIX (work.html only) ──────────────────
+   Minimal patch, not the real mobile redesign (backlog). Scoped
+   to this file only, so it never touches desktop. Narrows --px
+   so the nav/hero/grid/strip all get real breathing room on
+   phone widths instead of eating into their own padding, and
+   collapses the nav to fit without wrapping or crowding the
+   viewport edge. */
+@media (max-width: 600px) {
+  html { overflow-x: hidden; }
+
+  :root { --px: 16px; }
+
+  .comp-nav__links { gap: 12px; }
+  .comp-nav__links li { font-size: 8px; letter-spacing: 0.12em; }
+  .comp-nav__dot { width: 7px; height: 7px; margin-left: 4px; }
+}
