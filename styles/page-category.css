@@ -71,7 +71,7 @@ body { min-height: 100vh; }
   margin-top: 2px;
 }
 .page-cat--branding .cat-grid  { grid-template-columns: 1.5fr 1fr; grid-template-rows: 360px 260px 200px; }
-.page-cat--campaigns .cat-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 600px; }
+.page-cat--campaigns .cat-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 600px; }
 .page-cat--packaging .cat-grid { grid-template-columns: 1fr; grid-template-rows: minmax(560px, 72vh); }
 .page-cat--textile .cat-grid   { grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px 280px 200px; }
 
@@ -160,15 +160,19 @@ body { min-height: 100vh; }
 .page-cat--branding .pcard--4 .pcard__art { border-right: 1px solid rgba(245,242,235,0.10); padding: 16px 40px; }
 .page-cat--branding .pcard--4 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
 
-/* ─── CAMPAIGNS — 2-card grid, dark cards need light text override ─── */
+/* ─── CAMPAIGNS — 3-card grid, dark cards need light text override ─── */
 .page-cat--campaigns .pcard--1 { background: #202020; color: #F5F2EB; }
 .page-cat--campaigns .pcard--2 { background: var(--c-textile); color: #F5F2EB; }
+.page-cat--campaigns .pcard--3 { background: var(--c-branding); color: #F5F2EB; }
 .page-cat--campaigns .pcard--1 .pcard__info,
-.page-cat--campaigns .pcard--2 .pcard__info { border-top-color: rgba(245,242,235,0.12); }
+.page-cat--campaigns .pcard--2 .pcard__info,
+.page-cat--campaigns .pcard--3 .pcard__info { border-top-color: rgba(245,242,235,0.12); }
 .page-cat--campaigns .pcard--1 .pcard__meta,
-.page-cat--campaigns .pcard--2 .pcard__meta { color: rgba(245,242,235,0.50); }
+.page-cat--campaigns .pcard--2 .pcard__meta,
+.page-cat--campaigns .pcard--3 .pcard__meta { color: rgba(245,242,235,0.50); }
 .page-cat--campaigns .pcard--1 .pcard__dot,
-.page-cat--campaigns .pcard--2 .pcard__dot { background: var(--c-campaigns); }
+.page-cat--campaigns .pcard--2 .pcard__dot,
+.page-cat--campaigns .pcard--3 .pcard__dot { background: var(--c-campaigns); }
 
 /* ─── PACKAGING — single hero card ───────────────────────── */
 .page-cat--packaging .pcard--1 { background: var(--c-packaging-1); }
