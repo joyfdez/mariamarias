@@ -186,37 +186,37 @@
 .project-card--2 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/arts-and-economic-impact-awards/arts-and-economic-impact-awards-cover.png') center/cover no-repeat;
+    url('../assets/projects/historic-hampton-house/historic-hampton-house-cover.png') center/cover no-repeat;
 }
 .project-card--3 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/historic-hampton-house/historic-hampton-house-cover.png') center/cover no-repeat;
+    url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
 }
 .project-card--4 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
+    url('../assets/projects/fuego-mestizo/fuego-mestizo-cover.png') center/cover no-repeat;
 }
 .project-card--5 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/fuego-mestizo/fuego-mestizo-cover.png') center/cover no-repeat;
+    url('../assets/projects/crescendo/crescendo-cover.png') center/cover no-repeat;
 }
 .project-card--6 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/crescendo/crescendo-cover.png') center/cover no-repeat;
+    url('../assets/projects/hija-roja/hija-roja-cover.png') center/cover no-repeat;
 }
 .project-card--7 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/hija-roja/hija-roja-cover.png') center/cover no-repeat;
+    url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
 }
 .project-card--8 {
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
+    url('../assets/projects/national-arts-in-education-week/national-arts-in-education-week-cover.png') center/cover no-repeat;
 }
 
 .project-card__label {

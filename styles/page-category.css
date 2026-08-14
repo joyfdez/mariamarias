@@ -71,7 +71,7 @@ body { min-height: 100vh; }
   margin-top: 2px;
 }
 .page-cat--branding .cat-grid  { grid-template-columns: 1.5fr 1fr; grid-template-rows: 360px 260px 200px; }
-.page-cat--campaigns .cat-grid { grid-template-columns: repeat(3, 1fr); grid-template-rows: 600px; }
+.page-cat--campaigns .cat-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: 600px; }
 .page-cat--packaging .cat-grid { grid-template-columns: 1fr; grid-template-rows: minmax(560px, 72vh); }
 .page-cat--textile .cat-grid   { grid-template-columns: repeat(3, 1fr); grid-template-rows: 280px 280px 200px; }
 
@@ -97,7 +97,6 @@ body { min-height: 100vh; }
   padding: 32px;
   overflow: hidden;
 }
-.page-cat--campaigns .pcard__art { padding: 40px; }
 .page-cat--textile   .pcard__art { padding: 28px; }
 
 .pcard__art svg { width: 100%; height: 100%; }
@@ -186,34 +185,28 @@ body { min-height: 100vh; }
 }
 .page-cat--branding .pcard--4 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
 
-/* ─── CAMPAIGNS — 3-card grid, dark cards need light text override ───
-   pcard--1/--2 have real cover photos; pcard--3 (National Arts in
-   Education Week) has no uploaded images yet, so it keeps its SVG
-   placeholder + flat tonal background until real photos land. */
+/* ─── CAMPAIGNS — 2-card grid, dark cards need light text override ───
+   Both have real cover photos. */
 .page-cat--campaigns .pcard--1 {
-  justify-content: flex-end;
-  color: #F5F2EB;
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/arts-and-economic-impact-awards/arts-and-economic-impact-awards-cover.png') center/cover no-repeat;
-}
-.page-cat--campaigns .pcard--2 {
   justify-content: flex-end;
   color: #F5F2EB;
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
     url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
 }
-.page-cat--campaigns .pcard--3 { background: var(--c-branding); color: #F5F2EB; }
+.page-cat--campaigns .pcard--2 {
+  justify-content: flex-end;
+  color: #F5F2EB;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/national-arts-in-education-week/national-arts-in-education-week-cover.png') center/cover no-repeat;
+}
 .page-cat--campaigns .pcard--1 .pcard__info,
-.page-cat--campaigns .pcard--2 .pcard__info,
-.page-cat--campaigns .pcard--3 .pcard__info { border-top-color: rgba(245,242,235,0.12); }
+.page-cat--campaigns .pcard--2 .pcard__info { border-top-color: rgba(245,242,235,0.12); }
 .page-cat--campaigns .pcard--1 .pcard__meta,
-.page-cat--campaigns .pcard--2 .pcard__meta,
-.page-cat--campaigns .pcard--3 .pcard__meta { color: rgba(245,242,235,0.50); }
+.page-cat--campaigns .pcard--2 .pcard__meta { color: rgba(245,242,235,0.50); }
 .page-cat--campaigns .pcard--1 .pcard__dot,
-.page-cat--campaigns .pcard--2 .pcard__dot,
-.page-cat--campaigns .pcard--3 .pcard__dot { background: var(--c-campaigns); }
+.page-cat--campaigns .pcard--2 .pcard__dot { background: var(--c-campaigns); }
 
 /* ─── PACKAGING — single hero card ───────────────────────── */
 .page-cat--packaging .pcard--1 {
