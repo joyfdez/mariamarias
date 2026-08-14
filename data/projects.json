@@ -132,7 +132,7 @@
       { "text": "El resultado es una serie de patrones all-over llenos de color, movimiento y ritmo, pensados para convertir fenómenos normalmente asociados al caos y la destrucción en una experiencia visual y sensorial más lúdica.", "style": "primary" },
       { "text": "La colección juega con la contradicción entre desastre y diversión. Las gráficas abstraen información científica y la convierten en un lenguaje mucho más intuitivo, energético y corporal, donde el color funciona como una dosis de actitud. Desastre Sensorial propone mirar el caos desde otro lugar: ponerle un poco de sazón, chispa y color a la vida.", "style": "secondary" }
     ],
-    "cover": null,
+    "cover": "assets/projects/desastre-sensorial/desastre-sensorial-cover.JPG",
     "stack": [
       "assets/projects/desastre-sensorial/desastre-sensorial-01.jpg",
       "assets/projects/desastre-sensorial/desastre-sensorial-02.jpg",
@@ -177,7 +177,6 @@
       { "text": "El sistema se adaptó a múltiples formatos y puntos de contacto: desde materiales digitales y contenido para redes sociales hasta piezas impresas y aplicaciones en distintos espacios de Washington, D.C., creando una campaña capaz de llevar el mensaje de manera cercana y dinámica a diferentes públicos.", "style": "primary" },
       { "text": "La identidad visual busca representar el arte como algo que no está únicamente en museos o escenarios, sino que forma parte de todos nosotros. La mezcla de texturas hechas a mano, imágenes fotográficas y composiciones de collage genera un universo espontáneo, colorido y lleno de movimiento, celebrando la diversidad de formas en las que las artes y las humanidades se manifiestan en la vida cotidiana.", "style": "secondary" }
     ],
-    "status": "missing-assets",
     "cover": "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png",
     "stack": [
       "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-01.png",
@@ -189,7 +188,14 @@
     ],
     "gallery": [
       "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-07.png",
-      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-08.png"
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-08.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-09.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-10.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-11.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-12.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-13.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-14.png",
+      "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-15.png"
     ]
   },
   {
