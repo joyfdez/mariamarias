@@ -98,11 +98,9 @@ body { min-height: 100vh; }
   overflow: hidden;
 }
 .page-cat--campaigns .pcard__art { padding: 40px; }
-.page-cat--packaging .pcard__art { padding: 52px; }
 .page-cat--textile   .pcard__art { padding: 28px; }
 
 .pcard__art svg { width: 100%; height: 100%; }
-.page-cat--packaging .pcard__art svg { max-height: 480px; }
 
 .pcard__info {
   padding: 16px 22px 20px;
@@ -152,17 +150,60 @@ body { min-height: 100vh; }
 .page-cat--textile .pcard--6 .pcard__art { border-right: 1px solid rgba(245,242,235,0.10); padding: 16px 40px; }
 .page-cat--textile .pcard--6 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
 
-/* ─── BRANDING — 4-card grid ─────────────────────────────── */
-.page-cat--branding .pcard--1 { grid-column: 1; grid-row: 1 / 3; background: var(--c-branding-1); }
-.page-cat--branding .pcard--2 { grid-column: 2; grid-row: 1;     background: var(--c-branding-2); }
-.page-cat--branding .pcard--3 { grid-column: 2; grid-row: 2;     background: var(--c-branding-3); }
-.page-cat--branding .pcard--4 { grid-column: 1 / 3; grid-row: 3; background: var(--c-branding-4); flex-direction: row; }
-.page-cat--branding .pcard--4 .pcard__art { border-right: 1px solid rgba(245,242,235,0.10); padding: 16px 40px; }
+/* ─── BRANDING — 4-card grid ─────────────────────────────────
+   All 4 have real cover photos — dark gradient layered under the
+   text for legibility, same technique as work.html's project-card,
+   oriented to match each card's own flex direction (bottom-fade
+   for the column cards, left-fade for pcard--4's horizontal one). */
+.page-cat--branding .pcard--1 {
+  grid-column: 1; grid-row: 1 / 3;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/historic-hampton-house/historic-hampton-house-cover.png') center/cover no-repeat;
+}
+.page-cat--branding .pcard--2 {
+  grid-column: 2; grid-row: 1;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/crescendo/crescendo-cover.png') center/cover no-repeat;
+}
+.page-cat--branding .pcard--3 {
+  grid-column: 2; grid-row: 2;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/fuego-mestizo/fuego-mestizo-cover.png') center/cover no-repeat;
+}
+.page-cat--branding .pcard--4 {
+  grid-column: 1 / 3; grid-row: 3;
+  flex-direction: row;
+  justify-content: flex-end;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0) 45%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/hija-roja/hija-roja-cover.png') center/cover no-repeat;
+}
 .page-cat--branding .pcard--4 .pcard__info { border-top: none; width: 240px; flex-shrink: 0; display: flex; flex-direction: column; justify-content: flex-end; }
 
-/* ─── CAMPAIGNS — 3-card grid, dark cards need light text override ─── */
-.page-cat--campaigns .pcard--1 { background: #202020; color: #F5F2EB; }
-.page-cat--campaigns .pcard--2 { background: var(--c-textile); color: #F5F2EB; }
+/* ─── CAMPAIGNS — 3-card grid, dark cards need light text override ───
+   pcard--1/--2 have real cover photos; pcard--3 (National Arts in
+   Education Week) has no uploaded images yet, so it keeps its SVG
+   placeholder + flat tonal background until real photos land. */
+.page-cat--campaigns .pcard--1 {
+  justify-content: flex-end;
+  color: #F5F2EB;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/arts-and-economic-impact-awards/arts-and-economic-impact-awards-cover.png') center/cover no-repeat;
+}
+.page-cat--campaigns .pcard--2 {
+  justify-content: flex-end;
+  color: #F5F2EB;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
+}
 .page-cat--campaigns .pcard--3 { background: var(--c-branding); color: #F5F2EB; }
 .page-cat--campaigns .pcard--1 .pcard__info,
 .page-cat--campaigns .pcard--2 .pcard__info,
@@ -175,4 +216,9 @@ body { min-height: 100vh; }
 .page-cat--campaigns .pcard--3 .pcard__dot { background: var(--c-campaigns); }
 
 /* ─── PACKAGING — single hero card ───────────────────────── */
-.page-cat--packaging .pcard--1 { background: var(--c-packaging-1); }
+.page-cat--packaging .pcard--1 {
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
+    url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
+}

@@ -65,6 +65,15 @@ body { min-height: 100vh; }
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* <body> never carries the --modifier class (nav + main are its
+     children, not the other way around), so it always paints the
+     :root fallback above regardless of category. .page-project must
+     consume its OWN locally-scoped --c-bg/--c-text directly instead
+     of relying on inheriting body's, or every non-Branding project
+     silently shows Branding's fallback color everywhere but the nav
+     (which already does this correctly via .comp-nav below). */
+  background: var(--c-bg);
+  color: var(--c-text);
 }
 
 /* ─── PROJECT HEADER ─────────────────────────────────────── */
@@ -82,6 +91,22 @@ body { min-height: 100vh; }
   padding-right: 16px;
   padding-bottom: 56px;
   border-bottom: 1px solid var(--c-border);
+}
+
+/* ─── VIEW-FULL-GALLERY CTA ──────────────────────────────────
+   Opens the same lightbox as double-clicking a stack piece, but
+   at index 0 (the cover) with every image — the 6 in the stack
+   plus anything beyond that only lives in the full gallery. */
+.gallery-view-all {
+  margin-top: 24px;
+}
+
+.gallery-note {
+  font-family: var(--f-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--c-muted);
+  margin-top: 10px;
 }
 
 .project-category {
@@ -155,21 +180,21 @@ body { min-height: 100vh; }
   margin-top: 64px;
 }
 
-/* ─── LAYOUT B — pieces scattered ─────────────────────────
+/* ─── LAYOUT B — pieces piled toward center ───────────────
    Positions are initial rest state — drag moves them from here.
    Only left/top/width are authored; height is never fixed here —
    .gallery-piece__img is height:auto so each piece keeps its own
-   image's real aspect ratio (see components.css). */
-.gp-1 { left: 0.5%; top: 3%;  width: 22%; }
-.gp-2 { left: 19%;  top: 7%;  width: 17%; }
-.gp-3 { left: 34%;  top: 0.5%;width: 25%; }
-.gp-4 { left: 57%;  top: 4%;  width: 21%; }
-.gp-5 { left: 2%;   top: 45%; width: 20%; }
-.gp-6 { left: 24%;  top: 39%; width: 23%; }
-.gp-7 { left: 46%;  top: 43%; width: 20%; }
-.gp-8 { left: 65%;  top: 33%; width: 24%; }
-
-/* Extra positions — projects whose gallery has more than 8 real pieces */
-.gp-9  { left: 78%; top: 8%;  width: 20%; }
-.gp-10 { left: 8%;  top: 66%; width: 20%; }
-.gp-11 { left: 74%; top: 60%; width: 22%; }
+   image's real aspect ratio (see components.css). Exactly 6 slots —
+   every real project gallery caps its visible stack at 6 pieces;
+   anything beyond that lives only in the full-gallery lightbox
+   (see the data-gallery-cover/data-gallery-extra attributes on
+   .comp-gallery-interactive and gallery.js). Clustered into a
+   tighter, more overlapping pile than the old edge-to-edge spread,
+   reading as a stack of printed photos dropped on a table rather
+   than pieces scattered evenly across the canvas. */
+.gp-1 { left: 28%; top: 8%;  width: 24%; }
+.gp-2 { left: 38%; top: 3%;  width: 23%; }
+.gp-3 { left: 47%; top: 10%; width: 25%; }
+.gp-4 { left: 31%; top: 30%; width: 24%; }
+.gp-5 { left: 41%; top: 35%; width: 23%; }
+.gp-6 { left: 51%; top: 27%; width: 25%; }

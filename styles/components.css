@@ -34,6 +34,7 @@
   justify-content: space-between;
   padding: 0 var(--px);
   background: var(--c-bg);
+  color: var(--c-text);
   border-bottom: 1px solid var(--c-border);
   z-index: 1000;
 }
@@ -113,6 +114,17 @@
 }
 .cta-link:hover { opacity: 0.5; }
 
+/* <button> variant — same look as the <a>, minus the UA chrome
+   (border box, background, default padding) a real button carries. */
+button.cta-link {
+  background: none;
+  border: none;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 3px;
+  font: inherit;
+  cursor: pointer;
+}
+
 /* ─── TRANSPARENT BAG — shared mechanics ─────────────────────
    Used by about.html's hero bags (photographed plastic-bag PNG
    overlay + zipper). project.html's gallery used to share this
@@ -157,16 +169,20 @@
   transition: none;
 }
 
+/* Shadow weight matches the about.html bag-fill treatment — a soft,
+   close contact shadow plus a wider ambient one, read as a real
+   printed photo resting on a table rather than a floating panel.
+   Hover is scale-only (see below), so this box-shadow never changes
+   on :hover — only while a piece is actively picked up (dragging). */
 .gallery-piece__img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 3px;
   box-shadow:
-    0 1px 2px rgba(0,0,0,0.10),
-    0 6px 18px rgba(0,0,0,0.20),
-    0 20px 44px rgba(0,0,0,0.16);
-  transition: box-shadow 0.28s ease;
+    0 2px 4px rgba(0,0,0,0.14),
+    0 14px 30px rgba(0,0,0,0.22);
+  transition: box-shadow 0.2s ease, transform 0.25s ease;
 }
 
 /* Placeholder variant (no real photo yet) — a gradient div with
@@ -176,26 +192,23 @@
   width: 100%;
   border-radius: 3px;
   box-shadow:
-    0 1px 2px rgba(0,0,0,0.10),
-    0 6px 18px rgba(0,0,0,0.20),
-    0 20px 44px rgba(0,0,0,0.16);
-  transition: box-shadow 0.28s ease;
+    0 2px 4px rgba(0,0,0,0.14),
+    0 14px 30px rgba(0,0,0,0.22);
+  transition: box-shadow 0.2s ease, transform 0.25s ease;
 }
 
+/* Hover affordance — scale only, same as the about.html bags:
+   no opacity/color change, image stays full contrast. */
 .gallery-piece:hover .gallery-piece__img,
 .gallery-piece:hover .gallery-piece__fill {
-  box-shadow:
-    0 2px 5px rgba(0,0,0,0.14),
-    0 12px 30px rgba(0,0,0,0.26),
-    0 32px 56px rgba(0,0,0,0.20);
+  transform: scale(1.03);
 }
 
 .gallery-piece.is-dragging .gallery-piece__img,
 .gallery-piece.is-dragging .gallery-piece__fill {
   box-shadow:
-    0 4px 12px rgba(0,0,0,0.18),
-    0 20px 48px rgba(0,0,0,0.30),
-    0 40px 70px rgba(0,0,0,0.22);
+    0 6px 16px rgba(0,0,0,0.20),
+    0 24px 46px rgba(0,0,0,0.28);
 }
 
 /* ─── GALLERY LIGHTBOX — double-click detail view ────────────

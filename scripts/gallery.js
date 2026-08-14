@@ -181,9 +181,21 @@
     }
   }
 
+  /* A detached div carrying data-lightbox-src/-alt — buildLightbox()
+     already knows how to read those off any element, real stack
+     piece or not, so this is the cheapest way to fold the cover and
+     the gallery-only (7th-and-up) images into the same lightbox
+     without needing a second code path. */
+  function stubPiece(src, alt) {
+    const el = document.createElement('div');
+    el.dataset.lightboxSrc = src;
+    el.dataset.lightboxAlt = alt || '';
+    return el;
+  }
+
   function initGallery(section) {
-    const pieces = Array.from(section.querySelectorAll('.gallery-piece'));
-    if (!pieces.length) return;
+    const stackPieces = Array.from(section.querySelectorAll('.gallery-piece'));
+    if (!stackPieces.length) return;
 
     const dragHint = section.querySelector('.comp-drag-hint');
     let globalZ = 100;
@@ -197,18 +209,38 @@
       }
     }
 
-    const draggables = pieces.map(el => new DraggablePiece(el, onInteract));
-    const lightbox = buildLightbox(pieces);
+    const draggables = stackPieces.map(el => new DraggablePiece(el, onInteract));
 
-    pieces.forEach((el, i) => {
+    /* Full gallery = cover (if any) + the visible stack, in DOM
+       order + anything beyond the 6-piece stack that only lives
+       here, never in the draggable canvas. */
+    const coverSrc = section.dataset.galleryCover;
+    let extra = [];
+    if (section.dataset.galleryExtra) {
+      try { extra = JSON.parse(section.dataset.galleryExtra); } catch (e) { extra = []; }
+    }
+
+    const fullPieces = [];
+    const stackOffset = coverSrc ? 1 : 0;
+    if (coverSrc) fullPieces.push(stubPiece(coverSrc, section.dataset.galleryCoverAlt));
+    fullPieces.push(...stackPieces);
+    extra.forEach(item => fullPieces.push(stubPiece(item.src, item.alt)));
+
+    const lightbox = buildLightbox(fullPieces);
+
+    stackPieces.forEach((el, i) => {
       const img = el.querySelector('img');
       if (img) img.setAttribute('draggable', 'false');
 
       el.addEventListener('dblclick', () => {
         if (draggables[i].moved) return;
-        lightbox.open(i);
+        lightbox.open(i + stackOffset);
       });
     });
+
+    const viewAllBtn = section.parentElement.querySelector('.js-view-gallery')
+      || document.querySelector('.js-view-gallery');
+    if (viewAllBtn) viewAllBtn.addEventListener('click', () => lightbox.open(0));
   }
 
   /* Simple click-to-open lightbox — no drag, single click, for
