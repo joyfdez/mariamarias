@@ -259,4 +259,12 @@
   document.querySelectorAll('.comp-gallery-interactive').forEach(initGallery);
   document.querySelectorAll('[data-lightbox-group]').forEach(initClickLightbox);
 
+  /* Exposed for project.html's dynamic renderer — it builds the
+     .comp-gallery-interactive DOM from projects.json *after* this
+     script has already run its own querySelectorAll pass above (which
+     found nothing yet, harmlessly), so it calls this directly once the
+     stack/gallery markup exists. Static pages never need to call this
+     themselves — the auto-run above already covers them. */
+  window.GalleryJS = { initGallery, initClickLightbox };
+
 })();

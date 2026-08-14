@@ -64,6 +64,15 @@ body { min-height: 100vh; }
   max-width: 360px;
 }
 
+/* category.html only — shown when ?d= is missing or doesn't match
+   any discipline slug, instead of a blank page. */
+.cat-error {
+  font-family: var(--f-mono);
+  font-size: 13px;
+  padding: 64px var(--px);
+  color: var(--c-text);
+}
+
 /* ─── GRID — layout differs entirely per category ─────────── */
 .cat-grid {
   display: grid;
@@ -138,6 +147,49 @@ body { min-height: 100vh; }
 
 .pcard__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-dot); }
 .page-cat--packaging .pcard__dot { width: 8px; height: 8px; margin-bottom: 2px; }
+
+/* ─── UNIFORM GRID (category.html dynamic template) ───────────
+   One generic grid instead of the bespoke per-position layout below
+   (kept only for the legacy category-*.html pages until retired) —
+   every card is the same size no matter how many projects a
+   discipline has, so BioLiving's 1 project and Textile's 6 use the
+   exact same CSS. */
+.cat-grid--uniform {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2px;
+}
+.cat-grid--uniform .pcard { aspect-ratio: 3 / 4; justify-content: flex-end; }
+
+/* Cover photo itself is set per-card by the render script via
+   element.style.backgroundImage (JS-set inline styles resolve
+   relative URLs against the document; a CSS custom property holding
+   a url() would instead resolve against this stylesheet's own
+   folder, breaking the path) — this just supplies the fallback
+   layering/sizing and forces the same light text every photo card
+   already used. */
+.pcard--photo {
+  color: #F5F2EB;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pcard--photo .pcard__meta { color: rgba(245,242,235,0.50); }
+.pcard--photo .pcard__dot  { background: #F5F2EB; }
+
+/* No cover yet — flat tint in the project's own discipline color
+   plus a large faded discipline icon behind the text, instead of a
+   broken-image icon or silently omitting the card. */
+.pcard--placeholder { background: var(--c-bg); }
+.pcard--placeholder .pcard__placeholder-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pcard--placeholder .pcard__placeholder-icon img { width: 40%; opacity: 0.15; }
+.pcard--placeholder .pcard__info { position: relative; z-index: 1; }
 
 /* ─── TEXTILE — 6-card grid ──────────────────────────────── */
 /* pcard--1 through --4 have real cover photos now; --5 (Desastre

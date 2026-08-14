@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "textile",
+    "number": "01",
+    "name": "Textile",
+    "titleLines": ["Textile &", "Surface", "Design"],
+    "eyebrowLabel": "01 — Category",
+    "color": "#1546F4",
+    "textColor": "#F5F2EB",
+    "mutedColor": "rgba(245,242,235,0.50)",
+    "borderColor": "rgba(245,242,235,0.14)",
+    "dotColor": "#C6D90A",
+    "icon": "assets/shapes/bird.svg",
+    "description": "Surface as memory. Patterns drawn from natural form and cultural reference, developed for silk, linen, and mixed textile applications."
+  },
+  {
+    "slug": "campaigns",
+    "number": "02",
+    "name": "Campaigns",
+    "titleLines": ["Campaigns"],
+    "eyebrowLabel": "02 — Category",
+    "color": "#C6D90A",
+    "textColor": "#202020",
+    "mutedColor": "rgba(32,32,32,0.52)",
+    "borderColor": "rgba(32,32,32,0.12)",
+    "dotColor": "#202020",
+    "icon": "assets/shapes/nenunfar.svg",
+    "description": "Art as public practice. Visual strategies for cultural institutions and award programs — work built to move through the world."
+  },
+  {
+    "slug": "branding",
+    "number": "03",
+    "name": "Branding",
+    "titleLines": ["Branding"],
+    "eyebrowLabel": "03 — Category",
+    "color": "#1B5744",
+    "textColor": "#F5F2EB",
+    "mutedColor": "rgba(245,242,235,0.50)",
+    "borderColor": "rgba(245,242,235,0.13)",
+    "dotColor": "#C6D90A",
+    "icon": "assets/shapes/horse.svg",
+    "description": "Identity as language. Brand systems for cultural spaces, hospitality, and creative practices — marks that carry meaning without imposing it."
+  },
+  {
+    "slug": "packaging",
+    "number": "04",
+    "name": "Packaging",
+    "titleLines": ["Packaging /", "Product", "Design"],
+    "eyebrowLabel": "04 — Category",
+    "color": "#D00071",
+    "textColor": "#F5F2EB",
+    "mutedColor": "rgba(245,242,235,0.52)",
+    "borderColor": "rgba(245,242,235,0.14)",
+    "dotColor": "#F5F2EB",
+    "icon": "assets/shapes/leaf.svg",
+    "description": "Object as message. Packaging and product design where materials speak first, forms follow function, and both carry the brand."
+  }
+]

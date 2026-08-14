@@ -179,45 +179,48 @@
 
 .project-card:hover { filter: brightness(0.92); }
 
-.project-card--1 { background: #d8c8a8; }
+/* Cover photo itself is set per-card by the render script via
+   element.style.backgroundImage — a CSS custom property holding a
+   url() would resolve that relative path against this stylesheet's
+   own folder instead of the document, which is the wrong base and
+   404s. This just supplies sizing/fallback + forces light text,
+   same as before. */
+.project-card--photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.project-card--photo .project-card__label,
+.project-card--photo .project-card__title { color: #F5F2EB; }
+.project-card--photo .project-card__dot   { background: #F5F2EB; }
 
-/* Cards with real cover photos — dark gradient layered under the
-   text for legibility, regardless of what the photo looks like. */
-.project-card--2 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/historic-hampton-house/historic-hampton-house-cover.png') center/cover no-repeat;
+/* No cover yet (status: missing-assets, or a project with zero
+   uploaded photos) — flat tint in the project's own discipline color
+   plus a large faded discipline icon, instead of a broken-image icon
+   or silently skipping the card. */
+.project-card--placeholder {
+  background: var(--project-card-tint);
+  color: var(--project-card-text);
 }
-.project-card--3 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
+.project-card--placeholder .project-card__placeholder-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
 }
-.project-card--4 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/fuego-mestizo/fuego-mestizo-cover.png') center/cover no-repeat;
+.project-card--placeholder .project-card__placeholder-icon img {
+  width: 46%;
+  opacity: 0.16;
 }
-.project-card--5 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/crescendo/crescendo-cover.png') center/cover no-repeat;
+.project-card--placeholder .project-card__label,
+.project-card--placeholder .project-card__title,
+.project-card--placeholder .project-card__dot {
+  position: relative;
+  z-index: 1;
 }
-.project-card--6 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/hija-roja/hija-roja-cover.png') center/cover no-repeat;
-}
-.project-card--7 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png') center/cover no-repeat;
-}
-.project-card--8 {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/national-arts-in-education-week/national-arts-in-education-week-cover.png') center/cover no-repeat;
-}
+.project-card--placeholder .project-card__dot { background: var(--project-card-dot); }
 
 .project-card__label {
   font-family: var(--f-mono);
@@ -242,36 +245,6 @@
   border-radius: 50%;
   margin-top: 12px;
 }
-
-.project-card--1 .project-card__label,
-.project-card--1 .project-card__title { color: #202020; }
-.project-card--1 .project-card__dot   { background: #202020; }
-
-/* Cards --2 through --8 all carry the dark-gradient + photo
-   background above, so they share the same light text treatment
-   regardless of category color. */
-.project-card--2 .project-card__label,
-.project-card--2 .project-card__title,
-.project-card--3 .project-card__label,
-.project-card--3 .project-card__title,
-.project-card--4 .project-card__label,
-.project-card--4 .project-card__title,
-.project-card--5 .project-card__label,
-.project-card--5 .project-card__title,
-.project-card--6 .project-card__label,
-.project-card--6 .project-card__title,
-.project-card--7 .project-card__label,
-.project-card--7 .project-card__title,
-.project-card--8 .project-card__label,
-.project-card--8 .project-card__title { color: #F5F2EB; }
-
-.project-card--2 .project-card__dot,
-.project-card--3 .project-card__dot,
-.project-card--4 .project-card__dot,
-.project-card--5 .project-card__dot,
-.project-card--6 .project-card__dot,
-.project-card--7 .project-card__dot,
-.project-card--8 .project-card__dot { background: #F5F2EB; }
 
 /* ─── MOBILE EMERGENCY FIX (work.html only) ──────────────────
    Minimal patch, not the real mobile redesign (backlog). Scoped

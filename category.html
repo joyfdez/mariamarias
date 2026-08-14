@@ -1,12 +1,12 @@
 <meta charset="UTF-8">
-<title>María Méndez — Project</title>
+<title>María Méndez — Category</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 
 <link rel="stylesheet" href="styles/variables.css">
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/components.css">
-<link rel="stylesheet" href="styles/page-project.css">
+<link rel="stylesheet" href="styles/page-category.css">
 
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav class="comp-nav">
@@ -21,28 +21,27 @@
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
-<main class="page-project" id="pageProject">
+<main class="page-cat" id="pageCat">
 
-  <!-- PROJECT HEADER — filled in by scripts/render-project.js -->
-  <header class="project-header" id="projectHeader">
-
-    <div class="project-header__left">
-      <p class="project-category" id="projCategory"></p>
-      <h1 class="project-title" id="projTitle"></h1>
-      <div class="comp-spec-sheet" id="projSpecSheet"></div>
+  <section class="cat-hero" id="catHero">
+    <div>
+      <p class="cat-eyebrow" id="catEyebrow"></p>
+      <h1 class="cat-title" id="catTitle"></h1>
     </div>
-
-    <div class="project-header__right" id="projDesc"></div>
-
-  </header>
-
-  <!-- GALLERY — Layout B only -->
-  <section class="comp-gallery-interactive" id="projGallery">
-    <div class="comp-drag-hint" id="dragHint">Move to Explore →</div>
-    <div class="gallery-canvas" id="galleryCanvas"></div>
+    <div>
+      <p class="cat-count" id="catCount"></p>
+      <p class="cat-desc" id="catDesc"></p>
+    </div>
   </section>
+
+  <!-- ─── PROJECT GRID — rendered from data/projects.json ─────── -->
+  <div class="cat-grid cat-grid--uniform" id="catGrid"></div>
+
+  <footer class="comp-footer-minimal">
+    <a class="footer-back" href="work.html">← All Work</a>
+    <span class="footer-copy">María Méndez Studio</span>
+  </footer>
 
 </main>
 
-<script src="scripts/gallery.js"></script>
-<script src="scripts/render-project.js"></script>
+<script src="scripts/render-category.js"></script>

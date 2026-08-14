@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <title>María Méndez — Work</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -12,7 +13,7 @@
   <ul class="comp-nav__links">
     <li class="is-active"><a href="work.html">Work</a></li>
     <li><a href="about.html">About</a></li>
-    <li data-placeholder>Shop</li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="comp-nav__dot"></div>
@@ -47,7 +48,7 @@
   <!-- CATEGORY GRID -->
   <section class="comp-category-grid">
 
-    <a class="category-item category-item--textile" href="category-textile.html">
+    <a class="category-item category-item--textile" href="category.html?d=textile">
       <span class="category-num">01</span>
       <div class="category-icon">
         <img class="category-shape" src="assets/shapes/bird.svg" alt="">
@@ -55,7 +56,7 @@
       <div class="category-name">Textile &amp;<br>Surface Design</div>
     </a>
 
-    <a class="category-item category-item--campaigns" href="category-campaigns.html">
+    <a class="category-item category-item--campaigns" href="category.html?d=campaigns">
       <span class="category-num">02</span>
       <div class="category-icon">
         <img class="category-shape" src="assets/shapes/nenunfar.svg" alt="">
@@ -63,7 +64,7 @@
       <div class="category-name">Campaigns</div>
     </a>
 
-    <a class="category-item category-item--branding" href="category-branding.html">
+    <a class="category-item category-item--branding" href="category.html?d=branding">
       <span class="category-num">03</span>
       <div class="category-icon">
         <img class="category-shape" src="assets/shapes/horse.svg" alt="">
@@ -71,7 +72,7 @@
       <div class="category-name">Branding</div>
     </a>
 
-    <a class="category-item category-item--packaging" href="category-packaging.html">
+    <a class="category-item category-item--packaging" href="category.html?d=packaging">
       <span class="category-num">04</span>
       <div class="category-icon">
         <img class="category-shape" src="assets/shapes/leaf.svg" alt="">
@@ -84,63 +85,18 @@
   <!-- Dots are built by JS below, only when the grid actually overflows -->
   <div class="pagination-dots" id="categoryDots"></div>
 
-  <!-- PROJECTS STRIP -->
-  <div class="comp-projects-strip" id="projectsStrip">
-
-    <a class="project-card project-card--1" href="#">
-      <div class="project-card__label">Textile · 2023</div>
-      <div class="project-card__title">Caballos<br>Silvestres</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--2" href="project-historic-hampton-house.html">
-      <div class="project-card__label">Branding · 2025</div>
-      <div class="project-card__title">Historic<br>Hampton<br>House</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--3" href="project-bioliving.html">
-      <div class="project-card__label">Packaging · 2024</div>
-      <div class="project-card__title">BioLiving</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--4" href="project-fuego-mestizo.html">
-      <div class="project-card__label">Branding · 2023</div>
-      <div class="project-card__title">Fuego<br>Mestizo</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--5" href="project-crescendo.html">
-      <div class="project-card__label">Branding · 2025</div>
-      <div class="project-card__title">Crescendo</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--6" href="project-hija-roja.html">
-      <div class="project-card__label">Branding · 2022</div>
-      <div class="project-card__title">Hija<br>Roja</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--7" href="project-national-arts-and-humanities-month.html">
-      <div class="project-card__label">Campaigns · 2024</div>
-      <div class="project-card__title">National Arts<br>&amp; Humanities<br>Month</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-    <a class="project-card project-card--8" href="project-national-arts-in-education-week.html">
-      <div class="project-card__label">Campaigns · 2025</div>
-      <div class="project-card__title">National Arts<br>in Education<br>Week</div>
-      <div class="project-card__dot"></div>
-    </a>
-
-  </div>
+  <!-- PROJECTS STRIP — rendered from data/projects.json, see
+       scripts/render-strip.js. Every project is a candidate; ones
+       without a real cover yet (status: missing-assets, or zero
+       uploaded photos) show a tinted placeholder instead of being
+       silently omitted. -->
+  <div class="comp-projects-strip" id="projectsStrip"></div>
 
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
 <script src="scripts/fit-title.js"></script>
+<script src="scripts/render-strip.js"></script>
 <script>
 /* Hero bag physics — 8 pieces, gravity + drag, DOM synced to Matter.js bodies */
 (function () {
