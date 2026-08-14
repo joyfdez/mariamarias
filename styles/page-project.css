@@ -89,7 +89,7 @@ body { min-height: 100vh; }
   display: flex;
   flex-direction: column;
   padding-right: 16px;
-  padding-bottom: 56px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -132,7 +132,7 @@ body { min-height: 100vh; }
 .project-header__right {
   display: flex;
   flex-direction: column;
-  padding-bottom: 56px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--c-border);
 }
 
@@ -140,7 +140,7 @@ body { min-height: 100vh; }
   font-family: var(--f-body);
   font-size: 13px;
   line-height: 1.90;
-  max-width: 440px;
+  max-width: 580px;
   margin-bottom: 16px;
 }
 

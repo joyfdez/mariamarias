@@ -211,9 +211,10 @@
 
     const draggables = stackPieces.map(el => new DraggablePiece(el, onInteract));
 
-    /* Full gallery = cover (if any) + the visible stack, in DOM
-       order + anything beyond the 6-piece stack that only lives
-       here, never in the draggable canvas. */
+    /* Full gallery order: cover (if any), then everything beyond the
+       6-piece stack (07+, gallery-only), then the stack itself (01-06)
+       last — matching how María numbers and sequences a project's
+       photos, not just "stack first, extras after". */
     const coverSrc = section.dataset.galleryCover;
     let extra = [];
     if (section.dataset.galleryExtra) {
@@ -221,10 +222,10 @@
     }
 
     const fullPieces = [];
-    const stackOffset = coverSrc ? 1 : 0;
+    const stackOffset = (coverSrc ? 1 : 0) + extra.length;
     if (coverSrc) fullPieces.push(stubPiece(coverSrc, section.dataset.galleryCoverAlt));
-    fullPieces.push(...stackPieces);
     extra.forEach(item => fullPieces.push(stubPiece(item.src, item.alt)));
+    fullPieces.push(...stackPieces);
 
     const lightbox = buildLightbox(fullPieces);
 

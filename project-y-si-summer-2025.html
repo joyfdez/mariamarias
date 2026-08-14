@@ -42,6 +42,8 @@
           <div class="spec-value">2025</div>
         </div>
       </div>
+      <button type="button" class="cta-link gallery-view-all js-view-gallery">Ver toda la galería →</button>
+      <p class="gallery-note">Arrastra las imágenes para moverlas · Doble clic para ver en galería</p>
     </div>
 
     <div class="project-header__right">
@@ -52,35 +54,38 @@
 
   </header>
 
-  <!-- GALLERY — PLACEHOLDER pending real photos -->
-  <section class="comp-gallery-interactive">
+  <!-- GALLERY — Layout B only. María's numbering has gaps at 03/06/11,
+       so the stack only has 4 pieces (01,02,04,05), not 6. -->
+  <section class="comp-gallery-interactive"
+    data-gallery-cover="assets/projects/y-si-summer-2025/y-si-summer-2025-cover.jpeg"
+    data-gallery-extra='[
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-07.jpeg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-08.jpeg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-09.jpeg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-10.jpeg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-12.jpeg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-13.jpg"},
+      {"src":"assets/projects/y-si-summer-2025/y-si-summer-2025-14.jpg"}
+    ]'>
 
     <div class="comp-drag-hint" id="dragHint">Move to Explore →</div>
 
     <div class="gallery-canvas" id="galleryCanvas">
 
-      <div class="gallery-piece gp-1" data-rotation="-2.5">
-        <div class="gallery-piece__fill" style="aspect-ratio:3/4; background:linear-gradient(140deg, #c4b498 0%, #967850 40%, #6c4828 100%);"></div>
+      <div class="gallery-piece gp-1" data-rotation="-8">
+        <img class="gallery-piece__img" src="assets/projects/y-si-summer-2025/y-si-summer-2025-01.jpeg" alt="" draggable="false">
       </div>
 
-      <div class="gallery-piece gp-2" data-rotation="3.2">
-        <div class="gallery-piece__fill" style="aspect-ratio:4/5; background:linear-gradient(155deg, #4a6878 0%, #2a3e58 50%, #182840 100%);"></div>
+      <div class="gallery-piece gp-2" data-rotation="6">
+        <img class="gallery-piece__img" src="assets/projects/y-si-summer-2025/y-si-summer-2025-02.jpeg" alt="" draggable="false">
       </div>
 
-      <div class="gallery-piece gp-3" data-rotation="-0.8">
-        <div class="gallery-piece__fill" style="aspect-ratio:2/3; background:linear-gradient(165deg, #c87858 0%, #9a5035 50%, #6a2e18 100%);"></div>
+      <div class="gallery-piece gp-3" data-rotation="-4">
+        <img class="gallery-piece__img" src="assets/projects/y-si-summer-2025/y-si-summer-2025-04.jpeg" alt="" draggable="false">
       </div>
 
-      <div class="gallery-piece gp-4" data-rotation="4.5">
-        <div class="gallery-piece__fill" style="aspect-ratio:5/4; background:linear-gradient(130deg, #d4c8a8 0%, #a89870 50%, #7a6840 100%);"></div>
-      </div>
-
-      <div class="gallery-piece gp-5" data-rotation="1.8">
-        <div class="gallery-piece__fill" style="aspect-ratio:4/3; background:linear-gradient(145deg, #8898a8 0%, #586878 55%, #303e50 100%);"></div>
-      </div>
-
-      <div class="gallery-piece gp-6" data-rotation="-4.2">
-        <div class="gallery-piece__fill" style="aspect-ratio:3/5; background:linear-gradient(160deg, #b8a898 0%, #8a7868 50%, #5a4838 100%);"></div>
+      <div class="gallery-piece gp-4" data-rotation="9">
+        <img class="gallery-piece__img" src="assets/projects/y-si-summer-2025/y-si-summer-2025-05.jpeg" alt="" draggable="false">
       </div>
 
     </div>
