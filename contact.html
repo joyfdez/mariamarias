@@ -45,7 +45,7 @@
     <!-- CENTER COLUMN -->
     <div class="contact-col contact-col--center">
       <div class="contact-avatar">
-        <img src="assets/images/Contact1.png" alt="María Méndez">
+        <video class="contact-video" id="contactVideo" src="assets/images/Contact1.mp4" muted playsinline autoplay></video>
       </div>
     </div>
 
@@ -80,4 +80,23 @@
 
 /* Fit outline title to available width — shared with work.html, see scripts/fit-title.js */
 fitTitleToWidth(document.querySelector('.contact-outline'), { max: 60 });
+
+/* Decorative avatar video: plays once on load, freezes on its last
+   frame, and replays from the start on hover — never a manual player. */
+(function () {
+  const video = document.getElementById('contactVideo');
+  if (!video) return;
+
+  const freezeOnLastFrame = () => {
+    video.currentTime = Math.max(0, video.duration - 0.05);
+    video.pause();
+  };
+
+  video.addEventListener('ended', freezeOnLastFrame);
+
+  video.closest('.contact-avatar').addEventListener('mouseenter', () => {
+    video.currentTime = 0;
+    video.play();
+  });
+})();
 </script>

@@ -113,33 +113,24 @@ body {
   transition: transform 0.3s ease-out;
 }
 
-.comp-transparent-bag--1 { aspect-ratio: 1632 / 3200; }
-.comp-transparent-bag--2 { aspect-ratio: 1632 / 3200; }
+.comp-transparent-bag--1 { aspect-ratio: 896 / 1120; }
+.comp-transparent-bag--2 { aspect-ratio: 896 / 1120; }
 
 .comp-transparent-bag:hover {
   transform: scale(1.03);
 }
 
-/* Photographed plastic-bag/zipper overlay. components.css sets
-   mix-blend-mode: screen, which was washing out the photo (screen
-   only lightens). Override to multiply here so the zipper/plastic
-   texture still reads without desaturating the photo underneath. */
+/* The bag is baked into About1.png/About2.png itself now (photo +
+   plastic bag rendered as one image), so the separate photographed
+   overlay pseudo-element is no longer needed — kill it. */
 .comp-transparent-bag::after {
-  opacity: 0.7;
-  mix-blend-mode: multiply;
+  content: none;
 }
-.comp-transparent-bag--1::after { background: url('../assets/images/Aboutbag1.png') center / cover no-repeat; }
-.comp-transparent-bag--2::after { background: url('../assets/images/Aboutbag2.png') center / cover no-repeat; }
 
 .bag-fill {
-  /* inset from the bag's photographed edges — generous top clearance so the
-     photo sits below the zipper artwork baked into the Aboutbag PNG */
-  top: 17%;
-  right: 2%;
-  bottom: 1%;
-  left: 2%;
+  inset: 0;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   border-radius: 3px;
   box-shadow:
@@ -147,8 +138,8 @@ body {
     0 14px 30px rgba(0,0,0,0.12);
 }
 
-.bag-fill--1 { background-image: url('../assets/images/About1.jpeg'); }
-.bag-fill--2 { background-image: url('../assets/images/About2.jpeg'); }
+.bag-fill--1 { background-image: url('../assets/images/About1.png'); }
+.bag-fill--2 { background-image: url('../assets/images/About2.png'); }
 
 /* ─── DIVIDER ────────────────────────────────────────────── */
 .page-divider {
