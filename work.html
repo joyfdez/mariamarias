@@ -84,6 +84,21 @@
 
   const { Engine, World, Bodies, Body, Mouse, MouseConstraint, Events } = Matter;
 
+  /* Matter.js collision bodies are smaller than the visual pieces on
+     purpose: every shape here (bird, horse, leaf...) is an irregular
+     silhouette inside a rectangular (or circular, for nenunfar)
+     bounding box that's already tight around the artwork — checked
+     the source SVGs directly, none have meaningful transparent
+     padding to trim (99.5-100.2% opaque fill on every one). Two tight
+     bounding boxes can still only ever *touch*, never let the actual
+     silhouettes inside them overlap — a bird's beak reaching one
+     corner doesn't mean its tail reaches the opposite one. Shrinking
+     just the physics body (not the DOM element, which stays full
+     size) lets neighboring silhouettes visually overlap once their
+     smaller collision boxes touch, the way real loose paper cutouts
+     piled in a bag actually overlap. */
+  const COLLISION_SCALE = 0.80;
+
   /* w/h keep each real asset's aspect ratio (see assets/shapes/*.svg viewBox) */
   const SHAPES = [
     { type: 'bird',     w: 240, h: 238, circle: false, color: '#1546F4', img: 'bird.svg' },
@@ -143,9 +158,11 @@
     pieces.forEach((s, i) => {
       const x = W / 2 + (Math.random() - 0.5) * (W * 0.5);
       const y = -80 - i * 90;
+      const bw = s.w * COLLISION_SCALE;
+      const bh = s.h * COLLISION_SCALE;
       const body = s.circle
-        ? Bodies.circle(x, y, s.w / 2, { restitution: 0.15, friction: 0.5 })
-        : Bodies.rectangle(x, y, s.w, s.h, { restitution: 0.15, friction: 0.5 });
+        ? Bodies.circle(x, y, bw / 2, { restitution: 0.15, friction: 0.5 })
+        : Bodies.rectangle(x, y, bw, bh, { restitution: 0.15, friction: 0.5 });
       Body.setAngle(body, (Math.random() - 0.5) * 0.6);
       World.add(world, body);
       bodies.push(body);
