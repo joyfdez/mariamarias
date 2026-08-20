@@ -11,6 +11,17 @@ body {
   line-height: 1.75;
 }
 
+/* ─── NAV — page-specific extra ──────────────────────────────
+   Nav runs in the page's theme color (AI Visual Art red) per the
+   approved mockup, not the neutral --c-text. */
+.comp-nav__logo,
+.comp-nav__links a {
+  color: var(--c-ai-visual-art);
+}
+.comp-nav__dot {
+  background: var(--c-ai-visual-art);
+}
+
 /* ─── PAGE ───────────────────────────────────────────────── */
 .page-contact { padding-top: var(--nav-h); }
 
