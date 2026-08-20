@@ -207,7 +207,7 @@ body { min-height: 100vh; }
   justify-content: flex-end;
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/silk-scarves-2026/silk-scarves-2026-cover.jpg') center/cover no-repeat;
+    url('../assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-cover.jpg') center/cover no-repeat;
 }
 .page-cat--textile .pcard--3 {
   grid-column: 3; grid-row: 1;
@@ -221,7 +221,7 @@ body { min-height: 100vh; }
   justify-content: flex-end;
   background:
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
-    url('../assets/projects/mythos-on-silk/mythos-on-silk-cover.png') center/cover no-repeat;
+    url('../assets/projects/myths-on-silk/myths-on-silk-cover.png') center/cover no-repeat;
 }
 .page-cat--textile .pcard--5 { grid-column: 3; grid-row: 2;     background: var(--c-textile-5); }
 .page-cat--textile .pcard--6 { grid-column: 1 / 4; grid-row: 3; background: var(--c-textile-6); flex-direction: row; }

@@ -51,10 +51,10 @@
     ]
   },
   {
-    "slug": "silk-scarves-2026",
+    "slug": "silk-scarves-tvla-2026",
     "titleLines": [
       "Silk Scarves",
-      "2026"
+      "TVLA 2026"
     ],
     "discipline": "textile",
     "year": 2026,
@@ -66,8 +66,8 @@
     "description": [
       {
         "text": {
-          "es": "Silk Scarves 2026 es una nueva colección de pañuelos de seda inspirada en uno de mis lugares favoritos del mundo: un paisaje donde la naturaleza envuelve todo y donde las raíces, los recuerdos y las historias permanecen. Un lugar profundamente ligado a mi memoria y, especialmente, a la memoria de mi abuelo.",
-          "en": "Silk Scarves 2026 is a new collection of silk scarves inspired by one of my favorite places in the world: a landscape where nature wraps around everything and where roots, memories and stories remain. A place deeply tied to my own memory, and especially to my grandfather's."
+          "es": "Silk Scarves TVLA 2026 es una nueva colección de pañuelos de seda inspirada en uno de mis lugares favoritos del mundo: un paisaje donde la naturaleza envuelve todo y donde las raíces, los recuerdos y las historias permanecen. Un lugar profundamente ligado a mi memoria y, especialmente, a la memoria de mi abuelo.",
+          "en": "Silk Scarves TVLA 2026 is a new collection of silk scarves inspired by one of my favorite places in the world: a landscape where nature wraps around everything and where roots, memories and stories remain. A place deeply tied to my own memory, and especially to my grandfather's."
         },
         "style": "primary"
       },
@@ -86,20 +86,15 @@
         "style": "secondary"
       }
     ],
-    "cover": "assets/projects/silk-scarves-2026/silk-scarves-2026-cover.jpg",
+    "cover": "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-cover.jpg",
     "stack": [
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-01.jpg",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-02.jpg",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-03.jpg",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-04.jpg",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-05.jpg",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-06.png"
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-01.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-02.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-03.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-04.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-05.jpg"
     ],
-    "gallery": [
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-07.png",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-08.png",
-      "assets/projects/silk-scarves-2026/silk-scarves-2026-09.png"
-    ]
+    "gallery": []
   },
   {
     "slug": "y-si-summer-2025",
@@ -155,9 +150,9 @@
     ]
   },
   {
-    "slug": "mythos-on-silk",
+    "slug": "myths-on-silk",
     "titleLines": [
-      "Mythos",
+      "Myths",
       "on Silk"
     ],
     "discipline": "textile",
@@ -170,8 +165,8 @@
     "description": [
       {
         "text": {
-          "es": "Mythos on Silk nace de una exploración personal de personajes femeninos de la mitología y de los roles que ocupan dentro de estas narrativas. Durante años he ilustrado estas figuras, especialmente mujeres que representan fuerzas, ideas o explicaciones para aquello que en su momento no tenía una respuesta clara. Me interesa esa dimensión simbólica y poderosa que adquieren dentro de sus propias historias.",
-          "en": "Mythos on Silk grows out of a personal exploration of female figures in mythology and the roles they occupy within these narratives. For years I've illustrated these figures, especially women who represent forces, ideas or explanations for things that once had no clear answer. I'm drawn to the symbolic, powerful dimension they take on within their own stories."
+          "es": "Myths on Silk nace de una exploración personal de personajes femeninos de la mitología y de los roles que ocupan dentro de estas narrativas. Durante años he ilustrado estas figuras, especialmente mujeres que representan fuerzas, ideas o explicaciones para aquello que en su momento no tenía una respuesta clara. Me interesa esa dimensión simbólica y poderosa que adquieren dentro de sus propias historias.",
+          "en": "Myths on Silk grows out of a personal exploration of female figures in mythology and the roles they occupy within these narratives. For years I've illustrated these figures, especially women who represent forces, ideas or explanations for things that once had no clear answer. I'm drawn to the symbolic, powerful dimension they take on within their own stories."
         },
         "style": "primary"
       },
@@ -184,8 +179,8 @@
       },
       {
         "text": {
-          "es": "Lo que más me interesa de estos mitos es que, aunque muchas de sus historias puedan parecer ilógicas, exageradas o incluso absurdas desde una mirada contemporánea, siguen teniendo una estructura y una carga emocional. Son otras formas de entender el mundo: no siempre racionales, pero profundamente humanas. Mythos on Silk busca habitar precisamente ese espacio entre lo fantástico y lo cotidiano, convirtiendo esas historias en piezas de seda para llevarlas con nosotros.",
-          "en": "What interests me most about these myths is that, even though many of their stories can seem illogical, exaggerated or even absurd from a contemporary point of view, they still carry a structure and an emotional charge. They're other ways of understanding the world — not always rational, but deeply human. Mythos on Silk seeks to inhabit precisely that space between the fantastic and the everyday, turning these stories into silk pieces to carry with us."
+          "es": "Lo que más me interesa de estos mitos es que, aunque muchas de sus historias puedan parecer ilógicas, exageradas o incluso absurdas desde una mirada contemporánea, siguen teniendo una estructura y una carga emocional. Son otras formas de entender el mundo: no siempre racionales, pero profundamente humanas. Myths on Silk busca habitar precisamente ese espacio entre lo fantástico y lo cotidiano, convirtiendo esas historias en piezas de seda para llevarlas con nosotros.",
+          "en": "What interests me most about these myths is that, even though many of their stories can seem illogical, exaggerated or even absurd from a contemporary point of view, they still carry a structure and an emotional charge. They're other ways of understanding the world — not always rational, but deeply human. Myths on Silk seeks to inhabit precisely that space between the fantastic and the everyday, turning these stories into silk pieces to carry with us."
         },
         "style": "secondary"
       },
@@ -197,29 +192,26 @@
         "style": "secondary"
       }
     ],
-    "cover": "assets/projects/mythos-on-silk/mythos-on-silk-cover.png",
+    "cover": "assets/projects/myths-on-silk/myths-on-silk-cover.png",
     "stack": [
-      "assets/projects/mythos-on-silk/mythos-on-silk-01.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-02.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-03.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-04.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-05.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-06.png"
+      "assets/projects/myths-on-silk/myths-on-silk-01.png",
+      "assets/projects/myths-on-silk/myths-on-silk-02.png",
+      "assets/projects/myths-on-silk/myths-on-silk-03.png",
+      "assets/projects/myths-on-silk/myths-on-silk-04.png",
+      "assets/projects/myths-on-silk/myths-on-silk-05.png",
+      "assets/projects/myths-on-silk/myths-on-silk-06.png"
     ],
     "gallery": [
-      "assets/projects/mythos-on-silk/mythos-on-silk-07.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-08.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-09.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-10.jpg",
-      "assets/projects/mythos-on-silk/mythos-on-silk-11.jpg",
-      "assets/projects/mythos-on-silk/mythos-on-silk-12.jpg",
-      "assets/projects/mythos-on-silk/mythos-on-silk-13.jpg",
-      "assets/projects/mythos-on-silk/mythos-on-silk-14.jpg",
-      "assets/projects/mythos-on-silk/mythos-on-silk-15.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-16.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-17.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-18.png",
-      "assets/projects/mythos-on-silk/mythos-on-silk-19.jpg"
+      "assets/projects/myths-on-silk/myths-on-silk-07.png",
+      "assets/projects/myths-on-silk/myths-on-silk-08.png",
+      "assets/projects/myths-on-silk/myths-on-silk-09.png",
+      "assets/projects/myths-on-silk/myths-on-silk-10.jpg",
+      "assets/projects/myths-on-silk/myths-on-silk-11.jpg",
+      "assets/projects/myths-on-silk/myths-on-silk-12.jpg",
+      "assets/projects/myths-on-silk/myths-on-silk-13.jpg",
+      "assets/projects/myths-on-silk/myths-on-silk-14.jpg",
+      "assets/projects/myths-on-silk/myths-on-silk-15.png",
+      "assets/projects/myths-on-silk/myths-on-silk-16.jpg"
     ]
   },
   {
@@ -319,8 +311,8 @@
     "year": 2024,
     "client": "Americans for the Arts",
     "disciplineDetail": {
-      "es": "Diseño de campaña, Dirección de arte & Diseño gráfico",
-      "en": "Campaign Design, Art Direction & Graphic Design"
+      "es": "Dirección de arte, Ilustración & Diseño gráfico",
+      "en": "Art Direction, Illustration & Graphic Design"
     },
     "description": [
       {
@@ -377,8 +369,8 @@
     "year": 2025,
     "client": "Americans for the Arts",
     "disciplineDetail": {
-      "es": "Diseño de campaña, Dirección de arte & Diseño gráfico",
-      "en": "Campaign Design, Art Direction & Graphic Design"
+      "es": "Dirección de arte, Ilustración & Diseño gráfico",
+      "en": "Art Direction, Illustration & Graphic Design"
     },
     "description": [
       {
@@ -426,10 +418,10 @@
     ],
     "discipline": "branding",
     "year": 2025,
-    "client": "Historic Hampton House / Art Basel Miami Beach",
+    "client": "Historic Hampton House / Art Basel Miami Beach / Americans for the Arts",
     "disciplineDetail": {
-      "es": "Identidad de marca, Diseño de patrones, Dirección de arte & Gráfica ambiental",
-      "en": "Brand Identity, Pattern Design, Art Direction & Environmental Graphics"
+      "es": "Identidad de marca, Diseño de patrones & Dirección de arte",
+      "en": "Brand Identity, Pattern Design & Art Direction"
     },
     "description": [
       {
@@ -450,13 +442,6 @@
         "text": {
           "es": "El concepto juega con la tensión entre lo clásico y lo contemporáneo. Los elementos arquitectónicos originales se extraen, repiten, amplifican y convierten en composiciones gráficas más atrevidas, mientras una paleta de colores vibrantes introduce una energía inesperada dentro de un contexto histórico. La intención no era simplemente representar el pasado, sino reinterpretarlo desde una mirada contemporánea, convirtiendo la historia del Hampton House en un lenguaje visual vivo.",
           "en": "The concept plays with the tension between the classic and the contemporary. The original architectural elements are extracted, repeated, amplified and turned into bolder graphic compositions, while a palette of vibrant colors introduces an unexpected energy within a historic context. The intent wasn't simply to represent the past, but to reinterpret it through a contemporary lens, turning Hampton House's history into a living visual language."
-        },
-        "style": "secondary"
-      },
-      {
-        "text": {
-          "es": "Scope: Identidad gráfica integral, dirección de arte, diseño de patrones y estampados, sistema gráfico, gráfica ambiental, aplicaciones impresas y materiales para evento.",
-          "en": "Scope: Full graphic identity, art direction, pattern and print design, graphic system, environmental graphics, printed applications and event materials."
         },
         "style": "secondary"
       }
@@ -501,13 +486,6 @@
         "text": {
           "es": "La identidad nace de las vibraciones gráficas y las ondas sonoras, llevándolas a un sistema visual en movimiento que habla de crecimiento, libertad, conexión y accesibilidad. El resultado combina una energía urbana con una estética contemporánea, directa y abierta.",
           "en": "The identity grows out of graphic vibrations and sound waves, carrying them into a visual system in motion that speaks of growth, freedom, connection and accessibility. The result combines urban energy with a contemporary, direct and open aesthetic."
-        },
-        "style": "secondary"
-      },
-      {
-        "text": {
-          "es": "Desarrollo de identidad gráfica completa, campaña de lanzamiento, toolkits de marca y creación de assets para redes sociales y materiales impresos.",
-          "en": "Development of a complete graphic identity, launch campaign, brand toolkits, and creation of assets for social media and printed materials."
         },
         "style": "secondary"
       }
@@ -584,10 +562,10 @@
     ],
     "discipline": "branding",
     "year": 2022,
-    "client": "Hija Roja",
+    "client": "Hija Roja / A",
     "disciplineDetail": {
-      "es": "Identidad de marca, Empaque & Campaña",
-      "en": "Brand Identity, Packaging & Campaign"
+      "es": "Identidad de marca, Empaque & Campaña de lanzamiento",
+      "en": "Brand Identity, Packaging & Launch Campaign"
     },
     "description": [
       {
