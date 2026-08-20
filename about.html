@@ -11,14 +11,19 @@
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav class="comp-nav">
   <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
-  <ul class="comp-nav__links">
+  <ul class="comp-nav__links" id="navLinks">
     <li><a href="work.html" data-i18n-key="nav.work">Work</a></li>
     <li class="is-active"><a href="about.html" data-i18n-key="nav.about">About</a></li>
     <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
     <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__lang">
-    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  <div class="comp-nav__actions">
+    <div class="comp-nav__lang">
+      <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+    </div>
+    <button type="button" class="comp-nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="comp-nav__burger-bar"></span><span class="comp-nav__burger-bar"></span><span class="comp-nav__burger-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -95,5 +100,6 @@
 </main>
 
 <script src="scripts/i18n.js"></script>
+<script src="scripts/nav-menu.js"></script>
 <script src="scripts/gallery.js"></script>
 <script>I18N.init();</script>

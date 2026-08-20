@@ -113,3 +113,32 @@ body {
 @supports (-webkit-text-stroke: 1px black) {
   .contact-outline { color: transparent; }
 }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────
+   The 3-column grid (labels / video / back-link+clock) never had a
+   mobile override — below 760px it just kept squeezing 3 columns
+   into a narrow screen instead of stacking. */
+@media (max-width: 760px) {
+  .contact-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px var(--px) 40px;
+  }
+
+  .contact-col--right {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .contact-col--right .body-text { margin-top: 8px; }
+
+  /* width:150% + a 100-120px floor is a deliberate desktop "bleed"
+     effect for the outline word — on a narrow viewport that same
+     floor forces horizontal overflow no matter how it's clamped, so
+     mobile switches to a viewport-relative size that always fits
+     instead of a fixed floor. */
+  .contact-outline {
+    width: 100%;
+    font-size: 22vw;
+    margin-bottom: 16px;
+  }
+}

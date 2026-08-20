@@ -118,6 +118,86 @@
 
 .comp-nav__lang-sep { opacity: 0.3; }
 
+/* Groups the lang toggle with the (mobile-only) burger button so both
+   sit together on the right edge of the bar, regardless of whether a
+   page's nav has a logo on the left (about/contact/category/project)
+   or not (work.html, flex-end aligned) — .comp-nav has exactly 2 (or 3
+   with logo) flex children either way, never 3-4 competing for
+   space-between's middle slot. */
+.comp-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Hamburger — hidden on desktop, see the mobile breakpoint below.
+   Three CSS bars instead of a "☰" glyph so it renders identically
+   across platforms/fonts and can morph into an "×" on open. */
+.comp-nav__burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.comp-nav__burger-bar {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.comp-nav.is-menu-open .comp-nav__burger-bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.comp-nav.is-menu-open .comp-nav__burger-bar:nth-child(2) { opacity: 0; }
+.comp-nav.is-menu-open .comp-nav__burger-bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ─── NAV — MOBILE HAMBURGER MENU ─────────────────────────────
+   Below 640px the 4 links no longer compete for horizontal space
+   with the logo and lang toggle — they collapse into a dropdown
+   under the bar, opened by the burger. Logo + lang toggle stay put
+   in the bar at every width. */
+@media (max-width: 640px) {
+  .comp-nav__burger { display: flex; }
+
+  .comp-nav__links {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--c-bg);
+    border-bottom: 1px solid var(--c-border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .comp-nav.is-menu-open .comp-nav__links {
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+
+  .comp-nav__links li {
+    opacity: 1;
+    font-size: 13px;
+    padding: 18px var(--px);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .comp-nav__links li:last-child { border-bottom: none; }
+  .comp-nav__links li.is-active { background: rgba(128,128,128,0.10); }
+  .comp-nav__links li[data-placeholder] { display: none; }
+}
+
 /* ─── FOOTER MINIMAL ─────────────────────────────────────────
    Identical across the 4 category pages. */
 .comp-footer-minimal {

@@ -69,16 +69,24 @@
 }
 
 /* ─── HERO BAG ───────────────────────────────────────────── */
+/* aspect-ratio lives on .home-bag itself, not on the wrapper, so its
+   height comes directly from its own width — real WebKit/Safari does
+   not treat a height derived from an ancestor's aspect-ratio as
+   "definite" for the purposes of resolving a descendant's height:100%,
+   so .home-bag measured 0 there even though .home-bag-wrap's own
+   aspect-ratio height was correct. That sent #bagContent's Matter.js
+   physics floor to height 0, dropping every piece off-screen forever
+   with no error — invisible bag, no console warning. */
 .home-bag-wrap {
   position: relative;
   width: 100%;
   max-width: 860px;
-  aspect-ratio: 1308 / 1000;
 }
 
 .home-bag {
   position: relative;
-  width: 100%; height: 100%;
+  width: 100%;
+  aspect-ratio: 1308 / 1000;
   border-radius: 3px;
   overflow: hidden;
   box-shadow:

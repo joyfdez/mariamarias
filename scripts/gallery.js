@@ -230,6 +230,17 @@
 
     const lightbox = buildLightbox(fullPieces);
 
+    /* 'dblclick' has no reliable touch equivalent — mobile browsers don't
+       synthesize it from two taps, and DraggablePiece's touchstart above
+       already calls preventDefault() anyway, which suppresses whatever
+       synthetic mouse events might otherwise follow. Detect double-tap
+       manually instead: two touchend's on the same piece within 300ms.
+       Coexists with 'dblclick' rather than replacing it — desktop mice
+       never fire touchend, and touch devices never fire dblclick here. */
+    const DOUBLE_TAP_MS = 300;
+    let lastTapEl = null;
+    let lastTapTime = 0;
+
     stackPieces.forEach((el, i) => {
       const img = el.querySelector('img');
       if (img) img.setAttribute('draggable', 'false');
@@ -237,6 +248,18 @@
       el.addEventListener('dblclick', () => {
         if (draggables[i].moved) return;
         lightbox.open(i + stackOffset);
+      });
+
+      el.addEventListener('touchend', () => {
+        if (draggables[i].moved) { lastTapEl = null; return; }
+        const now = Date.now();
+        if (lastTapEl === el && now - lastTapTime < DOUBLE_TAP_MS) {
+          lastTapEl = null;
+          lightbox.open(i + stackOffset);
+        } else {
+          lastTapEl = el;
+          lastTapTime = now;
+        }
       });
     });
 

@@ -198,3 +198,42 @@ body { min-height: 100vh; }
 .gp-4 { left: 31%; top: 30%; width: 24%; }
 .gp-5 { left: 41%; top: 35%; width: 23%; }
 .gp-6 { left: 51%; top: 27%; width: 25%; }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────
+   .project-header stays in the DOM exactly as rendered by
+   render-project.js (left: title/specs/CTA, right: description) —
+   only its layout role changes here. display:contents drops its own
+   box so .project-header__left/__right are promoted to direct flex
+   children of .page-project (already flex-direction:column),
+   putting them in the same ordering context as the sibling
+   .comp-gallery-interactive section. That lets `order` reorder
+   across that nesting boundary — header first, then photos, then
+   the long description last — without touching any HTML/JS, and
+   without duplicating render logic between breakpoints. */
+@media (max-width: 760px) {
+  .project-header {
+    display: contents;
+  }
+
+  .project-header__left {
+    order: 1;
+    padding: 40px var(--px) 16px;
+    padding-right: var(--px);
+  }
+
+  .comp-gallery-interactive {
+    order: 2;
+    min-height: 420px;
+  }
+
+  .gallery-canvas {
+    min-height: 380px;
+  }
+
+  .project-header__right {
+    order: 3;
+    padding: 24px var(--px) 32px;
+  }
+
+  .project-desc { max-width: none; }
+}

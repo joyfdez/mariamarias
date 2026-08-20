@@ -10,14 +10,19 @@
 
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav class="comp-nav">
-  <ul class="comp-nav__links">
+  <ul class="comp-nav__links" id="navLinks">
     <li class="is-active"><a href="work.html" data-i18n-key="nav.work">Work</a></li>
     <li><a href="about.html" data-i18n-key="nav.about">About</a></li>
     <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
     <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__lang">
-    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  <div class="comp-nav__actions">
+    <div class="comp-nav__lang">
+      <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+    </div>
+    <button type="button" class="comp-nav__burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="comp-nav__burger-bar"></span><span class="comp-nav__burger-bar"></span><span class="comp-nav__burger-bar"></span>
+    </button>
   </div>
 </nav>
 
@@ -66,6 +71,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
 <script src="scripts/i18n.js"></script>
+<script src="scripts/nav-menu.js"></script>
 <script src="scripts/fit-title.js"></script>
 <script src="scripts/render-category-grid.js"></script>
 <script src="scripts/render-strip.js"></script>
@@ -93,18 +99,14 @@
   engine.gravity.y = 1;
   engine.enableSleeping = true;
 
-  let W = container.clientWidth;
-  let H = container.clientHeight;
+  let W = 0;
+  let H = 0;
   const wallT = 60;
   let walls = [];
-
-  /* SHAPES' w/h are sized for the 860px reference width (.home-bag-wrap's
-     max-width). On narrow mobile containers those pieces are as big as
-     the box itself, which makes Matter's solver "explode" overlapping
-     bodies out past the walls — scale them down to match the real
-     container width so they never outsize the space they fall into. */
-  const scale = Math.min(1, W / 860);
-  const pieces = SHAPES.map(s => ({ ...s, w: s.w * scale, h: s.h * scale }));
+  let pieces = [];
+  const bodies = [];
+  const els = [];
+  let initialized = false;
 
   function buildWalls() {
     if (walls.length) World.remove(world, walls);
@@ -116,77 +118,107 @@
 
     World.add(world, walls);
   }
-  buildWalls();
 
-  const bodies = [];
-  const els = [];
+  /* First-time setup — creates bodies/DOM pieces once real, non-zero
+     dimensions are available. Deferred out of the initial synchronous
+     read because container.clientHeight can report 0 here on real
+     WebKit/Safari: this box's height comes from an aspect-ratio on an
+     ancestor flex item, and that computation isn't always settled by
+     the time this script runs, even though clientWidth already is.
+     Building the physics floor at height 0 sent every piece falling
+     straight past it, off-screen forever — invisible bag, no error. */
+  function init() {
+    initialized = true;
 
-  pieces.forEach((s, i) => {
-    const x = W / 2 + (Math.random() - 0.5) * (W * 0.5);
-    const y = -80 - i * 90;
-    const body = s.circle
-      ? Bodies.circle(x, y, s.w / 2, { restitution: 0.15, friction: 0.5 })
-      : Bodies.rectangle(x, y, s.w, s.h, { restitution: 0.15, friction: 0.5 });
-    Body.setAngle(body, (Math.random() - 0.5) * 0.6);
-    World.add(world, body);
-    bodies.push(body);
+    /* SHAPES' w/h are sized for the 860px reference width (.home-bag-wrap's
+       max-width). On narrow mobile containers those pieces are as big as
+       the box itself, which makes Matter's solver "explode" overlapping
+       bodies out past the walls — scale them down to match the real
+       container width so they never outsize the space they fall into. */
+    const scale = Math.min(1, W / 860);
+    pieces = SHAPES.map(s => ({ ...s, w: s.w * scale, h: s.h * scale }));
 
-    const el = document.createElement('div');
-    el.className = 'bag-shape piece-' + s.type + (s.img ? ' bag-shape--cutout' : '');
-    el.style.width = s.w + 'px';
-    el.style.height = s.h + 'px';
-    if (s.img) {
-      el.style.backgroundImage = `url('assets/shapes/${s.img}')`;
-      el.style.backgroundSize = 'contain';
-      el.style.backgroundRepeat = 'no-repeat';
-      el.style.backgroundPosition = 'center';
-    } else {
-      el.style.background = s.color;
-      if (s.circle) el.style.borderRadius = '50%';
-    }
-    container.appendChild(el);
-    els.push(el);
-  });
+    buildWalls();
 
-  const mouse = Mouse.create(container);
-  mouse.element.removeEventListener('mousewheel', mouse.mousewheel);
-  mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel);
+    pieces.forEach((s, i) => {
+      const x = W / 2 + (Math.random() - 0.5) * (W * 0.5);
+      const y = -80 - i * 90;
+      const body = s.circle
+        ? Bodies.circle(x, y, s.w / 2, { restitution: 0.15, friction: 0.5 })
+        : Bodies.rectangle(x, y, s.w, s.h, { restitution: 0.15, friction: 0.5 });
+      Body.setAngle(body, (Math.random() - 0.5) * 0.6);
+      World.add(world, body);
+      bodies.push(body);
 
-  const mouseConstraint = MouseConstraint.create(engine, {
-    mouse,
-    constraint: { stiffness: 0.2, render: { visible: false } }
-  });
-  World.add(world, mouseConstraint);
-
-  Events.on(mouseConstraint, 'startdrag', e => {
-    const i = bodies.indexOf(e.body);
-    if (i > -1) els[i].style.zIndex = 50;
-  });
-  Events.on(mouseConstraint, 'enddrag', e => {
-    const i = bodies.indexOf(e.body);
-    if (i > -1) els[i].style.zIndex = 10;
-  });
-
-  function tick() {
-    Engine.update(engine, 1000 / 60);
-    bodies.forEach((body, i) => {
-      const s = pieces[i];
-      els[i].style.transform =
-        `translate(${body.position.x - s.w / 2}px, ${body.position.y - s.h / 2}px) rotate(${body.angle}rad)`;
+      const el = document.createElement('div');
+      el.className = 'bag-shape piece-' + s.type + (s.img ? ' bag-shape--cutout' : '');
+      el.style.width = s.w + 'px';
+      el.style.height = s.h + 'px';
+      if (s.img) {
+        el.style.backgroundImage = `url('assets/shapes/${s.img}')`;
+        el.style.backgroundSize = 'contain';
+        el.style.backgroundRepeat = 'no-repeat';
+        el.style.backgroundPosition = 'center';
+      } else {
+        el.style.background = s.color;
+        if (s.circle) el.style.borderRadius = '50%';
+      }
+      container.appendChild(el);
+      els.push(el);
     });
+
+    const mouse = Mouse.create(container);
+    mouse.element.removeEventListener('mousewheel', mouse.mousewheel);
+    mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel);
+
+    const mouseConstraint = MouseConstraint.create(engine, {
+      mouse,
+      constraint: { stiffness: 0.2, render: { visible: false } }
+    });
+    World.add(world, mouseConstraint);
+
+    Events.on(mouseConstraint, 'startdrag', e => {
+      const i = bodies.indexOf(e.body);
+      if (i > -1) els[i].style.zIndex = 50;
+    });
+    Events.on(mouseConstraint, 'enddrag', e => {
+      const i = bodies.indexOf(e.body);
+      if (i > -1) els[i].style.zIndex = 10;
+    });
+
+    function tick() {
+      Engine.update(engine, 1000 / 60);
+      bodies.forEach((body, i) => {
+        const s = pieces[i];
+        els[i].style.transform =
+          `translate(${body.position.x - s.w / 2}px, ${body.position.y - s.h / 2}px) rotate(${body.angle}rad)`;
+      });
+      requestAnimationFrame(tick);
+    }
     requestAnimationFrame(tick);
   }
-  requestAnimationFrame(tick);
 
+  /* ResizeObserver instead of a one-shot synchronous read: fires as soon
+     as the browser actually settles on a real size (whenever that is —
+     immediately, or after the aspect-ratio quirk above resolves), and
+     keeps firing on every real size change after that (rotation, resize),
+     which a window 'resize' listener won't catch when only *this*
+     element's internal layout changes without the viewport moving. */
   let resizeTimer;
-  window.addEventListener('resize', () => {
+  new ResizeObserver(entries => {
+    const box = entries[0].contentRect;
+    if (box.width === 0 || box.height === 0) return;
+    W = box.width;
+    H = box.height;
+
+    if (!initialized) {
+      init();
+      return;
+    }
+
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      W = container.clientWidth;
-      H = container.clientHeight;
-      buildWalls();
-    }, 200);
-  });
+    resizeTimer = setTimeout(buildWalls, 200);
+  }).observe(container);
 })();
 
 /* Fit title full width — shared with contact.html, see scripts/fit-title.js */
