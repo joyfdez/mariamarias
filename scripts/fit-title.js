@@ -7,7 +7,7 @@
    inline copies, one of which (work.html) used a hardcoded
    `- 80` offset instead of reading the parent's actual padding.
    ============================================================ */
-function fitTitleToWidth(el, { min = 5, max = 25 } = {}) {
+function fitTitleToWidth(el, { min = 5, max = 17 } = {}) {
   if (!el) return;
   const fit = () => {
     const parent = el.parentElement;
