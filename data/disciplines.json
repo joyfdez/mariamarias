@@ -15,8 +15,8 @@
     "dotColor": "#C6D90A",
     "icon": "assets/shapes/bird.svg",
     "description": {
-      "es": "La superficie como memoria. Estampados inspirados en formas naturales y referencias culturales, desarrollados para seda, lino y aplicaciones textiles mixtas.",
-      "en": "Surface as memory. Patterns drawn from natural form and cultural reference, developed for silk, linen, and mixed textile applications."
+      "es": "Una colección de estampados, textiles y superficies inspirados en la naturaleza, la memoria y todo lo que me rodea — traducidos en piezas para vestir, tocar y vivir.",
+      "en": "A collection of prints, textiles and surfaces inspired by nature, memory and everything around me — translated into pieces to wear, touch and live with."
     }
   },
   {
@@ -35,8 +35,8 @@
     "dotColor": "#202020",
     "icon": "assets/shapes/nenunfar.svg",
     "description": {
-      "es": "El arte como práctica pública. Estrategias visuales para instituciones culturales y programas de reconocimiento — trabajo pensado para moverse por el mundo.",
-      "en": "Art as public practice. Visual strategies for cultural institutions and award programs — work built to move through the world."
+      "es": "Campañas para cultura, educación y comunidad — creando imágenes que informan, conectan y hacen visible aquello que merece ocupar espacio.",
+      "en": "Campaigns for culture, education and community — creating imagery that informs, connects and makes space for what deserves to be seen."
     }
   },
   {
@@ -55,8 +55,8 @@
     "dotColor": "#C6D90A",
     "icon": "assets/shapes/horse.svg",
     "description": {
-      "es": "La identidad como lenguaje. Sistemas de marca para espacios culturales, hospitalidad y prácticas creativas — símbolos que comunican sentido sin imponerlo.",
-      "en": "Identity as language. Brand systems for cultural spaces, hospitality, and creative practices — marks that carry meaning without imposing it."
+      "es": "Identidades que encuentran una voz propia. Sistemas visuales construidos desde el concepto, la cultura y el carácter de cada proyecto — pensados para crecer, adaptarse y sentirse auténticos.",
+      "en": "Identities that find a voice of their own. Visual systems built from the concept, culture and character of each project — designed to grow, adapt and feel authentic."
     }
   },
   {
@@ -75,8 +75,8 @@
     "dotColor": "#F5F2EB",
     "icon": "assets/shapes/leaf.svg",
     "description": {
-      "es": "El objeto como mensaje. Diseño de empaque y producto donde los materiales hablan primero, la forma sigue a la función, y ambos transmiten la marca.",
-      "en": "Object as message. Packaging and product design where materials speak first, forms follow function, and both carry the brand."
+      "es": "Ideas que se convierten en objetos. Diseño de packaging y producto donde la materia, la forma y la imagen se encuentran para darle a cada proyecto su propio carácter.",
+      "en": "Ideas that become objects. Packaging and product design where material, form and image come together to give each project its own character."
     }
   }
 ]
