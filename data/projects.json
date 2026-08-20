@@ -1,15 +1,39 @@
 [
   {
     "slug": "pez-de-rio",
-    "titleLines": ["Pez", "de Río"],
+    "titleLines": [
+      "Pez",
+      "de Río"
+    ],
     "discipline": "textile",
     "year": 2020,
     "client": "Pez de Río",
-    "disciplineDetail": "Diseño de indumentaria, Diseño textil & Diseño de accesorios",
+    "disciplineDetail": {
+      "es": "Diseño de indumentaria, Diseño textil & Diseño de accesorios",
+      "en": "Apparel Design, Textile Design & Accessory Design"
+    },
     "description": [
-      { "text": "Pez de Río es una marca de indumentaria creada en 2020 que explora el movimiento y el lenguaje visual de los ecosistemas, tomando como punto de partida tanto paisajes naturales como estructuras y elementos de culturas antiguas y contemporáneas. El proyecto se desarrolló a través del diseño y confección de prendas y accesorios con una identidad propia, buscando crear piezas auténticas, expresivas y con personalidad.", "style": "primary" },
-      { "text": "A lo largo de diferentes colecciones se trabajó con una variedad de tejidos naturales, explorando sus texturas, posibilidades constructivas y comportamiento sobre el cuerpo. El objetivo fue crear prendas pensadas para acompañar el tiempo y tener una vida larga, alejándose de la lógica de usar y desechar.", "style": "primary" },
-      { "text": "La marca entiende la indumentaria como una extensión del paisaje: piezas que se mueven, se transforman y adquieren carácter con quien las lleva. La mezcla de materiales naturales, construcción artesanal y referencias a distintos ecosistemas y culturas busca crear una relación más duradera entre cuerpo, materia y territorio.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Pez de Río es una marca de indumentaria creada en 2020 que explora el movimiento y el lenguaje visual de los ecosistemas, tomando como punto de partida tanto paisajes naturales como estructuras y elementos de culturas antiguas y contemporáneas. El proyecto se desarrolló a través del diseño y confección de prendas y accesorios con una identidad propia, buscando crear piezas auténticas, expresivas y con personalidad.",
+          "en": "Pez de Río is an apparel brand founded in 2020 that explores movement and the visual language of ecosystems, drawing from natural landscapes as well as structures and elements from ancient and contemporary cultures. The project took shape through the design and making of garments and accessories with a distinct identity, aiming to create authentic, expressive pieces full of personality."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "A lo largo de diferentes colecciones se trabajó con una variedad de tejidos naturales, explorando sus texturas, posibilidades constructivas y comportamiento sobre el cuerpo. El objetivo fue crear prendas pensadas para acompañar el tiempo y tener una vida larga, alejándose de la lógica de usar y desechar.",
+          "en": "Across different collections, a variety of natural fabrics were used, exploring their textures, construction possibilities and behavior on the body. The goal was to create garments meant to age well and last, moving away from a use-and-discard logic."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La marca entiende la indumentaria como una extensión del paisaje: piezas que se mueven, se transforman y adquieren carácter con quien las lleva. La mezcla de materiales naturales, construcción artesanal y referencias a distintos ecosistemas y culturas busca crear una relación más duradera entre cuerpo, materia y territorio.",
+          "en": "The brand understands clothing as an extension of landscape: pieces that move, transform and gain character with whoever wears them. The mix of natural materials, handcrafted construction and references to different ecosystems and cultures seeks to build a more lasting relationship between body, material and territory."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/pez-de-rio/pez-de-rio-cover.png",
     "stack": [
@@ -28,15 +52,39 @@
   },
   {
     "slug": "silk-scarves-2026",
-    "titleLines": ["Silk Scarves", "2026"],
+    "titleLines": [
+      "Silk Scarves",
+      "2026"
+    ],
     "discipline": "textile",
     "year": 2026,
     "client": "María Méndez",
-    "disciplineDetail": "Diseño de pañuelos de seda & Diseño de estampados",
+    "disciplineDetail": {
+      "es": "Diseño de pañuelos de seda & Diseño de estampados",
+      "en": "Silk Scarf Design & Print Design"
+    },
     "description": [
-      { "text": "Silk Scarves 2026 es una nueva colección de pañuelos de seda inspirada en uno de mis lugares favoritos del mundo: un paisaje donde la naturaleza envuelve todo y donde las raíces, los recuerdos y las historias permanecen. Un lugar profundamente ligado a mi memoria y, especialmente, a la memoria de mi abuelo.", "style": "primary" },
-      { "text": "La colección nace de una serie de vistas cenitales que forman parte de ese imaginario: mirar hacia abajo, hacia arriba y desde otras perspectivas para imaginar cómo se transforma el mundo cuando dejamos de observarlo desde nuestra escala habitual. Animales, vegetación, casas, paisajes y fragmentos de vida cotidiana se convierten en escenas que después se traducen en ilustración, color y estampado sobre seda.", "style": "primary" },
-      { "text": "Hay también una parte íntima en la colección. Carmen me enseñó a mirar el cielo, contar las aves y detenerme a ver pasar la vida. Esa manera de observar —atenta, curiosa y un poco infantil— se convirtió en parte del lenguaje de los pañuelos. Cada diseño funciona como una pequeña ventana hacia ese lugar y hacia esos recuerdos, mezclando naturaleza, movimiento y memoria.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Silk Scarves 2026 es una nueva colección de pañuelos de seda inspirada en uno de mis lugares favoritos del mundo: un paisaje donde la naturaleza envuelve todo y donde las raíces, los recuerdos y las historias permanecen. Un lugar profundamente ligado a mi memoria y, especialmente, a la memoria de mi abuelo.",
+          "en": "Silk Scarves 2026 is a new collection of silk scarves inspired by one of my favorite places in the world: a landscape where nature wraps around everything and where roots, memories and stories remain. A place deeply tied to my own memory, and especially to my grandfather's."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La colección nace de una serie de vistas cenitales que forman parte de ese imaginario: mirar hacia abajo, hacia arriba y desde otras perspectivas para imaginar cómo se transforma el mundo cuando dejamos de observarlo desde nuestra escala habitual. Animales, vegetación, casas, paisajes y fragmentos de vida cotidiana se convierten en escenas que después se traducen en ilustración, color y estampado sobre seda.",
+          "en": "The collection grows out of a series of bird's-eye views that are part of that imagery: looking down, looking up, and from other perspectives to imagine how the world transforms once we stop observing it at our usual scale. Animals, vegetation, houses, landscapes and fragments of everyday life become scenes that are then translated into illustration, color and print on silk."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "Hay también una parte íntima en la colección. Carmen me enseñó a mirar el cielo, contar las aves y detenerme a ver pasar la vida. Esa manera de observar —atenta, curiosa y un poco infantil— se convirtió en parte del lenguaje de los pañuelos. Cada diseño funciona como una pequeña ventana hacia ese lugar y hacia esos recuerdos, mezclando naturaleza, movimiento y memoria.",
+          "en": "There's also something intimate in the collection. Carmen taught me to look at the sky, count birds, and pause to watch life go by. That way of observing — attentive, curious and a little childlike — became part of the scarves' language. Each design works as a small window into that place and those memories, blending nature, movement and memory."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/silk-scarves-2026/silk-scarves-2026-cover.jpg",
     "stack": [
@@ -55,15 +103,39 @@
   },
   {
     "slug": "y-si-summer-2025",
-    "titleLines": ["Y SI?", "Summer 2025"],
+    "titleLines": [
+      "Y SI?",
+      "Summer 2025"
+    ],
     "discipline": "textile",
     "year": 2025,
     "client": "María Méndez",
-    "disciplineDetail": "Diseño textil, Diseño de estampados & Diseño de colección",
+    "disciplineDetail": {
+      "es": "Diseño textil, Diseño de estampados & Diseño de colección",
+      "en": "Textile Design, Print Design & Collection Design"
+    },
     "description": [
-      { "text": "¿Y si, al llegar a cierta edad, pudiéramos elegir un animal que nos acompañara para siempre? Uno que compartiera sus cualidades, su energía y su compañía. ¿Y si, así como elegimos un nombre, pudiéramos elegir también una fragancia que nos identificara? ¿Un aroma que nos envolviera y hablara de quiénes somos? ¿Y si todos tuviéramos un refugio, ese lugar —o ser— donde nos sentimos seguros?", "style": "primary" },
-      { "text": "De estas preguntas nace Y SI?, una colección de pañuelos 100% seda que construye un pequeño mundo imaginario alrededor de la identidad, la compañía, los sentidos y la idea de refugio. Cada estampado guarda un fragmento de ese universo soñado, convirtiendo la seda en un espacio para imaginar quiénes somos y qué elegiríamos llevar con nosotros.", "style": "primary" },
-      { "text": "La colección parte de la imaginación como una herramienta para construir identidad. Animales, flores, aromas y paisajes se mezclan en composiciones llenas de color y narrativa, creando piezas que funcionan tanto como accesorios como pequeños mundos portátiles.", "style": "secondary" }
+      {
+        "text": {
+          "es": "¿Y si, al llegar a cierta edad, pudiéramos elegir un animal que nos acompañara para siempre? Uno que compartiera sus cualidades, su energía y su compañía. ¿Y si, así como elegimos un nombre, pudiéramos elegir también una fragancia que nos identificara? ¿Un aroma que nos envolviera y hablara de quiénes somos? ¿Y si todos tuviéramos un refugio, ese lugar —o ser— donde nos sentimos seguros?",
+          "en": "What if, at a certain age, we could choose an animal to accompany us forever? One that shared its qualities, its energy, its company. What if, just as we choose a name, we could also choose a fragrance to identify us — a scent that wrapped around us and spoke of who we are? What if we all had a refuge, that place — or being — where we feel safe?"
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "De estas preguntas nace Y SI?, una colección de pañuelos 100% seda que construye un pequeño mundo imaginario alrededor de la identidad, la compañía, los sentidos y la idea de refugio. Cada estampado guarda un fragmento de ese universo soñado, convirtiendo la seda en un espacio para imaginar quiénes somos y qué elegiríamos llevar con nosotros.",
+          "en": "From these questions comes Y SI?, a collection of 100% silk scarves that builds a small imaginary world around identity, companionship, the senses and the idea of refuge. Each print holds a fragment of that dreamed-up universe, turning silk into a space to imagine who we are and what we'd choose to carry with us."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La colección parte de la imaginación como una herramienta para construir identidad. Animales, flores, aromas y paisajes se mezclan en composiciones llenas de color y narrativa, creando piezas que funcionan tanto como accesorios como pequeños mundos portátiles.",
+          "en": "The collection starts from imagination as a tool for building identity. Animals, flowers, scents and landscapes blend into compositions full of color and narrative, creating pieces that work both as accessories and as small, portable worlds."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/y-si-summer-2025/y-si-summer-2025-cover.jpeg",
     "stack": [
@@ -84,16 +156,46 @@
   },
   {
     "slug": "mythos-on-silk",
-    "titleLines": ["Mythos", "on Silk"],
+    "titleLines": [
+      "Mythos",
+      "on Silk"
+    ],
     "discipline": "textile",
     "year": 2026,
     "client": "María Méndez",
-    "disciplineDetail": "Diseño textil, Diseño de estampados & Diseño de pañuelos de seda",
+    "disciplineDetail": {
+      "es": "Diseño textil, Diseño de estampados & Diseño de pañuelos de seda",
+      "en": "Textile Design, Print Design & Silk Scarf Design"
+    },
     "description": [
-      { "text": "Mythos on Silk nace de una exploración personal de personajes femeninos de la mitología y de los roles que ocupan dentro de estas narrativas. Durante años he ilustrado estas figuras, especialmente mujeres que representan fuerzas, ideas o explicaciones para aquello que en su momento no tenía una respuesta clara. Me interesa esa dimensión simbólica y poderosa que adquieren dentro de sus propias historias.", "style": "primary" },
-      { "text": "La colección de pañuelos de seda parte de esta investigación para reinterpretar estos personajes desde mi propio lenguaje visual, trasladando sus historias a través del color, el estampado y la composición. Cada diseño construye un universo propio, lleno de personajes, símbolos y detalles, pensado para aportar personalidad y variación a la forma de vestir.", "style": "primary" },
-      { "text": "Lo que más me interesa de estos mitos es que, aunque muchas de sus historias puedan parecer ilógicas, exageradas o incluso absurdas desde una mirada contemporánea, siguen teniendo una estructura y una carga emocional. Son otras formas de entender el mundo: no siempre racionales, pero profundamente humanas. Mythos on Silk busca habitar precisamente ese espacio entre lo fantástico y lo cotidiano, convirtiendo esas historias en piezas de seda para llevarlas con nosotros.", "style": "secondary" },
-      { "text": "Lanzamiento: durante las dos primeras semanas de lanzamiento, todas las piezas estarán disponibles bajo pedido.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Mythos on Silk nace de una exploración personal de personajes femeninos de la mitología y de los roles que ocupan dentro de estas narrativas. Durante años he ilustrado estas figuras, especialmente mujeres que representan fuerzas, ideas o explicaciones para aquello que en su momento no tenía una respuesta clara. Me interesa esa dimensión simbólica y poderosa que adquieren dentro de sus propias historias.",
+          "en": "Mythos on Silk grows out of a personal exploration of female figures in mythology and the roles they occupy within these narratives. For years I've illustrated these figures, especially women who represent forces, ideas or explanations for things that once had no clear answer. I'm drawn to the symbolic, powerful dimension they take on within their own stories."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La colección de pañuelos de seda parte de esta investigación para reinterpretar estos personajes desde mi propio lenguaje visual, trasladando sus historias a través del color, el estampado y la composición. Cada diseño construye un universo propio, lleno de personajes, símbolos y detalles, pensado para aportar personalidad y variación a la forma de vestir.",
+          "en": "The silk scarf collection builds on this research to reinterpret these figures through my own visual language, carrying their stories through color, print and composition. Each design builds its own universe, full of characters, symbols and details, meant to bring personality and variation to the way we dress."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "Lo que más me interesa de estos mitos es que, aunque muchas de sus historias puedan parecer ilógicas, exageradas o incluso absurdas desde una mirada contemporánea, siguen teniendo una estructura y una carga emocional. Son otras formas de entender el mundo: no siempre racionales, pero profundamente humanas. Mythos on Silk busca habitar precisamente ese espacio entre lo fantástico y lo cotidiano, convirtiendo esas historias en piezas de seda para llevarlas con nosotros.",
+          "en": "What interests me most about these myths is that, even though many of their stories can seem illogical, exaggerated or even absurd from a contemporary point of view, they still carry a structure and an emotional charge. They're other ways of understanding the world — not always rational, but deeply human. Mythos on Silk seeks to inhabit precisely that space between the fantastic and the everyday, turning these stories into silk pieces to carry with us."
+        },
+        "style": "secondary"
+      },
+      {
+        "text": {
+          "es": "Lanzamiento: durante las dos primeras semanas de lanzamiento, todas las piezas estarán disponibles bajo pedido.",
+          "en": "Launch: for the first two weeks after launch, all pieces will be available made to order."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/mythos-on-silk/mythos-on-silk-cover.png",
     "stack": [
@@ -122,15 +224,39 @@
   },
   {
     "slug": "desastre-sensorial",
-    "titleLines": ["Desastre", "Sensorial"],
+    "titleLines": [
+      "Desastre",
+      "Sensorial"
+    ],
     "discipline": "textile",
     "year": 2024,
     "client": "PeSeta",
-    "disciplineDetail": "Diseño textil, Diseño de estampados & Diseño de patrones",
+    "disciplineDetail": {
+      "es": "Diseño textil, Diseño de estampados & Diseño de patrones",
+      "en": "Textile Design, Print Design & Pattern Design"
+    },
     "description": [
-      { "text": "Desastre Sensorial es una colección de estampados desarrollada en colaboración con la marca madrileña PeSeta, a partir de una idea muy simple: transformar los desastres naturales en algo inesperado, positivo y divertido. La colección explora tres fenómenos —Terremoto, Erupción e Incendio— traduciendo registros y dispositivos utilizados para medir estos fenómenos en formas, líneas y composiciones gráficas que posteriormente se convirtieron en estampados para prendas.", "style": "primary" },
-      { "text": "El resultado es una serie de patrones all-over llenos de color, movimiento y ritmo, pensados para convertir fenómenos normalmente asociados al caos y la destrucción en una experiencia visual y sensorial más lúdica.", "style": "primary" },
-      { "text": "La colección juega con la contradicción entre desastre y diversión. Las gráficas abstraen información científica y la convierten en un lenguaje mucho más intuitivo, energético y corporal, donde el color funciona como una dosis de actitud. Desastre Sensorial propone mirar el caos desde otro lugar: ponerle un poco de sazón, chispa y color a la vida.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Desastre Sensorial es una colección de estampados desarrollada en colaboración con la marca madrileña PeSeta, a partir de una idea muy simple: transformar los desastres naturales en algo inesperado, positivo y divertido. La colección explora tres fenómenos —Terremoto, Erupción e Incendio— traduciendo registros y dispositivos utilizados para medir estos fenómenos en formas, líneas y composiciones gráficas que posteriormente se convirtieron en estampados para prendas.",
+          "en": "Desastre Sensorial is a print collection developed in collaboration with the Madrid-based brand PeSeta, built on a very simple idea: turning natural disasters into something unexpected, positive and fun. The collection explores three phenomena — Earthquake, Eruption and Fire — translating the records and instruments used to measure them into shapes, lines and graphic compositions that were later turned into prints for garments."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El resultado es una serie de patrones all-over llenos de color, movimiento y ritmo, pensados para convertir fenómenos normalmente asociados al caos y la destrucción en una experiencia visual y sensorial más lúdica.",
+          "en": "The result is a series of all-over patterns full of color, movement and rhythm, designed to turn phenomena normally associated with chaos and destruction into a more playful visual and sensory experience."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La colección juega con la contradicción entre desastre y diversión. Las gráficas abstraen información científica y la convierten en un lenguaje mucho más intuitivo, energético y corporal, donde el color funciona como una dosis de actitud. Desastre Sensorial propone mirar el caos desde otro lugar: ponerle un poco de sazón, chispa y color a la vida.",
+          "en": "The collection plays with the contradiction between disaster and fun. The graphics abstract scientific information and turn it into a far more intuitive, energetic and physical language, where color works as a dose of attitude. Desastre Sensorial proposes looking at chaos from another angle: adding a bit of spice, spark and color to life."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/desastre-sensorial/desastre-sensorial-cover.JPG",
     "stack": [
@@ -152,14 +278,32 @@
   },
   {
     "slug": "espiritu-design",
-    "titleLines": ["Espíritu", "Design"],
+    "titleLines": [
+      "Espíritu",
+      "Design"
+    ],
     "discipline": "textile",
     "year": 2026,
     "client": "Espíritu Design",
-    "disciplineDetail": "Diseño textil Jacquard, Diseño de estampados & Desarrollo de patrones",
+    "disciplineDetail": {
+      "es": "Diseño textil Jacquard, Diseño de estampados & Desarrollo de patrones",
+      "en": "Jacquard Textile Design, Print Design & Pattern Development"
+    },
     "description": [
-      { "text": "Colección de diseños textiles desarrollada para Espíritu Design, explorando patrones all-over y diseños posicionales para su aplicación en tejidos Jacquard. El proyecto parte de motivos ilustrados que se traducen a estructuras tejidas, trabajando cuidadosamente la escala, la repetición, el color y las posibilidades propias del material.", "style": "primary" },
-      { "text": "El proyecto explora cómo una ilustración cambia cuando deja de ser una imagen impresa para convertirse en una superficie táctil y construida con hilo. Las propias limitaciones y características del Jacquard se convierten en parte del proceso creativo, jugando con la repetición, el relieve y la materialidad para encontrar nuevas formas de llevar la ilustración al tejido.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Colección de diseños textiles desarrollada para Espíritu Design, explorando patrones all-over y diseños posicionales para su aplicación en tejidos Jacquard. El proyecto parte de motivos ilustrados que se traducen a estructuras tejidas, trabajando cuidadosamente la escala, la repetición, el color y las posibilidades propias del material.",
+          "en": "A collection of textile designs developed for Espíritu Design, exploring all-over patterns and placement designs for application on Jacquard fabrics. The project starts from illustrated motifs that are translated into woven structures, carefully working scale, repetition, color and the material's own possibilities."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El proyecto explora cómo una ilustración cambia cuando deja de ser una imagen impresa para convertirse en una superficie táctil y construida con hilo. Las propias limitaciones y características del Jacquard se convierten en parte del proceso creativo, jugando con la repetición, el relieve y la materialidad para encontrar nuevas formas de llevar la ilustración al tejido.",
+          "en": "The project explores how an illustration changes when it stops being a printed image and becomes a tactile surface built out of thread. The limitations and characteristics of Jacquard itself become part of the creative process, playing with repetition, relief and materiality to find new ways of bringing illustration into woven fabric."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": null,
     "stack": [],
@@ -167,15 +311,39 @@
   },
   {
     "slug": "national-arts-and-humanities-month",
-    "titleLines": ["National Arts &", "Humanities Month"],
+    "titleLines": [
+      "National Arts &",
+      "Humanities Month"
+    ],
     "discipline": "campaigns",
     "year": 2024,
     "client": "Americans for the Arts",
-    "disciplineDetail": "Diseño de campaña, Dirección de arte & Diseño gráfico",
+    "disciplineDetail": {
+      "es": "Diseño de campaña, Dirección de arte & Diseño gráfico",
+      "en": "Campaign Design, Art Direction & Graphic Design"
+    },
     "description": [
-      { "text": "Campaña digital e impresa desarrollada para National Arts & Humanities Month de Americans for the Arts, bajo el concepto \"The Arts Within You\". La campaña celebra cómo el arte y las humanidades viven dentro de cada persona, explorando diferentes disciplinas artísticas y creando un lenguaje visual vibrante a partir de la combinación de técnicas manuales, fotografía, ilustración y collage.", "style": "primary" },
-      { "text": "El sistema se adaptó a múltiples formatos y puntos de contacto: desde materiales digitales y contenido para redes sociales hasta piezas impresas y aplicaciones en distintos espacios de Washington, D.C., creando una campaña capaz de llevar el mensaje de manera cercana y dinámica a diferentes públicos.", "style": "primary" },
-      { "text": "La identidad visual busca representar el arte como algo que no está únicamente en museos o escenarios, sino que forma parte de todos nosotros. La mezcla de texturas hechas a mano, imágenes fotográficas y composiciones de collage genera un universo espontáneo, colorido y lleno de movimiento, celebrando la diversidad de formas en las que las artes y las humanidades se manifiestan en la vida cotidiana.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Campaña digital e impresa desarrollada para National Arts & Humanities Month de Americans for the Arts, bajo el concepto \"The Arts Within You\". La campaña celebra cómo el arte y las humanidades viven dentro de cada persona, explorando diferentes disciplinas artísticas y creando un lenguaje visual vibrante a partir de la combinación de técnicas manuales, fotografía, ilustración y collage.",
+          "en": "A digital and print campaign developed for Americans for the Arts' National Arts & Humanities Month, under the concept \"The Arts Within You.\" The campaign celebrates how art and the humanities live inside every person, exploring different artistic disciplines and creating a vibrant visual language through a combination of hand-made techniques, photography, illustration and collage."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El sistema se adaptó a múltiples formatos y puntos de contacto: desde materiales digitales y contenido para redes sociales hasta piezas impresas y aplicaciones en distintos espacios de Washington, D.C., creando una campaña capaz de llevar el mensaje de manera cercana y dinámica a diferentes públicos.",
+          "en": "The system was adapted to multiple formats and touchpoints — from digital materials and social media content to printed pieces and applications across different spaces in Washington, D.C. — creating a campaign able to carry the message to different audiences in a close, dynamic way."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La identidad visual busca representar el arte como algo que no está únicamente en museos o escenarios, sino que forma parte de todos nosotros. La mezcla de texturas hechas a mano, imágenes fotográficas y composiciones de collage genera un universo espontáneo, colorido y lleno de movimiento, celebrando la diversidad de formas en las que las artes y las humanidades se manifiestan en la vida cotidiana.",
+          "en": "The visual identity aims to represent art as something that doesn't live only in museums or on stages, but is part of all of us. The mix of hand-made textures, photographic images and collage compositions creates a spontaneous, colorful universe full of movement, celebrating the many ways art and the humanities show up in everyday life."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/national-arts-and-humanities-month/national-arts-and-humanities-month-cover.png",
     "stack": [
@@ -200,15 +368,40 @@
   },
   {
     "slug": "national-arts-in-education-week",
-    "titleLines": ["National Arts", "in Education", "Week"],
+    "titleLines": [
+      "National Arts",
+      "in Education",
+      "Week"
+    ],
     "discipline": "campaigns",
     "year": 2025,
     "client": "Americans for the Arts",
-    "disciplineDetail": "Diseño de campaña, Dirección de arte & Diseño gráfico",
+    "disciplineDetail": {
+      "es": "Diseño de campaña, Dirección de arte & Diseño gráfico",
+      "en": "Campaign Design, Art Direction & Graphic Design"
+    },
     "description": [
-      { "text": "Campaña desarrollada en Washington, D.C. para National Arts in Education Week, con el objetivo de defender el acceso universal a la educación artística en Estados Unidos. La campaña busca poner en conversación la importancia de integrar las artes en la educación de manera accesible y equitativa, independientemente del lugar donde crezcan o estudien las personas.", "style": "primary" },
-      { "text": "A través de una serie de piezas digitales, impresas y materiales de comunicación, la campaña lleva este mensaje a diferentes públicos y espacios, utilizando el diseño como una herramienta de sensibilización y advocacy.", "style": "primary" },
-      { "text": "El concepto parte de una idea sencilla: el arte nos une, nos ayuda a crecer y tiene el poder de transformar individuos y comunidades. La campaña reivindica las artes como una parte esencial de la educación, no como un complemento, destacando su capacidad para desarrollar empatía, creatividad, pensamiento crítico y conexión social, y para contribuir a construir una sociedad más consciente, saludable e inclusiva.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Campaña desarrollada en Washington, D.C. para National Arts in Education Week, con el objetivo de defender el acceso universal a la educación artística en Estados Unidos. La campaña busca poner en conversación la importancia de integrar las artes en la educación de manera accesible y equitativa, independientemente del lugar donde crezcan o estudien las personas.",
+          "en": "A campaign developed in Washington, D.C. for National Arts in Education Week, aimed at advocating for universal access to arts education across the United States. The campaign raises the conversation around the importance of integrating the arts into education in an accessible and equitable way, regardless of where people grow up or study."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "A través de una serie de piezas digitales, impresas y materiales de comunicación, la campaña lleva este mensaje a diferentes públicos y espacios, utilizando el diseño como una herramienta de sensibilización y advocacy.",
+          "en": "Through a series of digital pieces, printed materials and communication assets, the campaign carries this message to different audiences and spaces, using design as a tool for awareness and advocacy."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El concepto parte de una idea sencilla: el arte nos une, nos ayuda a crecer y tiene el poder de transformar individuos y comunidades. La campaña reivindica las artes como una parte esencial de la educación, no como un complemento, destacando su capacidad para desarrollar empatía, creatividad, pensamiento crítico y conexión social, y para contribuir a construir una sociedad más consciente, saludable e inclusiva.",
+          "en": "The concept starts from a simple idea: art brings us together, helps us grow, and has the power to transform individuals and communities. The campaign champions the arts as an essential part of education, not a supplement — highlighting their ability to build empathy, creativity, critical thinking and social connection, and to help build a more conscious, healthy and inclusive society."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/national-arts-in-education-week/national-arts-in-education-week-cover.png",
     "stack": [
@@ -226,16 +419,47 @@
   },
   {
     "slug": "historic-hampton-house",
-    "titleLines": ["Historic", "Hampton", "House"],
+    "titleLines": [
+      "Historic",
+      "Hampton",
+      "House"
+    ],
     "discipline": "branding",
     "year": 2025,
     "client": "Historic Hampton House / Art Basel Miami Beach",
-    "disciplineDetail": "Identidad de marca, Diseño de patrones, Dirección de arte & Gráfica ambiental",
+    "disciplineDetail": {
+      "es": "Identidad de marca, Diseño de patrones, Dirección de arte & Gráfica ambiental",
+      "en": "Brand Identity, Pattern Design, Art Direction & Environmental Graphics"
+    },
     "description": [
-      { "text": "Propuesta para desarrollar la identidad gráfica integral de Historic Hampton House para su participación en Art Basel Miami Beach 2025. El proyecto parte de una exploración de la arquitectura y la historia del venue, tomando elementos de su fachada, detalles ornamentales, texturas y formas espaciales para convertirlos en un nuevo lenguaje gráfico. Estos elementos se deconstruyeron y transformaron en una serie de estampados, patrones, marcos y composiciones que acompañan y resaltan imágenes relacionadas con la historia del espacio y con las distintas décadas que han formado parte de su legado cultural.", "style": "primary" },
-      { "text": "La identidad se llevó a diferentes aplicaciones impresas y ambientales, creando un sistema capaz de convivir con la arquitectura, la fotografía, la tipografía y los materiales del evento.", "style": "primary" },
-      { "text": "El concepto juega con la tensión entre lo clásico y lo contemporáneo. Los elementos arquitectónicos originales se extraen, repiten, amplifican y convierten en composiciones gráficas más atrevidas, mientras una paleta de colores vibrantes introduce una energía inesperada dentro de un contexto histórico. La intención no era simplemente representar el pasado, sino reinterpretarlo desde una mirada contemporánea, convirtiendo la historia del Hampton House en un lenguaje visual vivo.", "style": "secondary" },
-      { "text": "Scope: Identidad gráfica integral, dirección de arte, diseño de patrones y estampados, sistema gráfico, gráfica ambiental, aplicaciones impresas y materiales para evento.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Propuesta para desarrollar la identidad gráfica integral de Historic Hampton House para su participación en Art Basel Miami Beach 2025. El proyecto parte de una exploración de la arquitectura y la historia del venue, tomando elementos de su fachada, detalles ornamentales, texturas y formas espaciales para convertirlos en un nuevo lenguaje gráfico. Estos elementos se deconstruyeron y transformaron en una serie de estampados, patrones, marcos y composiciones que acompañan y resaltan imágenes relacionadas con la historia del espacio y con las distintas décadas que han formado parte de su legado cultural.",
+          "en": "A proposal to develop the full graphic identity for Historic Hampton House's participation in Art Basel Miami Beach 2025. The project starts from an exploration of the venue's architecture and history, drawing on elements from its façade, ornamental details, textures and spatial forms to turn them into a new graphic language. These elements were deconstructed and transformed into a series of prints, patterns, frames and compositions that accompany and highlight images tied to the space's history and to the different decades that have shaped its cultural legacy."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La identidad se llevó a diferentes aplicaciones impresas y ambientales, creando un sistema capaz de convivir con la arquitectura, la fotografía, la tipografía y los materiales del evento.",
+          "en": "The identity was carried across different printed and environmental applications, creating a system able to coexist with the venue's architecture, photography, typography and event materials."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El concepto juega con la tensión entre lo clásico y lo contemporáneo. Los elementos arquitectónicos originales se extraen, repiten, amplifican y convierten en composiciones gráficas más atrevidas, mientras una paleta de colores vibrantes introduce una energía inesperada dentro de un contexto histórico. La intención no era simplemente representar el pasado, sino reinterpretarlo desde una mirada contemporánea, convirtiendo la historia del Hampton House en un lenguaje visual vivo.",
+          "en": "The concept plays with the tension between the classic and the contemporary. The original architectural elements are extracted, repeated, amplified and turned into bolder graphic compositions, while a palette of vibrant colors introduces an unexpected energy within a historic context. The intent wasn't simply to represent the past, but to reinterpret it through a contemporary lens, turning Hampton House's history into a living visual language."
+        },
+        "style": "secondary"
+      },
+      {
+        "text": {
+          "es": "Scope: Identidad gráfica integral, dirección de arte, diseño de patrones y estampados, sistema gráfico, gráfica ambiental, aplicaciones impresas y materiales para evento.",
+          "en": "Scope: Full graphic identity, art direction, pattern and print design, graphic system, environmental graphics, printed applications and event materials."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/historic-hampton-house/historic-hampton-house-cover.png",
     "stack": [
@@ -255,15 +479,38 @@
   },
   {
     "slug": "crescendo",
-    "titleLines": ["Crescendo"],
+    "titleLines": [
+      "Crescendo"
+    ],
     "discipline": "branding",
     "year": 2025,
     "client": "Crescendo",
-    "disciplineDetail": "Brand Identity, Art Direction & Campaign",
+    "disciplineDetail": {
+      "es": "Identidad de marca, Dirección de arte & Campaña",
+      "en": "Brand Identity, Art Direction & Campaign"
+    },
     "description": [
-      { "text": "Crescendo es una incubadora musical para artistas emergentes, principalmente de Anacostia BID y Washington, D.C., creada para detectar talento, acompañarlo y abrir camino a una nueva generación de artistas. A través de una productora y un programa de desarrollo, busca impulsar a sus participantes tanto profesionalmente como en su crecimiento personal.", "style": "primary" },
-      { "text": "La identidad nace de las vibraciones gráficas y las ondas sonoras, llevándolas a un sistema visual en movimiento que habla de crecimiento, libertad, conexión y accesibilidad. El resultado combina una energía urbana con una estética contemporánea, directa y abierta.", "style": "secondary" },
-      { "text": "Desarrollo de identidad gráfica completa, campaña de lanzamiento, toolkits de marca y creación de assets para redes sociales y materiales impresos.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Crescendo es una incubadora musical para artistas emergentes, principalmente de Anacostia BID y Washington, D.C., creada para detectar talento, acompañarlo y abrir camino a una nueva generación de artistas. A través de una productora y un programa de desarrollo, busca impulsar a sus participantes tanto profesionalmente como en su crecimiento personal.",
+          "en": "Crescendo is a music incubator for emerging artists, primarily from Anacostia BID and Washington, D.C., created to spot talent, support it, and open a path for a new generation of artists. Through a production arm and a development program, it aims to push its participants forward both professionally and personally."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La identidad nace de las vibraciones gráficas y las ondas sonoras, llevándolas a un sistema visual en movimiento que habla de crecimiento, libertad, conexión y accesibilidad. El resultado combina una energía urbana con una estética contemporánea, directa y abierta.",
+          "en": "The identity grows out of graphic vibrations and sound waves, carrying them into a visual system in motion that speaks of growth, freedom, connection and accessibility. The result combines urban energy with a contemporary, direct and open aesthetic."
+        },
+        "style": "secondary"
+      },
+      {
+        "text": {
+          "es": "Desarrollo de identidad gráfica completa, campaña de lanzamiento, toolkits de marca y creación de assets para redes sociales y materiales impresos.",
+          "en": "Development of a complete graphic identity, launch campaign, brand toolkits, and creation of assets for social media and printed materials."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/crescendo/crescendo-cover.png",
     "stack": [
@@ -283,14 +530,32 @@
   {
     "slug": "fuego-mestizo",
     "hidden": true,
-    "titleLines": ["Fuego", "Mestizo"],
+    "titleLines": [
+      "Fuego",
+      "Mestizo"
+    ],
     "discipline": "branding",
     "year": 2023,
     "client": "Fuego Mestizo",
-    "disciplineDetail": "Brand Identity, Visual Identity & Brand Toolkit",
+    "disciplineDetail": {
+      "es": "Identidad de marca, Identidad visual & Toolkit de marca",
+      "en": "Brand Identity, Visual Identity & Brand Toolkit"
+    },
     "description": [
-      { "text": "Fuego Mestizo es una línea de salsas gourmet de chicharrón de chile, creada a partir de mezclas auténticas de diferentes chiles e ingredientes que se combinan para construir perfiles de sabor intensos, complejos y deliciosos. El proyecto desarrolló la identidad visual completa y el toolkit de marca, desde el universo gráfico hasta sus aplicaciones.", "style": "primary" },
-      { "text": "El concepto parte de la ambivalencia y la unión: dos fuerzas, dos sabores y dos identidades que se encuentran para crear algo nuevo. Esta idea se convirtió en un personaje doble, casi gemelo, que emerge de las raíces de la tierra y funciona como símbolo central de la marca. El resultado busca sentirse mexicano y arraigado, pero también inesperado, contemporáneo y un poco irreverente.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Fuego Mestizo es una línea de salsas gourmet de chicharrón de chile, creada a partir de mezclas auténticas de diferentes chiles e ingredientes que se combinan para construir perfiles de sabor intensos, complejos y deliciosos. El proyecto desarrolló la identidad visual completa y el toolkit de marca, desde el universo gráfico hasta sus aplicaciones.",
+          "en": "Fuego Mestizo is a line of gourmet chile-chicharrón sauces, made from authentic blends of different chiles and ingredients combined to build intense, complex and delicious flavor profiles. The project developed the full visual identity and brand toolkit, from the graphic universe to its applications."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El concepto parte de la ambivalencia y la unión: dos fuerzas, dos sabores y dos identidades que se encuentran para crear algo nuevo. Esta idea se convirtió en un personaje doble, casi gemelo, que emerge de las raíces de la tierra y funciona como símbolo central de la marca. El resultado busca sentirse mexicano y arraigado, pero también inesperado, contemporáneo y un poco irreverente.",
+          "en": "The concept starts from ambivalence and union: two forces, two flavors and two identities that meet to create something new. This idea became a double, almost twin character that emerges from the roots of the earth and works as the brand's central symbol. The result aims to feel Mexican and rooted, but also unexpected, contemporary and a little irreverent."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/fuego-mestizo/fuego-mestizo-cover.png",
     "stack": [
@@ -313,14 +578,32 @@
   },
   {
     "slug": "hija-roja",
-    "titleLines": ["Hija", "Roja"],
+    "titleLines": [
+      "Hija",
+      "Roja"
+    ],
     "discipline": "branding",
     "year": 2022,
     "client": "Hija Roja",
-    "disciplineDetail": "Brand Identity, Packaging & Campaign",
+    "disciplineDetail": {
+      "es": "Identidad de marca, Empaque & Campaña",
+      "en": "Brand Identity, Packaging & Campaign"
+    },
     "description": [
-      { "text": "Hija Roja es un licor elaborado a partir de tuna, nacido de la tierra donde se cultiva. El proyecto parte de la idea de extraer la esencia de ese paisaje y convertirla en una figura: una diosa contemporánea, femenina y poderosa, ligada a la fertilidad, la agricultura y los ciclos de crecimiento. A partir de este concepto se desarrolló la identidad completa de la marca, incluyendo branding, diseño de botella y etiquetas, ilustraciones y campaña de lanzamiento.", "style": "primary" },
-      { "text": "La identidad se mueve entre lo ancestral y lo contemporáneo, tomando símbolos de la tierra y transformándolos en un universo visual más libre, sensual y avant-garde. Una marca que no busca representar la tradición literalmente, sino reinterpretarla desde una perspectiva más desenfadada y actual.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Hija Roja es un licor elaborado a partir de tuna, nacido de la tierra donde se cultiva. El proyecto parte de la idea de extraer la esencia de ese paisaje y convertirla en una figura: una diosa contemporánea, femenina y poderosa, ligada a la fertilidad, la agricultura y los ciclos de crecimiento. A partir de este concepto se desarrolló la identidad completa de la marca, incluyendo branding, diseño de botella y etiquetas, ilustraciones y campaña de lanzamiento.",
+          "en": "Hija Roja is a liqueur made from prickly pear, born from the land where it's grown. The project starts from the idea of extracting the essence of that landscape and turning it into a figure: a contemporary goddess, feminine and powerful, tied to fertility, agriculture and cycles of growth. From this concept, the brand's complete identity was developed, including branding, bottle and label design, illustrations and launch campaign."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "La identidad se mueve entre lo ancestral y lo contemporáneo, tomando símbolos de la tierra y transformándolos en un universo visual más libre, sensual y avant-garde. Una marca que no busca representar la tradición literalmente, sino reinterpretarla desde una perspectiva más desenfadada y actual.",
+          "en": "The identity moves between the ancestral and the contemporary, taking symbols from the land and transforming them into a freer, more sensual and avant-garde visual universe. A brand that doesn't aim to represent tradition literally, but to reinterpret it from a more playful, present-day perspective."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/hija-roja/hija-roja-cover.png",
     "stack": [
@@ -339,14 +622,32 @@
   },
   {
     "slug": "casa-chechen",
-    "titleLines": ["Casa", "Chechen"],
+    "titleLines": [
+      "Casa",
+      "Chechen"
+    ],
     "discipline": "branding",
     "year": 2022,
     "client": "Casa Chechen",
-    "disciplineDetail": "Identidad de marca, Dirección de arte, Ilustración, Diseño gráfico y Motion",
+    "disciplineDetail": {
+      "es": "Identidad de marca, Dirección de arte, Ilustración, Diseño gráfico y Motion",
+      "en": "Brand Identity, Art Direction, Illustration, Graphic Design & Motion"
+    },
     "description": [
-      { "text": "Casa Chechen es un espacio dedicado a reunir objetos, piezas y creadores seleccionados alrededor de una misma idea: lo bien hecho importa. Concebida como una casa viva, la marca reúne a artesanos y diseñadores dentro de un catálogo de interiorismo donde conviven materiales nobles, procesos manuales, piezas únicas y objetos hechos para durar. El espacio combina arquitectura limpia y una fuerte presencia de naturaleza, funcionando como escenario para las piezas de madera de alta calidad que definen gran parte del universo de Casa Chechen. Para el proyecto se desarrolló la identidad visual completa, desde diferentes exploraciones de logotipo y sistema gráfico hasta ilustraciones, gráficos auxiliares, aplicaciones, papelería, merchandising y piezas animadas. El sistema busca encontrar un equilibrio entre la sofisticación del interiorismo y una identidad más cálida, humana y gráfica.", "style": "primary" },
-      { "text": "El símbolo de Casa Chechen nace de una idea muy sencilla: dos mujeres que se encuentran para seleccionar juntas aquello que merece quedarse. La figura representa la búsqueda del origen, la elección cuidadosa de la materia prima y ese conocimiento casi instintivo de reconocer algo bueno cuando lo tienes delante. La identidad juega con formas orgánicas, composiciones geométricas y una paleta contenida que permite que los materiales y las piezas respiren. Hay algo deliberadamente imperfecto en el sistema: porque cuando todo está demasiado pulido, se pierde un poco la magia.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Casa Chechen es un espacio dedicado a reunir objetos, piezas y creadores seleccionados alrededor de una misma idea: lo bien hecho importa. Concebida como una casa viva, la marca reúne a artesanos y diseñadores dentro de un catálogo de interiorismo donde conviven materiales nobles, procesos manuales, piezas únicas y objetos hechos para durar. El espacio combina arquitectura limpia y una fuerte presencia de naturaleza, funcionando como escenario para las piezas de madera de alta calidad que definen gran parte del universo de Casa Chechen. Para el proyecto se desarrolló la identidad visual completa, desde diferentes exploraciones de logotipo y sistema gráfico hasta ilustraciones, gráficos auxiliares, aplicaciones, papelería, merchandising y piezas animadas. El sistema busca encontrar un equilibrio entre la sofisticación del interiorismo y una identidad más cálida, humana y gráfica.",
+          "en": "Casa Chechen is a space dedicated to bringing together selected objects, pieces and makers around one shared idea: doing things well matters. Conceived as a living house, the brand brings artisans and designers together within an interior-design catalog where noble materials, manual processes, one-of-a-kind pieces and objects made to last all coexist. The space combines clean architecture with a strong presence of nature, acting as a backdrop for the high-quality wood pieces that define much of Casa Chechen's world. The project developed the full visual identity, from logo and graphic-system explorations to illustrations, supporting graphics, applications, stationery, merchandising and animated pieces. The system looks for a balance between the sophistication of interior design and a warmer, more human and graphic identity."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "El símbolo de Casa Chechen nace de una idea muy sencilla: dos mujeres que se encuentran para seleccionar juntas aquello que merece quedarse. La figura representa la búsqueda del origen, la elección cuidadosa de la materia prima y ese conocimiento casi instintivo de reconocer algo bueno cuando lo tienes delante. La identidad juega con formas orgánicas, composiciones geométricas y una paleta contenida que permite que los materiales y las piezas respiren. Hay algo deliberadamente imperfecto en el sistema: porque cuando todo está demasiado pulido, se pierde un poco la magia.",
+          "en": "Casa Chechen's symbol grows from a very simple idea: two women who come together to choose, side by side, what deserves to stay. The figure represents the search for origin, the careful selection of raw material, and that almost instinctive knowledge of recognizing something good when it's right in front of you. The identity plays with organic shapes, geometric compositions and a restrained palette that lets the materials and pieces breathe. There's something deliberately imperfect in the system — because when everything is too polished, a little bit of the magic gets lost."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/casa_chechen/casa_chechem_cover.jpg",
     "stack": [
@@ -376,14 +677,31 @@
   },
   {
     "slug": "bioliving",
-    "titleLines": ["BioLiving"],
+    "titleLines": [
+      "BioLiving"
+    ],
     "discipline": "packaging",
     "year": 2024,
     "client": "BioLiving",
-    "disciplineDetail": "Desarrollo visual, Brand Identity & Packaging Design",
+    "disciplineDetail": {
+      "es": "Desarrollo visual, Identidad de marca & Diseño de empaque",
+      "en": "Visual Development, Brand Identity & Packaging Design"
+    },
     "description": [
-      { "text": "Desarrollo visual e identidad para una marca innovadora de suplementos de alta calidad. Cada suplemento parte de un animal y del ecosistema que lo rodea, tomando sus características y propiedades como punto de partida para construir la identidad de cada producto. El concepto conecta los beneficios que encontramos en la naturaleza con las propiedades de cada suplemento, creando un vínculo visual y conceptual entre el producto y su origen natural.", "style": "primary" },
-      { "text": "A partir de este concepto se desarrolló un sistema visual basado en una paleta cromática amplia, asignando dos o tres tonos a cada producto para hacerlo reconocible dentro de la colección. El sistema se extendió posteriormente al packaging, campañas, redes sociales y diferentes aplicaciones de marca.", "style": "secondary" }
+      {
+        "text": {
+          "es": "Desarrollo visual e identidad para una marca innovadora de suplementos de alta calidad. Cada suplemento parte de un animal y del ecosistema que lo rodea, tomando sus características y propiedades como punto de partida para construir la identidad de cada producto. El concepto conecta los beneficios que encontramos en la naturaleza con las propiedades de cada suplemento, creando un vínculo visual y conceptual entre el producto y su origen natural.",
+          "en": "Visual development and identity for an innovative brand of high-quality supplements. Each supplement starts from an animal and the ecosystem around it, using its characteristics and properties as the starting point for building each product's identity. The concept connects the benefits we find in nature with the properties of each supplement, creating a visual and conceptual link between the product and its natural origin."
+        },
+        "style": "primary"
+      },
+      {
+        "text": {
+          "es": "A partir de este concepto se desarrolló un sistema visual basado en una paleta cromática amplia, asignando dos o tres tonos a cada producto para hacerlo reconocible dentro de la colección. El sistema se extendió posteriormente al packaging, campañas, redes sociales y diferentes aplicaciones de marca.",
+          "en": "From this concept, a visual system was developed based on a wide color palette, assigning two or three tones to each product to make it recognizable within the collection. The system was later extended to packaging, campaigns, social media and different brand applications."
+        },
+        "style": "secondary"
+      }
     ],
     "cover": "assets/projects/bioliving/bioliving-cover.png",
     "stack": [

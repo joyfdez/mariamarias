@@ -11,12 +11,14 @@
 <nav class="comp-nav">
   <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
   <ul class="comp-nav__links">
-    <li><a href="work.html">Work</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
-    <li class="is-active"><a href="contact.html">Contact</a></li>
+    <li><a href="work.html" data-i18n-key="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n-key="nav.about">About</a></li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
+    <li class="is-active"><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__dot"></div>
+  <div class="comp-nav__lang">
+    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
@@ -27,17 +29,18 @@
 
     <!-- LEFT COLUMN -->
     <div class="contact-col contact-col--left">
-      
+      <h2 class="contact-outline" id="contactOutline" data-i18n-key="contact.outlineTitle">Contacto</h2>
+
       <div class="contact-group">
-        <p class="label-mono">E-mail:</p>
+        <p class="label-mono" data-i18n-key="contact.emailLabel">Correo:</p>
         <p class="body-text"><a class="plain-link" href="mailto:hello@mariamariass.com">hello@mariamariass.com</a></p>
       </div>
       <div class="contact-group">
-        <p class="label-mono">Instagram:</p>
+        <p class="label-mono" data-i18n-key="contact.instagramLabel">Instagram:</p>
         <p class="body-text"><a class="plain-link" href="https://www.instagram.com/mariamariasssssss/" target="_blank" rel="noopener">@mariamariasssssss</a></p>
       </div>
       <div class="contact-group">
-        <p class="label-mono">Behance:</p>
+        <p class="label-mono" data-i18n-key="contact.behanceLabel">Behance:</p>
         <p class="body-text"><a class="plain-link" href="https://www.behance.net/mfmcmendezc664" target="_blank" rel="noopener">behance.net/mfmcmendezc664</a></p>
       </div>
     </div>
@@ -51,20 +54,16 @@
 
     <!-- RIGHT COLUMN -->
     <div class="contact-col contact-col--right">
-      <a class="back-link" href="work.html">← Back to Work</a>
+      <a class="back-link" href="work.html" data-i18n-key="contact.backCta">← Volver al Trabajo</a>
       <p class="body-text" id="madridClock">Madrid, --:--:--</p>
     </div>
 
   </section>
 
-  <!-- BOTTOM BLOCK -->
-  <section class="contact-bottom">
-    <h2 class="contact-outline" id="contactOutline">Contact</h2>
-  </section>
-
 </main>
 
-<script src="scripts/fit-title.js"></script>
+<script src="scripts/i18n.js"></script>
+<script>I18N.init();</script>
 <script>
 /* Live Madrid clock */
 (function () {
@@ -77,9 +76,6 @@
   tick();
   setInterval(tick, 1000);
 })();
-
-/* Fit outline title to available width — shared with work.html, see scripts/fit-title.js */
-fitTitleToWidth(document.querySelector('.contact-outline'), { max: 60 });
 
 /* Decorative avatar video: plays once on load, freezes on its last
    frame, and replays from the start on hover — never a manual player. */

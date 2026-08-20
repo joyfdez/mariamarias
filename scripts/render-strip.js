@@ -6,10 +6,13 @@
    A project without a real cover yet (status: "missing-assets", or
    zero uploaded photos) gets a tinted placeholder card in its own
    discipline's color instead of being silently left out.
+   discipline.name is a bilingual { es, en } object — resolved via
+   I18N.pick(); re-renders on 'langchange' instead of reloading.
    ============================================================ */
 (function () {
   const strip = document.getElementById('projectsStrip');
   if (!strip) return;
+  const pick = window.I18N.pick;
 
   function cardFor(project, discipline) {
     const hasCover = !!project.cover && project.status !== 'missing-assets';
@@ -33,7 +36,7 @@
 
     const label = document.createElement('div');
     label.className = 'project-card__label';
-    label.textContent = `${discipline.name} · ${project.year}`;
+    label.textContent = `${pick(discipline.name)} · ${project.year}`;
 
     const title = document.createElement('div');
     title.className = 'project-card__title';
@@ -53,11 +56,17 @@
     fetch('data/disciplines.json').then(r => r.json())
   ]).then(([projects, disciplines]) => {
     const bySlug = Object.fromEntries(disciplines.map(d => [d.slug, d]));
-    strip.innerHTML = '';
-    projects.filter(project => !project.hidden).forEach(project => {
-      const discipline = bySlug[project.discipline];
-      if (!discipline) return; // defensive — every project.discipline must match a real slug
-      strip.appendChild(cardFor(project, discipline));
-    });
+
+    function render() {
+      strip.innerHTML = '';
+      projects.filter(project => !project.hidden).forEach(project => {
+        const discipline = bySlug[project.discipline];
+        if (!discipline) return; // defensive — every project.discipline must match a real slug
+        strip.appendChild(cardFor(project, discipline));
+      });
+    }
+
+    render();
+    document.addEventListener('langchange', render);
   });
 })();

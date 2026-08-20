@@ -12,12 +12,14 @@
 <nav class="comp-nav">
   <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
   <ul class="comp-nav__links">
-    <li><a href="work.html">Work</a></li>
-    <li class="is-active"><a href="about.html">About</a></li>
-    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="work.html" data-i18n-key="nav.work">Work</a></li>
+    <li class="is-active"><a href="about.html" data-i18n-key="nav.about">About</a></li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
+    <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__dot"></div>
+  <div class="comp-nav__lang">
+    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
@@ -28,21 +30,21 @@
 
     <!-- BIO BLOCK -->
     <div class="comp-bio-block">
-      <h1 class="about-title">About</h1>
-      <p class="about-tagline">Somewhere between nature, imagination and everything wild, weird and beautiful we leave behind.</p>
-      <p class="about-bio">Maria Mendez is a graphic designer, textile artist and illustrator working across identity, campaigns, packaging, fashion and surface design. Her practice moves freely between graphic systems, textiles, objects and images, always looking for new ways to turn an idea into something tangible.</p>
-      <p class="about-bio">Nature is probably the biggest inspiration behind her work — animals, plants, landscapes, strange little details and the endless ways the world grows and transforms. But she is equally fascinated by what humans create: objects, architecture, traditions, symbols, clothes and all the imperfect, unexpected things we leave behind. Color, shape, texture and pattern become tools to collect these observations and turn them into visual stories that feel curious, tactile and alive.</p>
-      <a class="cta-link" href="work.html">View Selected Work →</a>
+      <h1 class="about-title" data-i18n-key="about.title">Sobre mí</h1>
+      <p class="about-tagline" data-i18n-key="about.tagline">Soy María</p>
+      <p class="about-bio" data-i18n-key="about.bioP1">diseñadora gráfica, artista textil e ilustradora. Pero sobre todo soy una persona muy curiosa, que necesita estar en constante aprendizaje. Me inspira observar el mundo: la naturaleza, lo que construimos, lo que heredamos, esas pequeñas cosas que muchas veces pasan desapercibidas. Tengo una relación muy especial con el color, con las sensaciones que puede provocar, emocionales y también físicas. Me gusta investigar, experimentar, descubrir conexiones entre ideas, materiales, imágenes y formas.</p>
+      <p class="about-bio" data-i18n-key="about.bioP2">Soy bastante organizada y disciplinada con mi trabajo. Pero también necesito espacio para explorar sin plan. Me gusta trabajar tanto sola, que es ahí es donde encuentro mi ritmo pero también con más personas, ya que me enriquece mucho: compartir ideas, aprender otras formas de pensar y de hacer. Me interesan los procesos cuidados, las cosas auténticas, los proyectos que tienen algo detrás. Al final, mi trabajo nace de eso: mirar con atención lo que me rodea, dejarme provocar por ello, y transformarlo en algo que pueda verse, tocarse o sentirse.</p>
+      <a class="cta-link" href="work.html" data-i18n-key="about.cta">Ver Trabajo Seleccionado →</a>
     </div>
 
     <!-- BAGS -->
     <div class="about-bags-area" data-lightbox-group>
-      <div class="comp-transparent-bag comp-transparent-bag--1" data-lightbox-src="assets/images/About1.png" data-lightbox-alt="María Méndez — proyecto 1">
+      <div class="comp-transparent-bag comp-transparent-bag--1" data-lightbox-src="assets/images/About1.png" data-lightbox-alt="María Méndez — proyecto 1" data-i18n-key="about.lightboxAlt1" data-i18n-attr="data-lightbox-alt">
 
         <div class="bag-fill bag-fill--1"></div>
       </div>
 
-      <div class="comp-transparent-bag comp-transparent-bag--2" data-lightbox-src="assets/images/About2.png" data-lightbox-alt="María Méndez — proyecto 2">
+      <div class="comp-transparent-bag comp-transparent-bag--2" data-lightbox-src="assets/images/About2.png" data-lightbox-alt="María Méndez — proyecto 2" data-i18n-key="about.lightboxAlt2" data-i18n-attr="data-lightbox-alt">
 
         <div class="bag-fill bag-fill--2"></div>
       </div>
@@ -54,37 +56,37 @@
 
   <!-- STUDIO VALUES -->
   <section class="comp-studio-values">
-    <div class="studio-values__label">My <br>Values</div>
+    <div class="studio-values__label" data-i18n-key="about.valuesLabel" data-i18n-html>Mis<br>Valores</div>
     <div class="studio-values__columns">
 
       <div class="studio-value-item">
         <div class="value-icon"><img class="category-shape" src="assets/shapes/poodle.svg" alt=""></div>
-        <div class="value-title">Curiosity</div>
-        <p class="value-desc">Look closer. Ask why. Follow the weird little detail.</p>
+        <div class="value-title" data-i18n-key="about.values.curiosity.title">Curiosidad</div>
+        <p class="value-desc" data-i18n-key="about.values.curiosity.desc">Mira más de cerca. Pregunta por qué. Sigue ese pequeño detalle raro.</p>
       </div>
 
       <div class="studio-value-item">
         <div class="value-icon"><img class="category-shape" src="assets/shapes/horse.svg" alt=""></div>
-        <div class="value-title">Craft</div>
-        <p class="value-desc">Good ideas deserve to become good things — beautifully made and thoughtfully considered.</p>
+        <div class="value-title" data-i18n-key="about.values.craft.title">Oficio</div>
+        <p class="value-desc" data-i18n-key="about.values.craft.desc">Las buenas ideas merecen convertirse en buenas cosas — hechas con belleza y pensadas con cuidado.</p>
       </div>
 
       <div class="studio-value-item">
         <div class="value-icon"><img class="category-shape" src="assets/shapes/bird.svg" alt=""></div>
-        <div class="value-title">Story</div>
-        <p class="value-desc">Everything has a story. We just have to find the right way to tell it.</p>
+        <div class="value-title" data-i18n-key="about.values.story.title">Historia</div>
+        <p class="value-desc" data-i18n-key="about.values.story.desc">Todo tiene una historia. Solo hay que encontrar la forma correcta de contarla.</p>
       </div>
 
       <div class="studio-value-item">
         <div class="value-icon"><img class="category-shape" src="assets/shapes/leaf.svg" alt=""></div>
-        <div class="value-title">Color</div>
-        <p class="value-desc">Color is never just decoration. It has mood, memory, attitude and a life of its own.</p>
+        <div class="value-title" data-i18n-key="about.values.color.title">Color</div>
+        <p class="value-desc" data-i18n-key="about.values.color.desc">El color nunca es solo decoración. Tiene estado de ánimo, memoria, actitud y vida propia.</p>
       </div>
 
       <div class="studio-value-item">
         <div class="value-icon"><img class="category-shape" src="assets/shapes/fish.svg" alt=""></div>
-        <div class="value-title">Play</div>
-        <p class="value-desc">Experiment, make a mess, change direction. Sometimes the best ideas happen by accident.</p>
+        <div class="value-title" data-i18n-key="about.values.play.title">Juego</div>
+        <p class="value-desc" data-i18n-key="about.values.play.desc">Experimenta, ensucia, cambia de dirección. A veces las mejores ideas ocurren por accidente.</p>
       </div>
 
     </div>
@@ -92,4 +94,6 @@
 
 </main>
 
+<script src="scripts/i18n.js"></script>
 <script src="scripts/gallery.js"></script>
+<script>I18N.init();</script>

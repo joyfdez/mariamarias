@@ -6,9 +6,14 @@
    auto-init pass at DOMContentLoaded — before this fetch resolves,
    so it found nothing (harmless no-op). Once the gallery DOM below
    is built, we call window.GalleryJS.initGallery() explicitly.
+   Bilingual fields ({es,en} objects in the JSON) are resolved via
+   I18N.pick(); fixed UI strings via I18N.t(). Re-renders on
+   'langchange' instead of reloading the page.
    ============================================================ */
 (function () {
   const slug = new URLSearchParams(location.search).get('p');
+  const pick = window.I18N.pick;
+  const t = window.I18N.t;
 
   const header     = document.getElementById('projectHeader');
   const leftCol     = header.querySelector('.project-header__left');
@@ -43,15 +48,15 @@
   function buildSpecSheet(project) {
     specSheet.innerHTML = `
       <div class="spec-item">
-        <div class="spec-label">Client</div>
+        <div class="spec-label">${t('project.specClient')}</div>
         <div class="spec-value">${project.client}</div>
       </div>
       <div class="spec-item">
-        <div class="spec-label">Discipline</div>
-        <div class="spec-value">${project.disciplineDetail}</div>
+        <div class="spec-label">${t('project.specDiscipline')}</div>
+        <div class="spec-value">${pick(project.disciplineDetail)}</div>
       </div>
       <div class="spec-item">
-        <div class="spec-label">Year</div>
+        <div class="spec-label">${t('project.specYear')}</div>
         <div class="spec-value">${project.year}</div>
       </div>
     `;
@@ -62,13 +67,14 @@
     project.description.forEach(block => {
       const p = document.createElement('p');
       p.className = 'project-desc' + (block.style === 'secondary' ? ' project-desc--secondary' : '');
-      p.textContent = block.text;
+      p.textContent = pick(block.text);
       descWrap.appendChild(p);
     });
   }
 
   function buildGalleryAndCta(project, hasImages) {
     canvas.innerHTML = '';
+    leftCol.querySelectorAll('.gallery-view-all, .gallery-note').forEach(el => el.remove());
 
     if (!hasImages) {
       PLACEHOLDER_FILLS.forEach((fill, i) => {
@@ -97,50 +103,61 @@
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'cta-link gallery-view-all js-view-gallery';
-    btn.textContent = 'Ver toda la galería →';
+    btn.textContent = t('project.viewGalleryCta');
     const note = document.createElement('p');
     note.className = 'gallery-note';
-    note.textContent = 'Arrastra las imágenes para moverlas · Doble clic para ver en galería';
+    note.textContent = t('project.dragNote');
     leftCol.appendChild(btn);
     leftCol.appendChild(note);
   }
 
-  Promise.all([
-    fetch('data/projects.json').then(r => r.json()),
-    fetch('data/disciplines.json').then(r => r.json())
-  ]).then(([projects, disciplines]) => {
-    const project = projects.find(p => p.slug === slug);
-    if (!project || project.hidden) {
-      showError(slug ? `No existe el proyecto "${slug}".` : 'Falta el parámetro ?p= en la URL.');
-      return;
-    }
-    const discipline = disciplines.find(d => d.slug === project.discipline);
+  window.I18N.init(function () {
+    Promise.all([
+      fetch('data/projects.json').then(r => r.json()),
+      fetch('data/disciplines.json').then(r => r.json())
+    ]).then(([projects, disciplines]) => {
+      const project = projects.find(p => p.slug === slug);
+      if (!project || project.hidden) {
+        function renderError() {
+          showError(slug ? t('project.errorNotFound', { slug }) : t('project.errorMissingParam'));
+        }
+        renderError();
+        document.addEventListener('langchange', renderError);
+        return;
+      }
+      const discipline = disciplines.find(d => d.slug === project.discipline);
 
-    document.title = `María Méndez — ${project.titleLines.join(' ')}`;
+      /* status: "missing-assets" means the referenced files don't
+         actually exist on disk right now — treat exactly like a
+         project with zero uploaded photos (placeholder fills, no
+         broken <img>, no CTA) until the real files land and the
+         status field is removed from projects.json. */
+      const hasImages = project.stack.length > 0 && project.status !== 'missing-assets';
 
-    const root = document.documentElement.style;
-    root.setProperty('--c-bg',     discipline.color);
-    root.setProperty('--c-text',   discipline.textColor);
-    root.setProperty('--c-muted',  discipline.mutedColor);
-    root.setProperty('--c-border', discipline.borderColor);
-    root.setProperty('--c-dot',    discipline.dotColor);
+      function render() {
+        document.title = `María Méndez — ${project.titleLines.join(' ')}`;
 
-    categoryEl.textContent = `${discipline.name} · ${project.year}`;
-    titleEl.innerHTML = project.titleLines.join('<br>');
+        const root = document.documentElement.style;
+        root.setProperty('--c-bg',     discipline.color);
+        root.setProperty('--c-text',   discipline.textColor);
+        root.setProperty('--c-muted',  discipline.mutedColor);
+        root.setProperty('--c-border', discipline.borderColor);
+        root.setProperty('--c-dot',    discipline.dotColor);
 
-    /* status: "missing-assets" means the referenced files don't
-       actually exist on disk right now — treat exactly like a
-       project with zero uploaded photos (placeholder fills, no
-       broken <img>, no CTA) until the real files land and the
-       status field is removed from projects.json. */
-    const hasImages = project.stack.length > 0 && project.status !== 'missing-assets';
+        categoryEl.textContent = `${pick(discipline.name)} · ${project.year}`;
+        titleEl.innerHTML = project.titleLines.join('<br>');
 
-    buildSpecSheet(project);
-    buildDescription(project);
-    buildGalleryAndCta(project, hasImages);
+        buildSpecSheet(project);
+        buildDescription(project);
+        buildGalleryAndCta(project, hasImages);
 
-    if (window.GalleryJS) window.GalleryJS.initGallery(gallerySec);
-  }).catch(() => {
-    showError('No se pudo cargar el contenido — revisa que la página se esté sirviendo por http(s), no abierta directo como archivo.');
+        if (window.GalleryJS) window.GalleryJS.initGallery(gallerySec);
+      }
+
+      render();
+      document.addEventListener('langchange', render);
+    }).catch(() => {
+      showError(t('common.errorLoadFailed'));
+    });
   });
 })();

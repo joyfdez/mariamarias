@@ -2,57 +2,81 @@
   {
     "slug": "textile",
     "number": "01",
-    "name": "Textile",
-    "titleLines": ["Textile &", "Surface", "Design"],
-    "eyebrowLabel": "01 — Category",
+    "name": { "es": "Textil", "en": "Textile" },
+    "titleLines": {
+      "es": ["Textil y", "Diseño de", "Superficie"],
+      "en": ["Textile &", "Surface", "Design"]
+    },
+    "eyebrowLabel": { "es": "01 — Categoría", "en": "01 — Category" },
     "color": "#1546F4",
     "textColor": "#F5F2EB",
     "mutedColor": "rgba(245,242,235,0.50)",
     "borderColor": "rgba(245,242,235,0.14)",
     "dotColor": "#C6D90A",
     "icon": "assets/shapes/bird.svg",
-    "description": "Surface as memory. Patterns drawn from natural form and cultural reference, developed for silk, linen, and mixed textile applications."
+    "description": {
+      "es": "La superficie como memoria. Estampados inspirados en formas naturales y referencias culturales, desarrollados para seda, lino y aplicaciones textiles mixtas.",
+      "en": "Surface as memory. Patterns drawn from natural form and cultural reference, developed for silk, linen, and mixed textile applications."
+    }
   },
   {
     "slug": "campaigns",
     "number": "02",
-    "name": "Campaigns",
-    "titleLines": ["Campaigns"],
-    "eyebrowLabel": "02 — Category",
+    "name": { "es": "Campañas", "en": "Campaigns" },
+    "titleLines": {
+      "es": ["Campañas"],
+      "en": ["Campaigns"]
+    },
+    "eyebrowLabel": { "es": "02 — Categoría", "en": "02 — Category" },
     "color": "#C6D90A",
     "textColor": "#202020",
     "mutedColor": "rgba(32,32,32,0.52)",
     "borderColor": "rgba(32,32,32,0.12)",
     "dotColor": "#202020",
     "icon": "assets/shapes/nenunfar.svg",
-    "description": "Art as public practice. Visual strategies for cultural institutions and award programs — work built to move through the world."
+    "description": {
+      "es": "El arte como práctica pública. Estrategias visuales para instituciones culturales y programas de reconocimiento — trabajo pensado para moverse por el mundo.",
+      "en": "Art as public practice. Visual strategies for cultural institutions and award programs — work built to move through the world."
+    }
   },
   {
     "slug": "branding",
     "number": "03",
-    "name": "Branding",
-    "titleLines": ["Branding"],
-    "eyebrowLabel": "03 — Category",
+    "name": { "es": "Branding", "en": "Branding" },
+    "titleLines": {
+      "es": ["Branding"],
+      "en": ["Branding"]
+    },
+    "eyebrowLabel": { "es": "03 — Categoría", "en": "03 — Category" },
     "color": "#1B5744",
     "textColor": "#F5F2EB",
     "mutedColor": "rgba(245,242,235,0.50)",
     "borderColor": "rgba(245,242,235,0.13)",
     "dotColor": "#C6D90A",
     "icon": "assets/shapes/horse.svg",
-    "description": "Identity as language. Brand systems for cultural spaces, hospitality, and creative practices — marks that carry meaning without imposing it."
+    "description": {
+      "es": "La identidad como lenguaje. Sistemas de marca para espacios culturales, hospitalidad y prácticas creativas — símbolos que comunican sentido sin imponerlo.",
+      "en": "Identity as language. Brand systems for cultural spaces, hospitality, and creative practices — marks that carry meaning without imposing it."
+    }
   },
   {
     "slug": "packaging",
     "number": "04",
-    "name": "Packaging",
-    "titleLines": ["Packaging /", "Product", "Design"],
-    "eyebrowLabel": "04 — Category",
+    "name": { "es": "Empaque", "en": "Packaging" },
+    "titleLines": {
+      "es": ["Empaque /", "Diseño de", "Producto"],
+      "en": ["Packaging /", "Product", "Design"]
+    },
+    "eyebrowLabel": { "es": "04 — Categoría", "en": "04 — Category" },
     "color": "#D00071",
     "textColor": "#F5F2EB",
     "mutedColor": "rgba(245,242,235,0.52)",
     "borderColor": "rgba(245,242,235,0.14)",
     "dotColor": "#F5F2EB",
     "icon": "assets/shapes/leaf.svg",
-    "description": "Object as message. Packaging and product design where materials speak first, forms follow function, and both carry the brand."
+    "description": {
+      "es": "El objeto como mensaje. Diseño de empaque y producto donde los materiales hablan primero, la forma sigue a la función, y ambos transmiten la marca.",
+      "en": "Object as message. Packaging and product design where materials speak first, forms follow function, and both carry the brand."
+    }
   }
 ]

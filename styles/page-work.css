@@ -28,7 +28,7 @@
   gap: 28px;
   align-items: center;
 }
-.comp-nav__dot {
+.comp-nav__lang {
   margin-left: 6px;
 }
 
@@ -260,5 +260,5 @@
 
   .comp-nav__links { gap: 12px; }
   .comp-nav__links li { font-size: 8px; letter-spacing: 0.12em; }
-  .comp-nav__dot { width: 7px; height: 7px; margin-left: 4px; }
+  .comp-nav__lang { font-size: 8px; gap: 4px; margin-left: 4px; }
 }

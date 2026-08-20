@@ -12,12 +12,14 @@
 <nav class="comp-nav">
   <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
   <ul class="comp-nav__links">
-    <li><a href="work.html">Work</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="work.html" data-i18n-key="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n-key="nav.about">About</a></li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
+    <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__dot"></div>
+  <div class="comp-nav__lang">
+    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
@@ -38,10 +40,11 @@
   <div class="cat-grid cat-grid--uniform" id="catGrid"></div>
 
   <footer class="comp-footer-minimal">
-    <a class="footer-back" href="work.html">← All Work</a>
+    <a class="footer-back" href="work.html" data-i18n-key="category.backCta">← Todo el Trabajo</a>
     <span class="footer-copy">María Méndez Studio</span>
   </footer>
 
 </main>
 
+<script src="scripts/i18n.js"></script>
 <script src="scripts/render-category.js"></script>

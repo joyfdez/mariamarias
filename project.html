@@ -12,12 +12,14 @@
 <nav class="comp-nav">
   <a class="comp-nav__logo" href="work.html">Maria Mendez</a>
   <ul class="comp-nav__links">
-    <li><a href="work.html">Work</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="work.html" data-i18n-key="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n-key="nav.about">About</a></li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
+    <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__dot"></div>
+  <div class="comp-nav__lang">
+    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
@@ -38,11 +40,12 @@
 
   <!-- GALLERY — Layout B only -->
   <section class="comp-gallery-interactive" id="projGallery">
-    <div class="comp-drag-hint" id="dragHint">Move to Explore →</div>
+    <div class="comp-drag-hint" id="dragHint" data-i18n-key="project.dragHint">Mueve para Explorar →</div>
     <div class="gallery-canvas" id="galleryCanvas"></div>
   </section>
 
 </main>
 
+<script src="scripts/i18n.js"></script>
 <script src="scripts/gallery.js"></script>
 <script src="scripts/render-project.js"></script>

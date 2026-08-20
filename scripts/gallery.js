@@ -14,13 +14,14 @@
 (function () {
 
   function buildLightbox(pieces) {
+    const t = window.I18N ? window.I18N.t : function () { return ''; };
     const lb = document.createElement('div');
     lb.className = 'comp-gallery-lightbox';
     lb.innerHTML =
-      '<button class="lightbox-close" aria-label="Close">&times;</button>' +
-      '<button class="lightbox-prev" aria-label="Previous image">&#8249;</button>' +
+      `<button class="lightbox-close" aria-label="${t('gallery.close') || 'Close'}">&times;</button>` +
+      `<button class="lightbox-prev" aria-label="${t('gallery.prevImage') || 'Previous image'}">&#8249;</button>` +
       '<div class="lightbox-stage"></div>' +
-      '<button class="lightbox-next" aria-label="Next image">&#8250;</button>';
+      `<button class="lightbox-next" aria-label="${t('gallery.nextImage') || 'Next image'}">&#8250;</button>`;
     document.body.appendChild(lb);
 
     const stage    = lb.querySelector('.lightbox-stage');

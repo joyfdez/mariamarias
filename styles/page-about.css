@@ -12,11 +12,12 @@ body {
    Nav runs in the page's theme color (Textile blue) per the
    approved mockup, not the neutral --c-text. */
 .comp-nav__logo,
-.comp-nav__links a {
+.comp-nav__links a,
+.comp-nav__lang {
   color: var(--c-textile);
 }
-.comp-nav__dot {
-  background: var(--c-textile);
+:root {
+  --c-dot: var(--c-textile);
 }
 
 /* ─── PAGE ───────────────────────────────────────────────── */

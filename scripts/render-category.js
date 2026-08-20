@@ -4,9 +4,14 @@
    data/projects.json, and renders the whole page client-side.
    No build step, no backend — fetch() of local JSON only works
    served over http(s), not opened directly via file://.
+   Bilingual fields ({es,en} objects in the JSON) are resolved via
+   I18N.pick(); fixed UI strings via I18N.t(). Re-renders on
+   'langchange' instead of reloading the page.
    ============================================================ */
 (function () {
   const slug = new URLSearchParams(location.search).get('d');
+  const pick = window.I18N.pick;
+  const t = window.I18N.t;
 
   const hero    = document.getElementById('catHero');
   const eyebrow  = document.getElementById('catEyebrow');
@@ -18,6 +23,7 @@
   function showError(message) {
     hero.style.display = 'none';
     grid.innerHTML = '';
+    grid.parentNode.querySelectorAll('.cat-error').forEach(el => el.remove());
     const p = document.createElement('p');
     p.className = 'cat-error';
     p.textContent = message;
@@ -44,7 +50,7 @@
     const info = document.createElement('div');
     info.className = 'pcard__info';
     info.innerHTML = `
-      <span class="pcard__meta">${discipline.name} · ${project.year}</span>
+      <span class="pcard__meta">${pick(discipline.name)} · ${project.year}</span>
       <h2 class="pcard__title">${project.titleLines.join('<br>')}</h2>
       <div class="pcard__dot"></div>
     `;
@@ -52,35 +58,50 @@
     return a;
   }
 
-  Promise.all([
-    fetch('data/disciplines.json').then(r => r.json()),
-    fetch('data/projects.json').then(r => r.json())
-  ]).then(([disciplines, projects]) => {
-    const discipline = disciplines.find(d => d.slug === slug);
-    if (!discipline) {
-      showError(slug ? `No existe la disciplina "${slug}".` : 'Falta el parámetro ?d= en la URL.');
-      return;
-    }
+  window.I18N.init(function () {
+    Promise.all([
+      fetch('data/disciplines.json').then(r => r.json()),
+      fetch('data/projects.json').then(r => r.json())
+    ]).then(([disciplines, projects]) => {
+      const discipline = disciplines.find(d => d.slug === slug);
+      if (!discipline) {
+        function renderError() {
+          showError(slug ? t('category.errorNoDiscipline', { slug }) : t('category.errorMissingParam'));
+        }
+        renderError();
+        document.addEventListener('langchange', renderError);
+        return;
+      }
 
-    document.title = `María Méndez — ${discipline.name}`;
+      const matches = projects.filter(p => p.discipline === slug && !p.hidden);
 
-    const root = document.documentElement.style;
-    root.setProperty('--c-bg',     discipline.color);
-    root.setProperty('--c-text',   discipline.textColor);
-    root.setProperty('--c-muted',  discipline.mutedColor);
-    root.setProperty('--c-border', discipline.borderColor);
-    root.setProperty('--c-dot',    discipline.dotColor);
+      function render() {
+        document.title = `María Méndez — ${pick(discipline.name)}`;
 
-    eyebrow.textContent = discipline.eyebrowLabel;
-    title.innerHTML     = discipline.titleLines.join('<br>');
-    desc.textContent    = discipline.description;
+        const root = document.documentElement.style;
+        root.setProperty('--c-bg',     discipline.color);
+        root.setProperty('--c-text',   discipline.textColor);
+        root.setProperty('--c-muted',  discipline.mutedColor);
+        root.setProperty('--c-border', discipline.borderColor);
+        root.setProperty('--c-dot',    discipline.dotColor);
 
-    const matches = projects.filter(p => p.discipline === slug && !p.hidden);
-    count.textContent = `${matches.length} Project${matches.length === 1 ? '' : 's'}`;
+        eyebrow.textContent = pick(discipline.eyebrowLabel);
+        title.innerHTML     = pick(discipline.titleLines).join('<br>');
+        desc.textContent    = pick(discipline.description);
 
-    grid.innerHTML = '';
-    matches.forEach(project => grid.appendChild(pcardFor(project, discipline)));
-  }).catch(() => {
-    showError('No se pudo cargar el contenido — revisa que la página se esté sirviendo por http(s), no abierta directo como archivo.');
+        count.textContent = t(
+          matches.length === 1 ? 'category.projectCountSingular' : 'category.projectCountPlural',
+          { count: matches.length }
+        );
+
+        grid.innerHTML = '';
+        matches.forEach(project => grid.appendChild(pcardFor(project, discipline)));
+      }
+
+      render();
+      document.addEventListener('langchange', render);
+    }).catch(() => {
+      showError(t('common.errorLoadFailed'));
+    });
   });
 })();

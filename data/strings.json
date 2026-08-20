@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "work":    { "es": "Trabajo",   "en": "Work" },
+    "about":   { "es": "Sobre Mí",  "en": "About" },
+    "shop":    { "es": "Tienda",    "en": "Shop" },
+    "contact": { "es": "Contacto",  "en": "Contact" }
+  },
+
+  "about": {
+    "title":        { "es": "Sobre mí", "en": "About" },
+    "tagline":      { "es": "Soy María", "en": "I'm María" },
+    "bioP1": {
+      "es": "diseñadora gráfica, artista textil e ilustradora. Pero sobre todo soy una persona muy curiosa, que necesita estar en constante aprendizaje. Me inspira observar el mundo: la naturaleza, lo que construimos, lo que heredamos, esas pequeñas cosas que muchas veces pasan desapercibidas. Tengo una relación muy especial con el color, con las sensaciones que puede provocar, emocionales y también físicas. Me gusta investigar, experimentar, descubrir conexiones entre ideas, materiales, imágenes y formas.",
+      "en": "graphic designer, textile artist and illustrator. But above all, I'm a very curious person who needs to be constantly learning. I'm inspired by observing the world: nature, what we build, what we inherit, those small things that often go unnoticed. I have a very special relationship with color, with the sensations it can provoke, both emotional and physical. I like to research, experiment, and discover connections between ideas, materials, images and forms."
+    },
+    "bioP2": {
+      "es": "Soy bastante organizada y disciplinada con mi trabajo. Pero también necesito espacio para explorar sin plan. Me gusta trabajar tanto sola, que es ahí es donde encuentro mi ritmo pero también con más personas, ya que me enriquece mucho: compartir ideas, aprender otras formas de pensar y de hacer. Me interesan los procesos cuidados, las cosas auténticas, los proyectos que tienen algo detrás. Al final, mi trabajo nace de eso: mirar con atención lo que me rodea, dejarme provocar por ello, y transformarlo en algo que pueda verse, tocarse o sentirse.",
+      "en": "I'm fairly organized and disciplined with my work. But I also need space to explore without a plan. I like working alone, which is where I find my rhythm, but also with other people, since it enriches me a lot — sharing ideas, learning other ways of thinking and making. I'm drawn to careful processes, authentic things, projects that have something behind them. In the end, my work comes from that: paying close attention to what surrounds me, letting it provoke me, and turning it into something that can be seen, touched or felt."
+    },
+    "cta":          { "es": "Ver Trabajo Seleccionado →", "en": "View Selected Work →" },
+    "valuesLabel":  { "es": "Mis<br>Valores", "en": "My<br>Values" },
+    "lightboxAlt1": { "es": "María Méndez — proyecto 1", "en": "María Méndez — project 1" },
+    "lightboxAlt2": { "es": "María Méndez — proyecto 2", "en": "María Méndez — project 2" },
+    "values": {
+      "curiosity": {
+        "title": { "es": "Curiosidad", "en": "Curiosity" },
+        "desc":  { "es": "Mira más de cerca. Pregunta por qué. Sigue ese pequeño detalle raro.", "en": "Look closer. Ask why. Follow the weird little detail." }
+      },
+      "craft": {
+        "title": { "es": "Oficio", "en": "Craft" },
+        "desc":  { "es": "Las buenas ideas merecen convertirse en buenas cosas — hechas con belleza y pensadas con cuidado.", "en": "Good ideas deserve to become good things — beautifully made and thoughtfully considered." }
+      },
+      "story": {
+        "title": { "es": "Historia", "en": "Story" },
+        "desc":  { "es": "Todo tiene una historia. Solo hay que encontrar la forma correcta de contarla.", "en": "Everything has a story. We just have to find the right way to tell it." }
+      },
+      "color": {
+        "title": { "es": "Color", "en": "Color" },
+        "desc":  { "es": "El color nunca es solo decoración. Tiene estado de ánimo, memoria, actitud y vida propia.", "en": "Color is never just decoration. It has mood, memory, attitude and a life of its own." }
+      },
+      "play": {
+        "title": { "es": "Juego", "en": "Play" },
+        "desc":  { "es": "Experimenta, ensucia, cambia de dirección. A veces las mejores ideas ocurren por accidente.", "en": "Experiment, make a mess, change direction. Sometimes the best ideas happen by accident." }
+      }
+    }
+  },
+
+  "contact": {
+    "emailLabel":    { "es": "Correo:", "en": "E-mail:" },
+    "instagramLabel":{ "es": "Instagram:", "en": "Instagram:" },
+    "behanceLabel":  { "es": "Behance:", "en": "Behance:" },
+    "backCta":       { "es": "← Volver al Trabajo", "en": "← Back to Work" },
+    "outlineTitle":  { "es": "Contacto", "en": "Contact" }
+  },
+
+  "work": {
+    "tagline": { "es": "Diseñadora Gráfica<br>Artista Textil<br>Ilustradora", "en": "Graphic Designer<br>Textile Artist<br>Illustrator" }
+  },
+
+  "category": {
+    "backCta":                { "es": "← Todo el Trabajo", "en": "← All Work" },
+    "projectCountSingular":   { "es": "{count} Proyecto", "en": "{count} Project" },
+    "projectCountPlural":     { "es": "{count} Proyectos", "en": "{count} Projects" },
+    "errorNoDiscipline":      { "es": "No existe la disciplina \"{slug}\".", "en": "Discipline \"{slug}\" doesn't exist." },
+    "errorMissingParam":      { "es": "Falta el parámetro ?d= en la URL.", "en": "Missing the ?d= parameter in the URL." }
+  },
+
+  "project": {
+    "dragHint":         { "es": "Mueve para Explorar →", "en": "Move to Explore →" },
+    "specClient":       { "es": "Cliente", "en": "Client" },
+    "specDiscipline":   { "es": "Disciplina", "en": "Discipline" },
+    "specYear":         { "es": "Año", "en": "Year" },
+    "viewGalleryCta":   { "es": "Ver toda la galería →", "en": "View full gallery →" },
+    "dragNote":         { "es": "Arrastra las imágenes para moverlas · Doble clic para ver en galería", "en": "Drag the images to move them · Double-click to view in gallery" },
+    "errorNotFound":    { "es": "No existe el proyecto \"{slug}\".", "en": "Project \"{slug}\" doesn't exist." },
+    "errorMissingParam":{ "es": "Falta el parámetro ?p= en la URL.", "en": "Missing the ?p= parameter in the URL." }
+  },
+
+  "gallery": {
+    "close":     { "es": "Cerrar", "en": "Close" },
+    "prevImage": { "es": "Imagen anterior", "en": "Previous image" },
+    "nextImage": { "es": "Imagen siguiente", "en": "Next image" }
+  },
+
+  "common": {
+    "errorLoadFailed": {
+      "es": "No se pudo cargar el contenido — revisa que la página se esté sirviendo por http(s), no abierta directo como archivo.",
+      "en": "Couldn't load the content — make sure the page is being served over http(s), not opened directly as a file."
+    }
+  }
+}

@@ -11,12 +11,14 @@
 <!-- ─── NAV ─────────────────────────────────────────────────── -->
 <nav class="comp-nav">
   <ul class="comp-nav__links">
-    <li class="is-active"><a href="work.html">Work</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener">Shop</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li class="is-active"><a href="work.html" data-i18n-key="nav.work">Work</a></li>
+    <li><a href="about.html" data-i18n-key="nav.about">About</a></li>
+    <li><a href="https://shop.mariamariass.com" target="_blank" rel="noopener" data-i18n-key="nav.shop">Shop</a></li>
+    <li><a href="contact.html" data-i18n-key="nav.contact">Contact</a></li>
   </ul>
-  <div class="comp-nav__dot"></div>
+  <div class="comp-nav__lang">
+    <button type="button" class="comp-nav__lang-btn" data-lang="es">ES</button><span class="comp-nav__lang-sep">/</span><button type="button" class="comp-nav__lang-btn" data-lang="en">EN</button>
+  </div>
 </nav>
 
 <!-- ─── PAGE ─────────────────────────────────────────────────── -->
@@ -24,10 +26,10 @@
 
   <section class="work-hero">
     <h1 class="work-title">Maria Mendez</h1>
-    <p class="work-tagline">
-      Graphic Designer<br>
-      Textile Artist<br>
-      Illustrator
+    <p class="work-tagline" data-i18n-key="work.tagline" data-i18n-html>
+      Diseñadora Gráfica<br>
+      Artista Textil<br>
+      Ilustradora
     </p>
 
     <!-- HERO BAG -->
@@ -45,42 +47,10 @@
     </div>
   </section>
 
-  <!-- CATEGORY GRID -->
-  <section class="comp-category-grid">
-
-    <a class="category-item category-item--textile" href="category.html?d=textile">
-      <span class="category-num">01</span>
-      <div class="category-icon">
-        <img class="category-shape" src="assets/shapes/bird.svg" alt="">
-      </div>
-      <div class="category-name">Textile &amp;<br>Surface Design</div>
-    </a>
-
-    <a class="category-item category-item--campaigns" href="category.html?d=campaigns">
-      <span class="category-num">02</span>
-      <div class="category-icon">
-        <img class="category-shape" src="assets/shapes/nenunfar.svg" alt="">
-      </div>
-      <div class="category-name">Campaigns</div>
-    </a>
-
-    <a class="category-item category-item--branding" href="category.html?d=branding">
-      <span class="category-num">03</span>
-      <div class="category-icon">
-        <img class="category-shape" src="assets/shapes/horse.svg" alt="">
-      </div>
-      <div class="category-name">Branding</div>
-    </a>
-
-    <a class="category-item category-item--packaging" href="category.html?d=packaging">
-      <span class="category-num">04</span>
-      <div class="category-icon">
-        <img class="category-shape" src="assets/shapes/leaf.svg" alt="">
-      </div>
-      <div class="category-name">Packaging /<br>Product Design</div>
-    </a>
-
-  </section>
+  <!-- CATEGORY GRID — rendered from data/disciplines.json, see
+       scripts/render-category-grid.js (single source of truth,
+       shared with category.html). -->
+  <section class="comp-category-grid" id="categoryGrid"></section>
 
   <!-- Dots are built by JS below, only when the grid actually overflows -->
   <div class="pagination-dots" id="categoryDots"></div>
@@ -95,8 +65,11 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script src="scripts/i18n.js"></script>
 <script src="scripts/fit-title.js"></script>
+<script src="scripts/render-category-grid.js"></script>
 <script src="scripts/render-strip.js"></script>
+<script>I18N.init();</script>
 <script>
 /* Hero bag physics — 8 pieces, gravity + drag, DOM synced to Matter.js bodies */
 (function () {
@@ -279,6 +252,12 @@ fitTitleToWidth(document.querySelector('.work-title'));
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(refresh, 200);
   });
+
+  /* Grid items now come from render-category-grid.js (async fetch of
+     data/disciplines.json), so they don't exist yet at parse time —
+     re-measure once real items land, and again on every langchange
+     (titleLines line count can change between ES/EN). */
+  document.addEventListener('categorygridready', refresh);
 
   refresh();
 })();
