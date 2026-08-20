@@ -282,6 +282,7 @@
   },
   {
     "slug": "fuego-mestizo",
+    "hidden": true,
     "titleLines": ["Fuego", "Mestizo"],
     "discipline": "branding",
     "year": 2023,
@@ -334,6 +335,43 @@
       "assets/projects/hija-roja/hija-roja-07.png",
       "assets/projects/hija-roja/hija-roja-08.png",
       "assets/projects/hija-roja/hija-roja-09.png"
+    ]
+  },
+  {
+    "slug": "casa-chechen",
+    "titleLines": ["Casa", "Chechen"],
+    "discipline": "branding",
+    "year": 2022,
+    "client": "Casa Chechen",
+    "disciplineDetail": "Identidad de marca, Dirección de arte, Ilustración, Diseño gráfico y Motion",
+    "description": [
+      { "text": "Casa Chechen es un espacio dedicado a reunir objetos, piezas y creadores seleccionados alrededor de una misma idea: lo bien hecho importa. Concebida como una casa viva, la marca reúne a artesanos y diseñadores dentro de un catálogo de interiorismo donde conviven materiales nobles, procesos manuales, piezas únicas y objetos hechos para durar. El espacio combina arquitectura limpia y una fuerte presencia de naturaleza, funcionando como escenario para las piezas de madera de alta calidad que definen gran parte del universo de Casa Chechen. Para el proyecto se desarrolló la identidad visual completa, desde diferentes exploraciones de logotipo y sistema gráfico hasta ilustraciones, gráficos auxiliares, aplicaciones, papelería, merchandising y piezas animadas. El sistema busca encontrar un equilibrio entre la sofisticación del interiorismo y una identidad más cálida, humana y gráfica.", "style": "primary" },
+      { "text": "El símbolo de Casa Chechen nace de una idea muy sencilla: dos mujeres que se encuentran para seleccionar juntas aquello que merece quedarse. La figura representa la búsqueda del origen, la elección cuidadosa de la materia prima y ese conocimiento casi instintivo de reconocer algo bueno cuando lo tienes delante. La identidad juega con formas orgánicas, composiciones geométricas y una paleta contenida que permite que los materiales y las piezas respiren. Hay algo deliberadamente imperfecto en el sistema: porque cuando todo está demasiado pulido, se pierde un poco la magia.", "style": "secondary" }
+    ],
+    "cover": "assets/projects/casa_chechen/casa_chechem_cover.jpg",
+    "stack": [
+      "assets/projects/casa_chechen/casa_chechen_01.jpg",
+      "assets/projects/casa_chechen/casa_chechen_02.jpg",
+      "assets/projects/casa_chechen/casa_chechen_03.jpg",
+      "assets/projects/casa_chechen/casa_chechen_04.jpg",
+      "assets/projects/casa_chechen/casa_chechen_05.jpg",
+      "assets/projects/casa_chechen/casa_chechen_06.jpg"
+    ],
+    "gallery": [
+      "assets/projects/casa_chechen/casa_chechen_07.jpg",
+      "assets/projects/casa_chechen/casa_chechen_08.jpg",
+      "assets/projects/casa_chechen/casa_chechen_09.jpg",
+      "assets/projects/casa_chechen/casa_chechen_010.jpg",
+      "assets/projects/casa_chechen/casa_chechen_011.jpg",
+      "assets/projects/casa_chechen/casa_chechen_012.jpg",
+      "assets/projects/casa_chechen/casa_chechen_013.jpg",
+      "assets/projects/casa_chechen/casa_chechen_014.jpg",
+      "assets/projects/casa_chechen/casa_chechen_015.jpg",
+      "assets/projects/casa_chechen/casa_chechen_016.png",
+      "assets/projects/casa_chechen/casa_chechen_017.jpg",
+      "assets/projects/casa_chechen/casa_chechen_018.jpg",
+      "assets/projects/casa_chechen/casa_chechen_019.jpg",
+      "assets/projects/casa_chechen/casa_chechen_020.png"
     ]
   },
   {

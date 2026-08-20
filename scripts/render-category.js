@@ -75,7 +75,7 @@
     title.innerHTML     = discipline.titleLines.join('<br>');
     desc.textContent    = discipline.description;
 
-    const matches = projects.filter(p => p.discipline === slug);
+    const matches = projects.filter(p => p.discipline === slug && !p.hidden);
     count.textContent = `${matches.length} Project${matches.length === 1 ? '' : 's'}`;
 
     grid.innerHTML = '';

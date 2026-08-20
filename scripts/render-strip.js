@@ -54,7 +54,7 @@
   ]).then(([projects, disciplines]) => {
     const bySlug = Object.fromEntries(disciplines.map(d => [d.slug, d]));
     strip.innerHTML = '';
-    projects.forEach(project => {
+    projects.filter(project => !project.hidden).forEach(project => {
       const discipline = bySlug[project.discipline];
       if (!discipline) return; // defensive — every project.discipline must match a real slug
       strip.appendChild(cardFor(project, discipline));

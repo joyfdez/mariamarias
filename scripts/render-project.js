@@ -110,7 +110,7 @@
     fetch('data/disciplines.json').then(r => r.json())
   ]).then(([projects, disciplines]) => {
     const project = projects.find(p => p.slug === slug);
-    if (!project) {
+    if (!project || project.hidden) {
       showError(slug ? `No existe el proyecto "${slug}".` : 'Falta el parámetro ?p= en la URL.');
       return;
     }
