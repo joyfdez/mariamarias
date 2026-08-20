@@ -67,6 +67,7 @@ body {
 
 /* ─── AVATAR BOX ─────────────────────────────────────────── */
 .contact-avatar {
+  position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--c-border);
@@ -77,6 +78,36 @@ body {
 
 .contact-avatar img,
 .contact-video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Exposure lift, not a blend mode — mix-blend-mode is for fusing with
+   the page background (confirmed: screen/soft-light just wash this
+   out to near-invisible against the cream --c-bg), not for correcting
+   a video that reads dark. Starting value per initial ask; nudge
+   toward brightness(1.3-1.45) if it still reads dark on a real
+   screen, back toward 1 if this already looks blown out on one. */
+.contact-video {
+  filter: brightness(1.15) contrast(1.05);
+}
+
+.contact-video-mute {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20,20,20,0.45);
+  color: #F5F2EB;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.contact-video-mute:hover { background: rgba(20,20,20,0.65); }
 
 /* ─── BACK LINK ──────────────────────────────────────────── */
 .back-link {

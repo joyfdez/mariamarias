@@ -54,6 +54,7 @@
     <div class="contact-col contact-col--center">
       <div class="contact-avatar">
         <video class="contact-video" id="contactVideo" src="assets/images/Contact1.mp4" muted playsinline autoplay></video>
+        <button type="button" class="contact-video-mute" id="contactVideoMute" aria-pressed="false"></button>
       </div>
     </div>
 
@@ -112,5 +113,28 @@
   };
   window.addEventListener('touchstart', retryPlay, { passive: true, once: true });
   window.addEventListener('scroll', retryPlay, { passive: true, once: true });
+
+  /* Mute toggle — works whether the video is mid-play or already
+     frozen on its last frame; toggling .muted never touches
+     playback state, so it doesn't fight the hover-replay/freeze
+     logic above. */
+  const muteBtn = document.getElementById('contactVideoMute');
+  const ICON_MUTED = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 4,15 8,15 13,20 13,4 8,9" fill="currentColor" stroke="none"/><line x1="16" y1="9" x2="22" y2="15"/><line x1="22" y1="9" x2="16" y2="15"/></svg>';
+  const ICON_UNMUTED = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 4,15 8,15 13,20 13,4 8,9" fill="currentColor" stroke="none"/><path d="M16 8a5 5 0 0 1 0 8"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+
+  if (muteBtn) {
+    const t = window.I18N ? window.I18N.t : function () { return ''; };
+    function syncMuteButton() {
+      muteBtn.innerHTML = video.muted ? ICON_MUTED : ICON_UNMUTED;
+      muteBtn.setAttribute('aria-pressed', String(!video.muted));
+      muteBtn.setAttribute('aria-label', (video.muted ? t('contact.unmute') : t('contact.mute')) || (video.muted ? 'Unmute' : 'Mute'));
+    }
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      syncMuteButton();
+    });
+    syncMuteButton();
+    document.addEventListener('langchange', syncMuteButton);
+  }
 })();
 </script>

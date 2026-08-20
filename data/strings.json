@@ -50,7 +50,9 @@
     "instagramLabel":{ "es": "Instagram:", "en": "Instagram:" },
     "behanceLabel":  { "es": "Behance:", "en": "Behance:" },
     "backCta":       { "es": "← Volver al Trabajo", "en": "← Back to Work" },
-    "outlineTitle":  { "es": "Contacto", "en": "Contact" }
+    "outlineTitle":  { "es": "Contacto", "en": "Contact" },
+    "mute":          { "es": "Silenciar video", "en": "Mute video" },
+    "unmute":        { "es": "Activar sonido", "en": "Unmute video" }
   },
 
   "work": {
