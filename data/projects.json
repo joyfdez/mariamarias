@@ -60,8 +60,8 @@
     "year": 2026,
     "client": "María Méndez",
     "disciplineDetail": {
-      "es": "Diseño de pañuelos de seda & Diseño de estampados",
-      "en": "Silk Scarf Design & Print Design"
+      "es": "Diseño textil y de estampados",
+      "en": "Print & Textile Design"
     },
     "description": [
       {
@@ -94,7 +94,13 @@
       "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-04.jpg",
       "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-05.jpg"
     ],
-    "gallery": []
+    "gallery": [
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-06.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-07.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-08.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-09.jpg",
+      "assets/projects/silk-scarves-tvla-2026/silk-scarves-tvla-2026-10.jpg"
+    ]
   },
   {
     "slug": "y-si-summer-2025",
@@ -106,8 +112,8 @@
     "year": 2025,
     "client": "María Méndez",
     "disciplineDetail": {
-      "es": "Diseño textil, Diseño de estampados & Diseño de colección",
-      "en": "Textile Design, Print Design & Collection Design"
+      "es": "Diseño textil y de estampados",
+      "en": "Print & Textile Design"
     },
     "description": [
       {
@@ -159,8 +165,8 @@
     "year": 2026,
     "client": "María Méndez",
     "disciplineDetail": {
-      "es": "Diseño textil, Diseño de estampados & Diseño de pañuelos de seda",
-      "en": "Textile Design, Print Design & Silk Scarf Design"
+      "es": "Diseño textil y de estampados",
+      "en": "Print & Textile Design"
     },
     "description": [
       {
@@ -181,13 +187,6 @@
         "text": {
           "es": "Lo que más me interesa de estos mitos es que, aunque muchas de sus historias puedan parecer ilógicas, exageradas o incluso absurdas desde una mirada contemporánea, siguen teniendo una estructura y una carga emocional. Son otras formas de entender el mundo: no siempre racionales, pero profundamente humanas. Myths on Silk busca habitar precisamente ese espacio entre lo fantástico y lo cotidiano, convirtiendo esas historias en piezas de seda para llevarlas con nosotros.",
           "en": "What interests me most about these myths is that, even though many of their stories can seem illogical, exaggerated or even absurd from a contemporary point of view, they still carry a structure and an emotional charge. They're other ways of understanding the world — not always rational, but deeply human. Myths on Silk seeks to inhabit precisely that space between the fantastic and the everyday, turning these stories into silk pieces to carry with us."
-        },
-        "style": "secondary"
-      },
-      {
-        "text": {
-          "es": "Lanzamiento: durante las dos primeras semanas de lanzamiento, todas las piezas estarán disponibles bajo pedido.",
-          "en": "Launch: for the first two weeks after launch, all pieces will be available made to order."
         },
         "style": "secondary"
       }
@@ -224,8 +223,8 @@
     "year": 2024,
     "client": "PeSeta",
     "disciplineDetail": {
-      "es": "Diseño textil, Diseño de estampados & Diseño de patrones",
-      "en": "Textile Design, Print Design & Pattern Design"
+      "es": "Diseño textil y de estampados",
+      "en": "Print & Textile Design"
     },
     "description": [
       {
