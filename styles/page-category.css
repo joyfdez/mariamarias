@@ -294,3 +294,40 @@ body { min-height: 100vh; }
     linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%),
     url('../assets/projects/bioliving/bioliving-cover.png') center/cover no-repeat;
 }
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────
+   Same technique as page-project.css's mobile reorder: .cat-hero's
+   two <div>s (unnamed in the HTML — targeted structurally, no markup
+   change needed) stay in DOM order, but display:contents drops
+   .cat-hero's own box and promotes them to direct flex children of
+   .page-cat, putting them in the same ordering context as the
+   sibling .cat-grid and footer so `order` can reorder across that
+   nesting boundary: eyebrow+title first, count+description second,
+   the project grid last — instead of the cramped 2-column hero. */
+@media (max-width: 760px) {
+  .page-cat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cat-hero {
+    display: contents;
+  }
+
+  .cat-hero > div:first-child {
+    order: 1;
+    padding: 40px var(--px) 20px;
+  }
+
+  .cat-hero > div:last-child {
+    order: 2;
+    padding: 0 var(--px) 32px;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .cat-desc { max-width: none; }
+
+  .cat-grid { order: 3; }
+
+  .comp-footer-minimal { order: 4; }
+}

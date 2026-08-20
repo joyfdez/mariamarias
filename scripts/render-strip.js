@@ -1,9 +1,10 @@
 /* ============================================================
    RENDER-STRIP.JS — work.html only
    Renders the horizontal projects strip from data/projects.json —
-   every project is a candidate, in the same order as the JSON file
-   (grouped by discipline: textile, campaigns, branding, packaging).
-   A project without a real cover yet (status: "missing-assets", or
+   every project is a candidate, shuffled into a random order on
+   each page load (see shuffle() below) rather than always opening
+   with the same fixed textile/campaigns/branding/packaging sequence
+   from the JSON file. A project without a real cover yet (status: "missing-assets", or
    zero uploaded photos) gets a tinted placeholder card in its own
    discipline's color instead of being silently left out.
    discipline.name is a bilingual { es, en } object — resolved via
@@ -51,11 +52,30 @@
     return a;
   }
 
+  /* Fisher-Yates, in place on a copy — this is the only page that
+     reads data/projects.json in strip order; render-project.js looks
+     up one project by slug and render-category.js filters by
+     discipline, neither cares about array order, and each page does
+     its own independent fetch(), so shuffling this local copy can't
+     leak into anything else on the site. */
+  function shuffle(arr) {
+    const out = arr.slice();
+    for (let i = out.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [out[i], out[j]] = [out[j], out[i]];
+    }
+    return out;
+  }
+
   Promise.all([
     fetch('data/projects.json').then(r => r.json()),
     fetch('data/disciplines.json').then(r => r.json())
-  ]).then(([projects, disciplines]) => {
+  ]).then(([fetchedProjects, disciplines]) => {
     const bySlug = Object.fromEntries(disciplines.map(d => [d.slug, d]));
+    /* Shuffled once per page load, not per render() call — switching
+       ES/EN calls render() again and shouldn't shuffle the cards out
+       from under someone mid-browse. */
+    const projects = shuffle(fetchedProjects);
 
     function render() {
       strip.innerHTML = '';
